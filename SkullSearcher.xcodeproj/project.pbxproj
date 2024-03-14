@@ -18,6 +18,10 @@
 		849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098012BA3127B0015E68C /* CoordinatorProtocol.swift */; };
 		849098042BA312B00015E68C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098032BA312B00015E68C /* AppCoordinator.swift */; };
 		849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098052BA317A20015E68C /* LoginCoordinator.swift */; };
+		849098092BA3230D0015E68C /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */; };
+		8490980B2BA3231D0015E68C /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8490980A2BA3231D0015E68C /* SF-Pro-Display-Medium.otf */; };
+		8490980D2BA3232F0015E68C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8490980C2BA3232F0015E68C /* SF-Pro-Display-Regular.otf */; };
+		849098102BA325220015E68C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8490980F2BA325220015E68C /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		849098012BA3127B0015E68C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		849098032BA312B00015E68C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		849098052BA317A20015E68C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		8490980A2BA3231D0015E68C /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		8490980C2BA3232F0015E68C /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		8490980F2BA325220015E68C /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		849097C72BA308FE0015E68C /* SkullSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				8490980E2BA323380015E68C /* Fonts */,
 				849098072BA31B240015E68C /* Views */,
 				849098002BA312400015E68C /* Coordinators */,
 				849097FD2BA311DA0015E68C /* Extensions */,
@@ -110,6 +119,7 @@
 				849097D42BA309010015E68C /* Assets.xcassets */,
 				849097D92BA309010015E68C /* Info.plist */,
 				849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */,
+				8490980F2BA325220015E68C /* Storyboard.storyboard */,
 			);
 			path = SkullSearcher;
 			sourceTree = "<group>";
@@ -155,6 +165,16 @@
 				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8490980E2BA323380015E68C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8490980C2BA3232F0015E68C /* SF-Pro-Display-Regular.otf */,
+				8490980A2BA3231D0015E68C /* SF-Pro-Display-Medium.otf */,
+				849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +281,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8490980B2BA3231D0015E68C /* SF-Pro-Display-Medium.otf in Resources */,
+				849098092BA3230D0015E68C /* SF-Pro-Display-Semibold.otf in Resources */,
+				8490980D2BA3232F0015E68C /* SF-Pro-Display-Regular.otf in Resources */,
 				849097D52BA309010015E68C /* Assets.xcassets in Resources */,
+				849098102BA325220015E68C /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
