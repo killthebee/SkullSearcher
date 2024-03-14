@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
-		849097CB2BA308FE0015E68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CA2BA308FE0015E68C /* SceneDelegate.swift */; };
-		849097CD2BA308FE0015E68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* ViewController.swift */; };
-		849097D02BA308FE0015E68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849097CE2BA308FE0015E68C /* Main.storyboard */; };
+		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
 		849097D52BA309010015E68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849097D42BA309010015E68C /* Assets.xcassets */; };
-		849097D82BA309010015E68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849097D62BA309010015E68C /* LaunchScreen.storyboard */; };
 		849097E32BA309010015E68C /* SkullSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097E22BA309010015E68C /* SkullSearcherTests.swift */; };
 		849097ED2BA309010015E68C /* SkullSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097EC2BA309010015E68C /* SkullSearcherUITests.swift */; };
 		849097EF2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */; };
+		849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097FE2BA311FC0015E68C /* UIViewController + ext.swift */; };
+		849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098012BA3127B0015E68C /* CoordinatorProtocol.swift */; };
+		849098042BA312B00015E68C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098032BA312B00015E68C /* AppCoordinator.swift */; };
+		849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098052BA317A20015E68C /* LoginCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +40,19 @@
 /* Begin PBXFileReference section */
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		849097CA2BA308FE0015E68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		849097CC2BA308FE0015E68C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		849097CF2BA308FE0015E68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		849097D22BA308FE0015E68C /* SkullSearcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkullSearcher.xcdatamodel; sourceTree = "<group>"; };
 		849097D42BA309010015E68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		849097D72BA309010015E68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		849097D92BA309010015E68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849097DE2BA309010015E68C /* SkullSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkullSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097E22BA309010015E68C /* SkullSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherTests.swift; sourceTree = "<group>"; };
 		849097E82BA309010015E68C /* SkullSearcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkullSearcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097EC2BA309010015E68C /* SkullSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherUITests.swift; sourceTree = "<group>"; };
 		849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		849097FE2BA311FC0015E68C /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
+		849098012BA3127B0015E68C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		849098032BA312B00015E68C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		849098052BA317A20015E68C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,11 @@
 		849097C72BA308FE0015E68C /* SkullSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				849098072BA31B240015E68C /* Views */,
+				849098002BA312400015E68C /* Coordinators */,
+				849097FD2BA311DA0015E68C /* Extensions */,
 				849097C82BA308FE0015E68C /* AppDelegate.swift */,
-				849097CA2BA308FE0015E68C /* SceneDelegate.swift */,
-				849097CC2BA308FE0015E68C /* ViewController.swift */,
-				849097CE2BA308FE0015E68C /* Main.storyboard */,
 				849097D42BA309010015E68C /* Assets.xcassets */,
-				849097D62BA309010015E68C /* LaunchScreen.storyboard */,
 				849097D92BA309010015E68C /* Info.plist */,
 				849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */,
 			);
@@ -128,6 +129,32 @@
 				849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */,
 			);
 			path = SkullSearcherUITests;
+			sourceTree = "<group>";
+		};
+		849097FD2BA311DA0015E68C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				849097FE2BA311FC0015E68C /* UIViewController + ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		849098002BA312400015E68C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				849098012BA3127B0015E68C /* CoordinatorProtocol.swift */,
+				849098032BA312B00015E68C /* AppCoordinator.swift */,
+				849098052BA317A20015E68C /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		849098072BA31B240015E68C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849097D82BA309010015E68C /* LaunchScreen.storyboard in Resources */,
 				849097D52BA309010015E68C /* Assets.xcassets in Resources */,
-				849097D02BA308FE0015E68C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849097CD2BA308FE0015E68C /* ViewController.swift in Sources */,
+				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
+				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
+				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
+				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
+				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
 				849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */,
-				849097CB2BA308FE0015E68C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,25 +327,6 @@
 			targetProxy = 849097E92BA309010015E68C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		849097CE2BA308FE0015E68C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				849097CF2BA308FE0015E68C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		849097D62BA309010015E68C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				849097D72BA309010015E68C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		849097F02BA309010015E68C /* Debug */ = {
@@ -446,7 +455,6 @@
 				INFOPLIST_FILE = SkullSearcher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +482,6 @@
 				INFOPLIST_FILE = SkullSearcher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
