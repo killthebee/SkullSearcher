@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
+		849097CB2BA308FE0015E68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CA2BA308FE0015E68C /* SceneDelegate.swift */; };
+		849097CD2BA308FE0015E68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* ViewController.swift */; };
+		849097D02BA308FE0015E68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849097CE2BA308FE0015E68C /* Main.storyboard */; };
+		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
+		849097D52BA309010015E68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849097D42BA309010015E68C /* Assets.xcassets */; };
+		849097D82BA309010015E68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849097D62BA309010015E68C /* LaunchScreen.storyboard */; };
+		849097E32BA309010015E68C /* SkullSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097E22BA309010015E68C /* SkullSearcherTests.swift */; };
+		849097ED2BA309010015E68C /* SkullSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097EC2BA309010015E68C /* SkullSearcherUITests.swift */; };
+		849097EF2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		849097DF2BA309010015E68C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849097BD2BA308FE0015E68C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 849097C42BA308FE0015E68C;
+			remoteInfo = SkullSearcher;
+		};
+		849097E92BA309010015E68C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849097BD2BA308FE0015E68C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 849097C42BA308FE0015E68C;
+			remoteInfo = SkullSearcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		849097CA2BA308FE0015E68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		849097CC2BA308FE0015E68C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		849097CF2BA308FE0015E68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		849097D22BA308FE0015E68C /* SkullSearcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkullSearcher.xcdatamodel; sourceTree = "<group>"; };
+		849097D42BA309010015E68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		849097D72BA309010015E68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		849097D92BA309010015E68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849097DE2BA309010015E68C /* SkullSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkullSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		849097E22BA309010015E68C /* SkullSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherTests.swift; sourceTree = "<group>"; };
+		849097E82BA309010015E68C /* SkullSearcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkullSearcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		849097EC2BA309010015E68C /* SkullSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherUITests.swift; sourceTree = "<group>"; };
+		849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullSearcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		849097C22BA308FE0015E68C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097DB2BA309010015E68C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097E52BA309010015E68C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		849097BC2BA308FE0015E68C = {
+			isa = PBXGroup;
+			children = (
+				849097C72BA308FE0015E68C /* SkullSearcher */,
+				849097E12BA309010015E68C /* SkullSearcherTests */,
+				849097EB2BA309010015E68C /* SkullSearcherUITests */,
+				849097C62BA308FE0015E68C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		849097C62BA308FE0015E68C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				849097C52BA308FE0015E68C /* SkullSearcher.app */,
+				849097DE2BA309010015E68C /* SkullSearcherTests.xctest */,
+				849097E82BA309010015E68C /* SkullSearcherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		849097C72BA308FE0015E68C /* SkullSearcher */ = {
+			isa = PBXGroup;
+			children = (
+				849097C82BA308FE0015E68C /* AppDelegate.swift */,
+				849097CA2BA308FE0015E68C /* SceneDelegate.swift */,
+				849097CC2BA308FE0015E68C /* ViewController.swift */,
+				849097CE2BA308FE0015E68C /* Main.storyboard */,
+				849097D42BA309010015E68C /* Assets.xcassets */,
+				849097D62BA309010015E68C /* LaunchScreen.storyboard */,
+				849097D92BA309010015E68C /* Info.plist */,
+				849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */,
+			);
+			path = SkullSearcher;
+			sourceTree = "<group>";
+		};
+		849097E12BA309010015E68C /* SkullSearcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				849097E22BA309010015E68C /* SkullSearcherTests.swift */,
+			);
+			path = SkullSearcherTests;
+			sourceTree = "<group>";
+		};
+		849097EB2BA309010015E68C /* SkullSearcherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				849097EC2BA309010015E68C /* SkullSearcherUITests.swift */,
+				849097EE2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift */,
+			);
+			path = SkullSearcherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		849097C42BA308FE0015E68C /* SkullSearcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 849097F22BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcher" */;
+			buildPhases = (
+				849097C12BA308FE0015E68C /* Sources */,
+				849097C22BA308FE0015E68C /* Frameworks */,
+				849097C32BA308FE0015E68C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkullSearcher;
+			productName = SkullSearcher;
+			productReference = 849097C52BA308FE0015E68C /* SkullSearcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		849097DD2BA309010015E68C /* SkullSearcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 849097F52BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcherTests" */;
+			buildPhases = (
+				849097DA2BA309010015E68C /* Sources */,
+				849097DB2BA309010015E68C /* Frameworks */,
+				849097DC2BA309010015E68C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				849097E02BA309010015E68C /* PBXTargetDependency */,
+			);
+			name = SkullSearcherTests;
+			productName = SkullSearcherTests;
+			productReference = 849097DE2BA309010015E68C /* SkullSearcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		849097E72BA309010015E68C /* SkullSearcherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 849097F82BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcherUITests" */;
+			buildPhases = (
+				849097E42BA309010015E68C /* Sources */,
+				849097E52BA309010015E68C /* Frameworks */,
+				849097E62BA309010015E68C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				849097EA2BA309010015E68C /* PBXTargetDependency */,
+			);
+			name = SkullSearcherUITests;
+			productName = SkullSearcherUITests;
+			productReference = 849097E82BA309010015E68C /* SkullSearcherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		849097BD2BA308FE0015E68C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					849097C42BA308FE0015E68C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					849097DD2BA309010015E68C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 849097C42BA308FE0015E68C;
+					};
+					849097E72BA309010015E68C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 849097C42BA308FE0015E68C;
+					};
+				};
+			};
+			buildConfigurationList = 849097C02BA308FE0015E68C /* Build configuration list for PBXProject "SkullSearcher" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 849097BC2BA308FE0015E68C;
+			productRefGroup = 849097C62BA308FE0015E68C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				849097C42BA308FE0015E68C /* SkullSearcher */,
+				849097DD2BA309010015E68C /* SkullSearcherTests */,
+				849097E72BA309010015E68C /* SkullSearcherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		849097C32BA308FE0015E68C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849097D82BA309010015E68C /* LaunchScreen.storyboard in Resources */,
+				849097D52BA309010015E68C /* Assets.xcassets in Resources */,
+				849097D02BA308FE0015E68C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097DC2BA309010015E68C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097E62BA309010015E68C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		849097C12BA308FE0015E68C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849097CD2BA308FE0015E68C /* ViewController.swift in Sources */,
+				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
+				849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */,
+				849097CB2BA308FE0015E68C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097DA2BA309010015E68C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849097E32BA309010015E68C /* SkullSearcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		849097E42BA309010015E68C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849097ED2BA309010015E68C /* SkullSearcherUITests.swift in Sources */,
+				849097EF2BA309010015E68C /* SkullSearcherUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		849097E02BA309010015E68C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 849097C42BA308FE0015E68C /* SkullSearcher */;
+			targetProxy = 849097DF2BA309010015E68C /* PBXContainerItemProxy */;
+		};
+		849097EA2BA309010015E68C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 849097C42BA308FE0015E68C /* SkullSearcher */;
+			targetProxy = 849097E92BA309010015E68C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		849097CE2BA308FE0015E68C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849097CF2BA308FE0015E68C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		849097D62BA309010015E68C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849097D72BA309010015E68C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		849097F02BA309010015E68C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		849097F12BA309010015E68C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		849097F32BA309010015E68C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkullSearcher/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		849097F42BA309010015E68C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkullSearcher/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		849097F62BA309010015E68C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkullSearcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkullSearcher";
+			};
+			name = Debug;
+		};
+		849097F72BA309010015E68C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkullSearcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkullSearcher";
+			};
+			name = Release;
+		};
+		849097F92BA309010015E68C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkullSearcher;
+			};
+			name = Debug;
+		};
+		849097FA2BA309010015E68C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6Y7U4524Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.SkullSearcherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkullSearcher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		849097C02BA308FE0015E68C /* Build configuration list for PBXProject "SkullSearcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849097F02BA309010015E68C /* Debug */,
+				849097F12BA309010015E68C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		849097F22BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849097F32BA309010015E68C /* Debug */,
+				849097F42BA309010015E68C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		849097F52BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849097F62BA309010015E68C /* Debug */,
+				849097F72BA309010015E68C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		849097F82BA309010015E68C /* Build configuration list for PBXNativeTarget "SkullSearcherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849097F92BA309010015E68C /* Debug */,
+				849097FA2BA309010015E68C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				849097D22BA308FE0015E68C /* SkullSearcher.xcdatamodel */,
+			);
+			currentVersion = 849097D22BA308FE0015E68C /* SkullSearcher.xcdatamodel */;
+			path = SkullSearcher.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 849097BD2BA308FE0015E68C /* Project object */;
+}
