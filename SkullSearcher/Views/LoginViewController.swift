@@ -49,6 +49,8 @@ class LoginViewController: UIViewController {
         )
         field.dropShadow()
         field.setLeftIcon(UIImage(named: "emailIcon"))
+//        field.clearButtonMode = .whileEditing
+        field.applyCustomClearButton()
         
         return field
     }()
@@ -113,69 +115,7 @@ class LoginViewController: UIViewController {
     }()
     
     private let dashboardTabBar = DasboardTabBar.shared
-        // TODO: move to separate file
-//        let tabBar = UITabBar()
-//
-//        let item1 = UITabBarItem(
-//            title: "Поиск",
-//            image: UIImage(named: "loopIcon"),
-//            tag: 1
-//        )
-//        item1.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
-//        item1.setTitleTextAttributes(
-//            [NSAttributedString.Key.font: tabTextFont!],
-//            for: .normal
-//        )
-//        let item2 = UITabBarItem(
-//            title: "Избранное",
-//            image: UIImage(named: "heartIcon"),
-//            tag: 2
-//        )
-//        item2.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
-//        item2.setTitleTextAttributes(
-//            [NSAttributedString.Key.font: tabTextFont!],
-//            for: .normal
-//        )
-//        let item3 = UITabBarItem(
-//            title: "Отклики",
-//            image: UIImage(named: "emailIcon"),
-//            tag: 3
-//        )
-//        item3.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
-//        item3.setTitleTextAttributes(
-//            [NSAttributedString.Key.font: tabTextFont!],
-//            for: .normal
-//        )
-//        let item4 = UITabBarItem(
-//            title: "Сообщения",
-//            image: UIImage(named: "messageIcon"),
-//            tag: 4
-//        )
-//        item4.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
-//        item4.setTitleTextAttributes(
-//            [NSAttributedString.Key.font: tabTextFont!],
-//            for: .normal
-//        )
-//        let item5 = UITabBarItem(
-//            title: "Профиль",
-//            image: UIImage(named: "profileIcon"),
-//            tag: 5
-//        )
-//        item5.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
-//        item5.setTitleTextAttributes(
-//            [NSAttributedString.Key.font: tabTextFont!],
-//            for: .normal
-//        )
-//
-//        tabBar.isTranslucent = false
-//        tabBar.barTintColor = .black
-//        tabBar.layer.borderColor = grey1?.cgColor
-//        tabBar.layer.borderWidth = 2
-//        tabBar.items = [item1, item2, item3, item4, item5]
-////        tabBar.selectedItem = tabBar.items![1]
-//        return tabBar
-////    }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -186,7 +126,7 @@ class LoginViewController: UIViewController {
         disableAutoresizing()
         addSubview()
         configureLayout()
-        dashboardTabBar.delegate = self
+        emailFeld.delegate = self
     }
     
     private func disableAutoresizing() {
@@ -391,9 +331,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: UITabBarDelegate {
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print(item.tag)
-    }
-}

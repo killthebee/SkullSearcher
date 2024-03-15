@@ -31,4 +31,37 @@ extension UITextField {
         leftView = outerView
         leftViewMode = .always
       }
+    
+    func applyCustomClearButton() {
+        clearButtonMode = .never
+
+        let clearButton = UIButton(
+            frame: CGRectMake(0, 0, 24, 24)
+        )
+        clearButton.setImage(
+            UIImage(named: "clearIcon"),
+            for: .normal
+        )
+        clearButton.addTarget(
+            self,
+            action: #selector(clearClicked),
+            for: .touchUpInside
+        )
+        let padding: CGFloat = 8
+        let rightView = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: clearButton.frame.width + padding,
+                height: clearButton.frame.height
+            )
+        )
+        rightView.addSubview(clearButton)
+        self.rightView = rightView
+    }
+    
+    @objc
+    func clearClicked(sender:UIButton) {
+        text = ""
+    }
 }

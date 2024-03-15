@@ -27,7 +27,7 @@
 		849098192BA344310015E68C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098182BA344310015E68C /* Strings.swift */; };
 		8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981A2BA353620015E68C /* UITextField + ext.swift */; };
 		8490981D2BA453AC0015E68C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981C2BA453AC0015E68C /* TabBar.swift */; };
-		8490981F2BA464640015E68C /* fsfsafs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981E2BA464640015E68C /* fsfsafs.swift */; };
+		849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098202BA488BA0015E68C /* LoginVC + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,7 @@
 		849098182BA344310015E68C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8490981A2BA353620015E68C /* UITextField + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + ext.swift"; sourceTree = "<group>"; };
 		8490981C2BA453AC0015E68C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		8490981E2BA464640015E68C /* fsfsafs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fsfsafs.swift; sourceTree = "<group>"; };
+		849098202BA488BA0015E68C /* LoginVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,6 @@
 				849097FE2BA311FC0015E68C /* UIViewController + ext.swift */,
 				849098162BA33C3B0015E68C /* UIColor + ext.swift */,
 				8490981A2BA353620015E68C /* UITextField + ext.swift */,
-				8490981E2BA464640015E68C /* fsfsafs.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +178,7 @@
 			children = (
 				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
 				8490981C2BA453AC0015E68C /* TabBar.swift */,
+				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 			files = (
 				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
 				849098192BA344310015E68C /* Strings.swift in Sources */,
-				8490981F2BA464640015E68C /* fsfsafs.swift in Sources */,
+				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
