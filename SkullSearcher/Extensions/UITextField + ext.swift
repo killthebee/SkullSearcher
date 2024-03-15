@@ -61,8 +61,9 @@ extension UITextField {
     }
     
     @objc
-    func clearClicked(sender:UIButton) {
+    func clearClicked(sender: UIButton) {
         text = ""
         rightViewMode = .never
+        let _ = delegate?.textFieldShouldClear?(self)
     }
 }

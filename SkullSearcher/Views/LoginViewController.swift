@@ -2,6 +2,27 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var viewModel: LoginViewModelProtocol?
+    var warningFired = false
+    
+    private func bindUI() {
+        viewModel?.showEmailWarning = {
+            self.emailFeld.layer.borderWidth = 2
+            self.emailHelpTextLable.isHidden = false
+            self.warningFired = true
+        }
+        viewModel?.hideEmailWarning = {
+            self.emailFeld.layer.borderWidth = 0
+            self.emailHelpTextLable.isHidden = true
+            self.warningFired = false
+        }
+    }
+    
+    @objc
+    func badEmail() {
+        viewModel?.handleEmailInput(emailFeld.text)
+    }
+    
     private let enterLKLable: UILabel = {
         let lable = UILabel()
         lable.font = title2Font
@@ -41,6 +62,7 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 8
         field.textColor = .white
         field.font = text1Font
+        field.layer.borderColor = UIColor.red.cgColor
         field.backgroundColor = grey2
         field.attributedPlaceholder = NSAttributedString(
             string: emailPlaceholderString,
@@ -56,13 +78,28 @@ class LoginViewController: UIViewController {
         return field
     }()
     
-    private let continueButton: UIButton = {
+    private let emailHelpTextLable: UILabel = {
+        let lable = UILabel()
+        lable.textColor = .red
+        lable.font = title4Font
+        lable.text = emailHelpTextString
+        lable.isHidden = true
+        
+        return lable
+    }()
+    
+    private lazy var continueButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = darkBlue
         button.layer.cornerRadius = 8
         button.setTitle(continueString, for: .normal)
         button.setTitleColor(grey4, for: .normal)
         button.titleLabel?.font = buttonText2Font
+        button.addTarget(
+            self,
+            action: #selector(badEmail),
+            for: .touchDown
+        )
         
         return button
     }()
@@ -128,6 +165,7 @@ class LoginViewController: UIViewController {
         addSubview()
         configureLayout()
         emailFeld.delegate = self
+        bindUI()
     }
     
     private func disableAutoresizing() {
@@ -135,7 +173,7 @@ class LoginViewController: UIViewController {
          employeeSearchContainerView, jobSearchHeaderLable, emailFeld,
          continueButton, eneterWithPWButton, employeeSearchHeaderLable,
          employeeSearchTextLable, employeeSearchButton, employeeSearchStack,
-         dashboardTabBar,
+         dashboardTabBar, emailHelpTextLable
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
@@ -145,8 +183,8 @@ class LoginViewController: UIViewController {
         [jobSearchContainerView, employeeSearchContainerView,
         ].forEach{ centerContainerView.addSubview($0) }
         [jobSearchHeaderLable, emailFeld, continueButton, eneterWithPWButton,
+         emailHelpTextLable,
         ].forEach{ jobSearchContainerView.addSubview($0) }
-//        [employeeSearchHeaderLable, employeeSearchTextLable,
          [employeeSearchButton, employeeSearchStack
         ].forEach{ employeeSearchContainerView.addSubview($0) }
     }
@@ -245,6 +283,21 @@ class LoginViewController: UIViewController {
                 constant: -1 * spacing
             ),
             emailFeld.heightAnchor.constraint(equalToConstant: 40),
+            
+            emailHelpTextLable.topAnchor.constraint(
+                equalTo: jobSearchHeaderLable.bottomAnchor
+            ),
+            emailHelpTextLable.leadingAnchor.constraint(
+                equalTo: jobSearchContainerView.leadingAnchor,
+                constant: spacing
+            ),
+            emailHelpTextLable.trailingAnchor.constraint(
+                equalTo: jobSearchContainerView.trailingAnchor,
+                constant: -1 * spacing
+            ),
+            emailHelpTextLable.bottomAnchor.constraint(
+                equalTo: emailFeld.topAnchor
+            ),
             
             continueButton.topAnchor.constraint(
                 equalTo: emailFeld.bottomAnchor,
