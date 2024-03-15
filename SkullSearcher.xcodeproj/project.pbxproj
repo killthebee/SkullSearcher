@@ -32,6 +32,7 @@
 		849098272BA494780015E68C /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098262BA494780015E68C /* Verifier.swift */; };
 		849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */; };
 		8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */; };
+		8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982C2BA4B8F90015E68C /* CodeField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		849098262BA494780015E68C /* Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifier.swift; sourceTree = "<group>"; };
 		849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCoordinator.swift; sourceTree = "<group>"; };
 		8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		8490982C2BA4B8F90015E68C /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				8490981C2BA453AC0015E68C /* TabBar.swift */,
 				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
 				8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */,
+				8490982C2BA4B8F90015E68C /* CodeField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098272BA494780015E68C /* Verifier.swift in Sources */,
+				8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
