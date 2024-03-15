@@ -30,6 +30,8 @@
 		849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098202BA488BA0015E68C /* LoginVC + ext.swift */; };
 		849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098232BA4940C0015E68C /* LoginViewModel.swift */; };
 		849098272BA494780015E68C /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098262BA494780015E68C /* Verifier.swift */; };
+		849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */; };
+		8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		849098202BA488BA0015E68C /* LoginVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC + ext.swift"; sourceTree = "<group>"; };
 		849098232BA4940C0015E68C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		849098262BA494780015E68C /* Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifier.swift; sourceTree = "<group>"; };
+		849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCoordinator.swift; sourceTree = "<group>"; };
+		8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				849098012BA3127B0015E68C /* CoordinatorProtocol.swift */,
 				849098032BA312B00015E68C /* AppCoordinator.swift */,
 				849098052BA317A20015E68C /* LoginCoordinator.swift */,
+				849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
 				8490981C2BA453AC0015E68C /* TabBar.swift */,
 				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
+				8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,7 +372,9 @@
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
+				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
+				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
 				8490981D2BA453AC0015E68C /* TabBar.swift in Sources */,

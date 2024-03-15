@@ -1,10 +1,29 @@
-class LoginCoordinator: Coordinator {
+protocol LoginCoordinatorProtocol: AnyObject {
+    func presentConfirmScreen()
+}
+
+class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
+    
+    weak var view: LoginViewController?
     
     func start() -> Presentable? {
-        let logincVC = LoginViewController()
+        let loginVC = LoginViewController()
         let viewModel = LoginViewModel()
-        logincVC.viewModel = viewModel
+        viewModel.coordinatorDelegate = self
+        loginVC.viewModel = viewModel
+        self.view = loginVC
         
-        return logincVC
+        return loginVC
+    }
+    
+    func presentConfirmScreen() {
+        let confrimCoordinator = ConfirmCoordinator()
+        guard
+            let confirmVC = confrimCoordinator.start() as? ConfirmViewController
+        else
+            { return }
+        confirmVC.modalPresentationStyle = .fullScreen
+        // test@mail.ru
+        view?.present(confirmVC)
     }
 }

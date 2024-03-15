@@ -19,8 +19,28 @@ class LoginViewController: UIViewController {
     }
     
     @objc
-    func badEmail() {
+    private func handleEmailInput() {
         viewModel?.handleEmailInput(emailFeld.text)
+    }
+    
+    func activateButton() {
+        continueButton.addTarget(
+            self,
+            action: #selector(handleEmailInput),
+            for: .touchDown
+        )
+        continueButton.backgroundColor = lightBlue
+        continueButton.setTitleColor(.white, for: .normal)
+    }
+    
+    func deactivateButton() {
+        continueButton.removeTarget(
+            self,
+            action: #selector(handleEmailInput),
+            for: .touchDown
+        )
+        continueButton.backgroundColor = darkBlue
+        continueButton.setTitleColor(grey4, for: .normal)
     }
     
     private let enterLKLable: UILabel = {
@@ -95,11 +115,6 @@ class LoginViewController: UIViewController {
         button.setTitle(continueString, for: .normal)
         button.setTitleColor(grey4, for: .normal)
         button.titleLabel?.font = buttonText2Font
-        button.addTarget(
-            self,
-            action: #selector(badEmail),
-            for: .touchDown
-        )
         
         return button
     }()

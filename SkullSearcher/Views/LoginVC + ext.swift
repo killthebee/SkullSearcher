@@ -14,8 +14,10 @@ extension LoginViewController: UITextFieldDelegate {
         let textCount = textField.text?.count ?? 0
         if range.length == 0 {
             textField.rightViewMode = .whileEditing
+            activateButton()
         } else if range.length != 0 && textCount == range.length {
             textField.rightViewMode = .never
+            deactivateButton()
         }
         
         return true
@@ -29,6 +31,7 @@ extension LoginViewController: UITextFieldDelegate {
         if warningFired {
             viewModel?.hideEmailWarning?()
         }
+        deactivateButton()
         
         return true
     }

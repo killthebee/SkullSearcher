@@ -13,7 +13,6 @@ final class AppCoordinator: Coordinator {
     @discardableResult
     func start() -> Presentable? {
         loginCoordinator = LoginCoordinator()
-        // wheter logined in or not
         let loginVC = loginCoordinator?.start()
         self.window?.rootViewController = loginVC as? LoginViewController
         self.window?.makeKeyAndVisible()

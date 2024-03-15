@@ -7,6 +7,7 @@ protocol LoginViewModelProtocol: AnyObject {
 class LoginViewModel: LoginViewModelProtocol {
     
     let verifier = Verifier.shared
+    weak var coordinatorDelegate: LoginCoordinatorProtocol?
     
     var showEmailWarning: (() -> ())?
     var hideEmailWarning: (() -> ())?
@@ -15,5 +16,6 @@ class LoginViewModel: LoginViewModelProtocol {
         if input == nil || !verifier.isValidEmail(input) {
             showEmailWarning?()
         }
+        coordinatorDelegate?.presentConfirmScreen()
     }
 }
