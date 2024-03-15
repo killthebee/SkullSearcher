@@ -21,7 +21,13 @@
 		849098092BA3230D0015E68C /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */; };
 		8490980B2BA3231D0015E68C /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8490980A2BA3231D0015E68C /* SF-Pro-Display-Medium.otf */; };
 		8490980D2BA3232F0015E68C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8490980C2BA3232F0015E68C /* SF-Pro-Display-Regular.otf */; };
-		849098102BA325220015E68C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8490980F2BA325220015E68C /* Storyboard.storyboard */; };
+		849098132BA3357F0015E68C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098122BA3357F0015E68C /* Fonts.swift */; };
+		849098152BA33BD00015E68C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098142BA33BD00015E68C /* Colors.swift */; };
+		849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098162BA33C3B0015E68C /* UIColor + ext.swift */; };
+		849098192BA344310015E68C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098182BA344310015E68C /* Strings.swift */; };
+		8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981A2BA353620015E68C /* UITextField + ext.swift */; };
+		8490981D2BA453AC0015E68C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981C2BA453AC0015E68C /* TabBar.swift */; };
+		8490981F2BA464640015E68C /* fsfsafs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981E2BA464640015E68C /* fsfsafs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +66,13 @@
 		849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		8490980A2BA3231D0015E68C /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		8490980C2BA3232F0015E68C /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
-		8490980F2BA325220015E68C /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		849098122BA3357F0015E68C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		849098142BA33BD00015E68C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		849098162BA33C3B0015E68C /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
+		849098182BA344310015E68C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		8490981A2BA353620015E68C /* UITextField + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + ext.swift"; sourceTree = "<group>"; };
+		8490981C2BA453AC0015E68C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		8490981E2BA464640015E68C /* fsfsafs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fsfsafs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 		849097C72BA308FE0015E68C /* SkullSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				849098112BA3356E0015E68C /* Utils */,
 				8490980E2BA323380015E68C /* Fonts */,
 				849098072BA31B240015E68C /* Views */,
 				849098002BA312400015E68C /* Coordinators */,
@@ -119,7 +132,6 @@
 				849097D42BA309010015E68C /* Assets.xcassets */,
 				849097D92BA309010015E68C /* Info.plist */,
 				849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */,
-				8490980F2BA325220015E68C /* Storyboard.storyboard */,
 			);
 			path = SkullSearcher;
 			sourceTree = "<group>";
@@ -145,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				849097FE2BA311FC0015E68C /* UIViewController + ext.swift */,
+				849098162BA33C3B0015E68C /* UIColor + ext.swift */,
+				8490981A2BA353620015E68C /* UITextField + ext.swift */,
+				8490981E2BA464640015E68C /* fsfsafs.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
+				8490981C2BA453AC0015E68C /* TabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +191,16 @@
 				849098082BA3230D0015E68C /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		849098112BA3356E0015E68C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				849098122BA3357F0015E68C /* Fonts.swift */,
+				849098142BA33BD00015E68C /* Colors.swift */,
+				849098182BA344310015E68C /* Strings.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +311,6 @@
 				849098092BA3230D0015E68C /* SF-Pro-Display-Semibold.otf in Resources */,
 				8490980D2BA3232F0015E68C /* SF-Pro-Display-Regular.otf in Resources */,
 				849097D52BA309010015E68C /* Assets.xcassets in Resources */,
-				849098102BA325220015E68C /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,10 +335,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
+				849098192BA344310015E68C /* Strings.swift in Sources */,
+				8490981F2BA464640015E68C /* fsfsafs.swift in Sources */,
+				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
+				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
+				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
+				8490981D2BA453AC0015E68C /* TabBar.swift in Sources */,
 				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
 				849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */,
