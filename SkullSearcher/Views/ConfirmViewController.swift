@@ -2,9 +2,16 @@ import UIKit
 
 class ConfirmViewController: UIViewController {
     
+    var viewModel: ConfirmViewModelProtocol?
+    
+    private func bindUI() {
+        viewModel?.setSentHeaderText = { [weak self] (header) in
+            self?.sentHeaderLable.text = header
+        }
+    }
+    
     private let sentHeaderLable: UILabel = {
         let lable = UILabel()
-        lable.text = sentHeaderString
         lable.font = title2Font
         lable.textColor = .white
         
@@ -45,6 +52,12 @@ class ConfirmViewController: UIViewController {
         disableAutoresizing()
         addSubview()
         configureLayout()
+        bindUI()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        viewModel?.setSentHeader()
     }
     
     private func disableAutoresizing() {

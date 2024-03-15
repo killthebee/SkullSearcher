@@ -33,6 +33,7 @@
 		849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */; };
 		8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */; };
 		8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982C2BA4B8F90015E68C /* CodeField.swift */; };
+		8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCoordinator.swift; sourceTree = "<group>"; };
 		8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		8490982C2BA4B8F90015E68C /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
+		8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				849098232BA4940C0015E68C /* LoginViewModel.swift */,
+				8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
+				8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */,
 				8490981D2BA453AC0015E68C /* TabBar.swift in Sources */,
 				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,

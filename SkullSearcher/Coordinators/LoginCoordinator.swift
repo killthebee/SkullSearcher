@@ -1,5 +1,5 @@
 protocol LoginCoordinatorProtocol: AnyObject {
-    func presentConfirmScreen()
+    func presentConfirmScreen(_ email: String?)
 }
 
 class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
@@ -16,8 +16,9 @@ class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
         return loginVC
     }
     
-    func presentConfirmScreen() {
+    func presentConfirmScreen(_ email: String?) {
         let confrimCoordinator = ConfirmCoordinator()
+        confrimCoordinator.email = email
         guard
             let confirmVC = confrimCoordinator.start() as? ConfirmViewController
         else

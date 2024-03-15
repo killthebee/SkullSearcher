@@ -16,6 +16,6 @@ class LoginViewModel: LoginViewModelProtocol {
         if input == nil || !verifier.isValidEmail(input) {
             showEmailWarning?()
         }
-        coordinatorDelegate?.presentConfirmScreen()
+        coordinatorDelegate?.presentConfirmScreen(input)
     }
 }
