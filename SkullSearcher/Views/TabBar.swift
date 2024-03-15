@@ -25,11 +25,11 @@ class DasboardTabBar: UITabBar {
         items = makeBarItems()
     }
     
-    private func makeItem(_ title: String, _ image: UIImage?) -> UITabBarItem {
+    private func makeItem(_ title: String, _ image: UIImage?, _ tag: Int) -> UITabBarItem {
         let item = UITabBarItem(
             title: title,
             image: image,
-            tag: 1
+            tag: tag
         )
         item.titlePositionAdjustment = .init(horizontal: 0, vertical: -10)
         item.setTitleTextAttributes(
@@ -42,11 +42,11 @@ class DasboardTabBar: UITabBar {
     
     private func makeBarItems() -> [UITabBarItem] {
         let items = [
-            makeItem("Поиск", UIImage(named: "loopIcon")),
-            makeItem("Избранное", UIImage(named: "heartIcon")),
-            makeItem("Отклики", UIImage(named: "emailIcon")),
-            makeItem("Сообщения", UIImage(named: "messageIcon")),
-            makeItem("Профиль", UIImage(named: "profileIcon")),
+            makeItem("Поиск", UIImage(named: "loopIcon"), 1),
+            makeItem("Избранное", UIImage(named: "heartIcon"), 2),
+            makeItem("Отклики", UIImage(named: "emailIcon"), 3),
+            makeItem("Сообщения", UIImage(named: "messageIcon"), 4),
+            makeItem("Профиль", UIImage(named: "profileIcon"), 5),
         ]
         
         return items

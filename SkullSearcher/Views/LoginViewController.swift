@@ -39,6 +39,8 @@ class LoginViewController: UIViewController {
     private let emailFeld: UITextField = {
         let field = UITextField()
         field.layer.cornerRadius = 8
+        field.textColor = .white
+        field.font = text1Font
         field.backgroundColor = grey2
         field.attributedPlaceholder = NSAttributedString(
             string: emailPlaceholderString,
@@ -49,7 +51,6 @@ class LoginViewController: UIViewController {
         )
         field.dropShadow()
         field.setLeftIcon(UIImage(named: "emailIcon"))
-//        field.clearButtonMode = .whileEditing
         field.applyCustomClearButton()
         
         return field
@@ -327,7 +328,6 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         dashboardTabBar.addItemBadge(atIndex: 1)
-        
     }
 }
 

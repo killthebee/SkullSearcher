@@ -36,7 +36,7 @@ extension UITextField {
         clearButtonMode = .never
 
         let clearButton = UIButton(
-            frame: CGRectMake(0, 0, 24, 24)
+            frame: CGRect(x: 0, y: 0, width: 24, height: 24)
         )
         clearButton.setImage(
             UIImage(named: "clearIcon"),
@@ -63,5 +63,6 @@ extension UITextField {
     @objc
     func clearClicked(sender:UIButton) {
         text = ""
+        rightViewMode = .never
     }
 }
