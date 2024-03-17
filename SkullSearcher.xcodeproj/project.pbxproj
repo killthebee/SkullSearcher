@@ -39,6 +39,11 @@
 		849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098342BA73FB50015E68C /* MainScreenCoordinator.swift */; };
 		849098372BA742E40015E68C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098362BA742E40015E68C /* MainViewController.swift */; };
 		849098392BA7433C0015E68C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098382BA7433C0015E68C /* MainViewModel.swift */; };
+		8490983C2BA74C250015E68C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490983B2BA74C250015E68C /* Networking.swift */; };
+		8490983E2BA74C7F0015E68C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490983D2BA74C7F0015E68C /* Errors.swift */; };
+		849098412BA74CD20015E68C /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098402BA74CD20015E68C /* MockApi.swift */; };
+		849098432BA74F350015E68C /* consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098422BA74F350015E68C /* consts.swift */; };
+		849098452BA751180015E68C /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098442BA751180015E68C /* ApiModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		849098342BA73FB50015E68C /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		849098362BA742E40015E68C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		849098382BA7433C0015E68C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8490983B2BA74C250015E68C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		8490983D2BA74C7F0015E68C /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		849098402BA74CD20015E68C /* MockApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
+		849098422BA74F350015E68C /* consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = consts.swift; sourceTree = "<group>"; };
+		849098442BA751180015E68C /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,9 +257,30 @@
 		849098252BA494560015E68C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8490983A2BA74C190015E68C /* Networking */,
 				849098262BA494780015E68C /* Verifier.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8490983A2BA74C190015E68C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8490983F2BA74CA80015E68C /* Domain */,
+				8490983D2BA74C7F0015E68C /* Errors.swift */,
+				8490983B2BA74C250015E68C /* Networking.swift */,
+				849098422BA74F350015E68C /* consts.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8490983F2BA74CA80015E68C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				849098402BA74CD20015E68C /* MockApi.swift */,
+				849098442BA751180015E68C /* ApiModels.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,9 +418,13 @@
 				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
 				849098192BA344310015E68C /* Strings.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
+				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
+				849098452BA751180015E68C /* ApiModels.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
+				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,
+				849098432BA74F350015E68C /* consts.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,
 				849098272BA494780015E68C /* Verifier.swift in Sources */,
@@ -398,6 +433,7 @@
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
+				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
 				849098372BA742E40015E68C /* MainViewController.swift in Sources */,
