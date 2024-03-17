@@ -2,20 +2,37 @@ import UIKit
 
 class CodeField: UITextField {
     
-    let fieldTag = 1
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
+    convenience init(_ fieldTag: Int) {
+        self.init()
+        configure(fieldTag)
+        
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure() {
+    func configure(_ fieldTag: Int) {
         layer.cornerRadius = 8
         backgroundColor = grey2
-        tag = fieldTag
+        self.tag = fieldTag
+        contentVerticalAlignment = .center
+        attributedPlaceholder = NSAttributedString(
+            string: "*",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: grey3!,
+                NSAttributedString.Key.font: starsFont!
+            ]
+        )
+        textAlignment = .center
+        keyboardType = UIKeyboardType.numberPad
+        tintColor = .white
+    }
+
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        let rect =  CGRect(
+            x: bounds.minX,
+            y: CGFloat(7),
+            width: bounds.width,
+            height: bounds.height - 3
+        )
+        
+        return rect
     }
 }

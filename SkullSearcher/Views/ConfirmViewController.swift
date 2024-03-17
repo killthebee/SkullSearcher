@@ -4,10 +4,44 @@ class ConfirmViewController: UIViewController {
     
     var viewModel: ConfirmViewModelProtocol?
     
+    var codeFields = Array<UITextField>()
+    
     private func bindUI() {
         viewModel?.setSentHeaderText = { [weak self] (header) in
             self?.sentHeaderLable.text = header
         }
+        viewModel?.switchCodeField = { [weak self] (tag) in
+            let codeField = self?.codeFields[tag]
+            codeField?.becomeFirstResponder()
+        }
+        viewModel?.activateButton = { [weak self] in
+            self?.confirmButton.addTarget(
+                self,
+                action: #selector(self?.handeConfirmButtonTap),
+                for: .touchDown
+            )
+            self?.confirmButton.backgroundColor = lightBlue
+            self?.confirmButton.setTitleColor(.white, for: .normal)
+        }
+        viewModel?.deactivateButton = { [weak self] in
+            self?.confirmButton.removeTarget(
+                self,
+                action: #selector(self?.handeConfirmButtonTap),
+                for: .touchDown
+            )
+            self?.confirmButton.backgroundColor = darkBlue
+            self?.confirmButton.setTitleColor(grey4, for: .normal)
+        }
+    }
+    
+    @objc
+    private func doneButtonTapped() {
+        view.endEditing(true)
+    }
+    
+    @objc
+    private func handeConfirmButtonTap() {
+        viewModel?.presentMainScreen()
     }
     
     private let sentHeaderLable: UILabel = {
@@ -39,10 +73,10 @@ class ConfirmViewController: UIViewController {
         return button
     }()
     
-    private let codeField1 = CodeField()
-    private let codeField2 = CodeField()
-    private let codeField3 = CodeField()
-    private let codeField4 = CodeField()
+    private let codeField1 = CodeField(0)
+    private let codeField2 = CodeField(1)
+    private let codeField3 = CodeField(2)
+    private let codeField4 = CodeField(3)
     
     private let dashboardTabBar = DasboardTabBar.shared
     
@@ -54,10 +88,17 @@ class ConfirmViewController: UIViewController {
         configureLayout()
         bindUI()
         setupUI()
+        groopCodeFields()
+        addToolbar()
+        addCodeFieldDelegate()
     }
     
     private func setupUI() {
         viewModel?.setSentHeader()
+    }
+    
+    private func groopCodeFields() {
+        codeFields = [codeField1, codeField2, codeField3, codeField4]
     }
     
     private func disableAutoresizing() {
@@ -71,6 +112,34 @@ class ConfirmViewController: UIViewController {
         [sentHeaderLable, sentTextLable, confirmButton, codeField1, codeField2,
          codeField3, codeField4,
         ].forEach{ containerView.addSubview($0) }
+    }
+    
+    private func addToolbar() {
+        var buttons: [UIBarButtonItem] = []
+        for _ in 0 ... 3 {
+            let doneButton = UIBarButtonItem(
+                title: "Готово",
+                style: .plain,
+                target: self,
+                action: #selector(doneButtonTapped)
+            )
+            buttons.append(doneButton)
+        }
+        
+        let flexSpace = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        
+        codeFields.forEach{ $0.inputAccessoryView = makeToolbar(
+            barItems: [flexSpace, buttons.popLast()!]
+        )}
+    }
+    
+    private func addCodeFieldDelegate() {
+        [codeField1, codeField2, codeField3, codeField4
+        ].forEach { $0.delegate = self }
     }
     
     private let containerView = UIView()
