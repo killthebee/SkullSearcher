@@ -36,6 +36,9 @@
 		8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */; };
 		849098312BA6EB030015E68C /* ConfirmVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098302BA6EB030015E68C /* ConfirmVC + ext.swift */; };
 		849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098322BA6EEBE0015E68C /* Toolbars.swift */; };
+		849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098342BA73FB50015E68C /* MainScreenCoordinator.swift */; };
+		849098372BA742E40015E68C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098362BA742E40015E68C /* MainViewController.swift */; };
+		849098392BA7433C0015E68C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098382BA7433C0015E68C /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewModel.swift; sourceTree = "<group>"; };
 		849098302BA6EB030015E68C /* ConfirmVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfirmVC + ext.swift"; sourceTree = "<group>"; };
 		849098322BA6EEBE0015E68C /* Toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbars.swift; sourceTree = "<group>"; };
+		849098342BA73FB50015E68C /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
+		849098362BA742E40015E68C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		849098382BA7433C0015E68C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 				849098032BA312B00015E68C /* AppCoordinator.swift */,
 				849098052BA317A20015E68C /* LoginCoordinator.swift */,
 				849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */,
+				849098342BA73FB50015E68C /* MainScreenCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */,
 				8490982C2BA4B8F90015E68C /* CodeField.swift */,
 				849098302BA6EB030015E68C /* ConfirmVC + ext.swift */,
+				849098362BA742E40015E68C /* MainViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			children = (
 				849098232BA4940C0015E68C /* LoginViewModel.swift */,
 				8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */,
+				849098382BA7433C0015E68C /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -379,6 +388,8 @@
 				849098192BA344310015E68C /* Strings.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
+				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
+				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,
 				849098272BA494780015E68C /* Verifier.swift in Sources */,
@@ -389,6 +400,7 @@
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
+				849098372BA742E40015E68C /* MainViewController.swift in Sources */,
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
 				8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */,

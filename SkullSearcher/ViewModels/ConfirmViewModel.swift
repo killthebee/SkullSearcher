@@ -18,6 +18,8 @@ extension ConfirmViewModelProtocol {
 
 class ConfirmViewModel: ConfirmViewModelProtocol {
     
+    var coordinator: ConfirmCoordinatorProtocol?
+    
     var email: String?
     var currentTag = 0
     var pin = Array<String?>(repeating: nil, count: 4)
@@ -70,6 +72,7 @@ class ConfirmViewModel: ConfirmViewModelProtocol {
     }
     
     func presentMainScreen() {
-        print("please)")
+        print(coordinator == nil)
+        coordinator?.presentMainScreen()
     }
 }
