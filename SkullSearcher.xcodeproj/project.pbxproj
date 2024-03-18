@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84051A502BA835FB009685BD /* TopSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A4F2BA835FB009685BD /* TopSearchCell.swift */; };
+		84051A522BA84267009685BD /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A512BA84267009685BD /* OfferCell.swift */; };
+		84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A532BA84B3F009685BD /* VacanciesSupCell.swift */; };
+		84051A562BA84C0D009685BD /* VacancyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A552BA84C0D009685BD /* VacancyCell2.swift */; };
+		84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A572BA86A46009685BD /* MainVC + ext.swift */; };
+		84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A592BA86B5B009685BD /* MainVCLayouts.swift */; };
+		84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5B2BA8B10D009685BD /* VacanciesCell.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -64,6 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84051A4F2BA835FB009685BD /* TopSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchCell.swift; sourceTree = "<group>"; };
+		84051A512BA84267009685BD /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		84051A532BA84B3F009685BD /* VacanciesSupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesSupCell.swift; sourceTree = "<group>"; };
+		84051A552BA84C0D009685BD /* VacancyCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCell2.swift; sourceTree = "<group>"; };
+		84051A572BA86A46009685BD /* MainVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC + ext.swift"; sourceTree = "<group>"; };
+		84051A592BA86B5B009685BD /* MainVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCLayouts.swift; sourceTree = "<group>"; };
+		84051A5B2BA8B10D009685BD /* VacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesCell.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +146,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84051A4E2BA835F0009685BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84051A4F2BA835FB009685BD /* TopSearchCell.swift */,
+				84051A512BA84267009685BD /* OfferCell.swift */,
+				84051A532BA84B3F009685BD /* VacanciesSupCell.swift */,
+				84051A552BA84C0D009685BD /* VacancyCell2.swift */,
+				84051A5B2BA8B10D009685BD /* VacanciesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +238,7 @@
 		849098072BA31B240015E68C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84051A4E2BA835F0009685BD /* Cells */,
 				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
 				8490981C2BA453AC0015E68C /* TabBar.swift */,
 				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
@@ -219,6 +246,8 @@
 				8490982C2BA4B8F90015E68C /* CodeField.swift */,
 				849098302BA6EB030015E68C /* ConfirmVC + ext.swift */,
 				849098362BA742E40015E68C /* MainViewController.swift */,
+				84051A572BA86A46009685BD /* MainVC + ext.swift */,
+				84051A592BA86B5B009685BD /* MainVCLayouts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,12 +444,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84051A502BA835FB009685BD /* TopSearchCell.swift in Sources */,
 				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
 				849098192BA344310015E68C /* Strings.swift in Sources */,
+				84051A562BA84C0D009685BD /* VacancyCell2.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
 				849098452BA751180015E68C /* ApiModels.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
+				84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */,
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,
@@ -434,14 +466,18 @@
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
+				84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */,
+				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
+				84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */,
 				849098372BA742E40015E68C /* MainViewController.swift in Sources */,
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
 				8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */,
 				8490981D2BA453AC0015E68C /* TabBar.swift in Sources */,
 				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
+				84051A522BA84267009685BD /* OfferCell.swift in Sources */,
 				849098312BA6EB030015E68C /* ConfirmVC + ext.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
 				849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */,
