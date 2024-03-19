@@ -1,24 +1,24 @@
 struct MockData: Decodable {
-//    let offers: [Offers]
-    let vacancies: [Vacancies]
+    let offers: [Offer]
+    let vacancies: [Vacancy]
 }
 
-struct Offers: Decodable {
+struct Offer: Decodable {
     let id: String?
     let title: String
     let link: String
-    let button: offerButton?
+    let button: OfferButton?
 }
 
-struct offerButton: Decodable {
+struct OfferButton: Decodable {
     let text: String
 }
 
-struct Vacancies: Decodable {
+struct Vacancy: Decodable {
     let id: String
     let lookingNumber: Int?
     let title: String
-    let adress: Adress?
+    let address: Adress
     let company: String
     let experience: Experience
     let publishedDate: String
@@ -43,5 +43,6 @@ struct Experience: Decodable {
 }
 
 struct Salary: Decodable {
+    let short: String?
     let full: String
 }

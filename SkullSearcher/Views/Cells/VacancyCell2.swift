@@ -6,18 +6,60 @@ class VacancyCell: UICollectionViewCell {
     
     private let vacancyContainerView = UIView()
     
+    func configure(previewData: VacancyPreviewData) {
+//    arrangedSubviews: [
+//        lookingLable, titleLable, salaryLable, cityCompanyStack,
+//        expContainer, publishDateLable
+//    ]
+        if let lookingText = previewData.lookingText {
+            lookingLable.text = lookingText
+            infoStack.addArrangedSubview(lookingLable)
+        }
+        
+        titleLable.text = previewData.title
+        infoStack.addArrangedSubview(titleLable)
+        
+        if let salaryText = previewData.salary {
+            salaryLable.text = salaryText
+            infoStack.addArrangedSubview(salaryLable)
+        }
+        
+        cityLable.text = previewData.adress
+        
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "checkIcon")
+        attachment.bounds = CGRect(
+            x: 0, y: -2,
+            width: 10,
+            height: 10
+        )
+
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let string = NSMutableAttributedString(string: previewData.company, attributes: [:])
+        
+        string.append(attachmentString)
+        companyNameLable.attributedText = string
+        infoStack.addArrangedSubview(cityCompanyStack)
+        
+        expLable.text = previewData.experience
+        infoStack.addArrangedSubview(expLable)
+        
+        publishDateLable.text = previewData.publishedDate
+        infoStack.addArrangedSubview(publishDateLable)
+    }
+    
     private let lookingLable: UILabel = {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = green
-        lable.text = "Сейчас просматривает 1 человек"
+//        lable.text = "Сейчас просматривает 1 человек"
         
         return lable
     }()
     
     private let titleLable: UILabel = {
         let lable = UILabel()
-        lable.text = "UI/UX Designer"
+//        lable.text = "UI/UX Designer"
         lable.font = title3Font
         lable.textColor = .white
         
@@ -28,7 +70,7 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = .white
-        lable.text = "Минск"
+//        lable.text = "Минск"
         
         return lable
     }()
@@ -37,32 +79,17 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = .white
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "checkIcon")
-        attachment.bounds = CGRect(
-            x: 0, y: -2,
-            width: 10,
-            height: 10
-        )
-
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let string = NSMutableAttributedString(string: "Мобирикс", attributes: [:])
-
-        string.append(attachmentString)
-        lable.attributedText = string
+        
+//        lable.attributedText = string
         
         return lable
     }()
-    
-    private let checkImageView = UIImageView(
-        image: UIImage(named: "checkIcon")
-    )
     
     private let salaryLable: UILabel = {
         let lable = UILabel()
         lable.font = title2Font
         lable.textColor = .white
-        lable.text = "1500-2900 Br"
+//        lable.text = "1500-2900 Br"
         
         return lable
     }()
@@ -75,7 +102,7 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = .white
-        lable.text = "Опыт от 1 года до 3 лет"
+//        lable.text = "Опыт от 1 года до 3 лет"
         
         return lable
     }()
@@ -84,7 +111,7 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = grey3
-        lable.text = "Опубликовано 20 февраля"
+//        lable.text = "Опубликовано 20 февраля"
         
         return lable
     }()
@@ -106,14 +133,14 @@ class VacancyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() {
+    private func configureView() {
         backgroundColor = grey1
         layer.cornerRadius = 8
         disableAutoresizing()
@@ -123,7 +150,7 @@ class VacancyCell: UICollectionViewCell {
     
     private func disableAutoresizing() {
         [lookingLable, titleLable, cityLable, companyNameLable,
-         checkImageView, salaryLable, expIconView, expLable, publishDateLable,
+         salaryLable, expIconView, expLable, publishDateLable,
          applyButton, likeIconView, cityCompanyStack, infoStack, expContainer
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
@@ -150,10 +177,14 @@ class VacancyCell: UICollectionViewCell {
     
     private lazy var infoStack: UIStackView = {
         let stack = UIStackView(
-            arrangedSubviews: [
-                lookingLable, titleLable, salaryLable, cityCompanyStack,
-                expContainer, publishDateLable
-            ]
+//            arrangedSubviews: [
+//                lookingLable, titleLable, salaryLable, cityCompanyStack,
+//                expContainer, publishDateLable
+//            ]
+//            arrangedSubviews: [
+//                lookingLable, titleLable, cityCompanyStack,
+//                expContainer, publishDateLable
+//            ]
         )
         stack.axis = .vertical
         stack.distribution = .fillEqually

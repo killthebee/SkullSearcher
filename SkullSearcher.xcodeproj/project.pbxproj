@@ -14,6 +14,8 @@
 		84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A572BA86A46009685BD /* MainVC + ext.swift */; };
 		84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A592BA86B5B009685BD /* MainVCLayouts.swift */; };
 		84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5B2BA8B10D009685BD /* VacanciesCell.swift */; };
+		84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5E2BA9A522009685BD /* VacancyDataModel.swift */; };
+		84051A612BA9AB1F009685BD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A602BA9AB1F009685BD /* Helpers.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -78,6 +80,8 @@
 		84051A572BA86A46009685BD /* MainVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC + ext.swift"; sourceTree = "<group>"; };
 		84051A592BA86B5B009685BD /* MainVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCLayouts.swift; sourceTree = "<group>"; };
 		84051A5B2BA8B10D009685BD /* VacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesCell.swift; sourceTree = "<group>"; };
+		84051A5E2BA9A522009685BD /* VacancyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDataModel.swift; sourceTree = "<group>"; };
+		84051A602BA9AB1F009685BD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		84051A5D2BA9A513009685BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84051A5E2BA9A522009685BD /* VacancyDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +193,7 @@
 		849097C72BA308FE0015E68C /* SkullSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				84051A5D2BA9A513009685BD /* Models */,
 				849098252BA494560015E68C /* Services */,
 				849098222BA493FD0015E68C /* ViewModels */,
 				849098112BA3356E0015E68C /* Utils */,
@@ -269,6 +282,7 @@
 				849098142BA33BD00015E68C /* Colors.swift */,
 				849098182BA344310015E68C /* Strings.swift */,
 				849098322BA6EEBE0015E68C /* Toolbars.swift */,
+				84051A602BA9AB1F009685BD /* Helpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -451,8 +465,10 @@
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
 				849098452BA751180015E68C /* ApiModels.swift in Sources */,
+				84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */,
+				84051A612BA9AB1F009685BD /* Helpers.swift in Sources */,
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,

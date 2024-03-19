@@ -69,6 +69,9 @@ extension MainViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            if vacanciesPreviews.count > 0 {
+                cell.configure(previewData: vacanciesPreviews[indexPath.row])
+            }
             
             return cell
         }

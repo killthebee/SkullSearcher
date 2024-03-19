@@ -10,15 +10,27 @@ class MainViewController: UIViewController {
     ]
     
     var offerTexts: [String] = []
+    var vacanciesPreviews: [VacancyPreviewData] = []
     
-    @MainActor
-    func setData(_ offerTexts:  [String]) {
-        self.offerTexts = offerTexts
-        self.collectionView.reloadData()
-    }
+//    @MainActor
+//    func refreshCollectionView() async {
+//        
+//    }
     
     private func bindUI() {
-        viewModel?.setSentHeaderText = setData(_:)
+        viewModel?.refreshCollectionView = { [weak self] in
+            self?.collectionView.reloadData()
+            let moreButtonString = "Еще \(self?.vacanciesPreviews.count ?? 0) вакансий"
+            self?.morButton.setTitle(moreButtonString, for: .normal)
+        }
+        
+        viewModel?.setOffersTexts = { [weak self] (offerTexts) in
+            self?.offerTexts = offerTexts
+        }
+        
+        viewModel?.setVacanciesPreviews = { [weak self] (previews) in
+            self?.vacanciesPreviews = previews
+        }
     }
     
     private lazy var collectionView : UICollectionView = {
@@ -59,7 +71,6 @@ class MainViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = lightBlue
         button.layer.cornerRadius = 8
-        button.setTitle(moreString, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = buttonText1Font
         
