@@ -18,6 +18,10 @@
 		84051A612BA9AB1F009685BD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A602BA9AB1F009685BD /* Helpers.swift */; };
 		84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A652BA9D923009685BD /* MoreCoordinator.swift */; };
 		84051A692BA9D997009685BD /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A682BA9D997009685BD /* MoreViewController.swift */; };
+		84051A6B2BA9DE40009685BD /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A6A2BA9DE40009685BD /* MoreViewModel.swift */; };
+		84051A6D2BA9E0C5009685BD /* MoreVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A6C2BA9E0C5009685BD /* MoreVC + ext.swift */; };
+		84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A6E2BA9E219009685BD /* MoreVCLayouts.swift */; };
+		84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -86,6 +90,10 @@
 		84051A602BA9AB1F009685BD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		84051A652BA9D923009685BD /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
 		84051A682BA9D997009685BD /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		84051A6A2BA9DE40009685BD /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		84051A6C2BA9E0C5009685BD /* MoreVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreVC + ext.swift"; sourceTree = "<group>"; };
+		84051A6E2BA9E219009685BD /* MoreVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVCLayouts.swift; sourceTree = "<group>"; };
+		84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderSupCell.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 				84051A532BA84B3F009685BD /* VacanciesSupCell.swift */,
 				84051A552BA84C0D009685BD /* VacancyCell2.swift */,
 				84051A5B2BA8B10D009685BD /* VacanciesCell.swift */,
+				84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -207,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				84051A682BA9D997009685BD /* MoreViewController.swift */,
+				84051A6C2BA9E0C5009685BD /* MoreVC + ext.swift */,
+				84051A6E2BA9E219009685BD /* MoreVCLayouts.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				849098232BA4940C0015E68C /* LoginViewModel.swift */,
 				8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */,
 				849098382BA7433C0015E68C /* MainViewModel.swift */,
+				84051A6A2BA9DE40009685BD /* MoreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -520,9 +532,11 @@
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
+				84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */,
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
 				84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */,
 				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
+				84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */,
 				84051A692BA9D997009685BD /* MoreViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
@@ -535,8 +549,10 @@
 				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
 				84051A522BA84267009685BD /* OfferCell.swift in Sources */,
 				849098312BA6EB030015E68C /* ConfirmVC + ext.swift in Sources */,
+				84051A6B2BA9DE40009685BD /* MoreViewModel.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
 				849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */,
+				84051A6D2BA9E0C5009685BD /* MoreVC + ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

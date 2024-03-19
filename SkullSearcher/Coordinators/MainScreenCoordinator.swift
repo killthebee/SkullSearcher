@@ -1,5 +1,5 @@
 protocol MainScreenCoordinatorProtocol: AnyObject {
-    func presentMoreScreen()
+    func presentMoreScreen(_ vacancies: [VacancyPreviewData]?)
 }
 
 class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
@@ -19,8 +19,9 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
         return mainVC
     }
     
-    func presentMoreScreen() {
+    func presentMoreScreen(_ vacancies: [VacancyPreviewData]?) {
         let moreCoordinator = MoreCoordinator()
+        moreCoordinator.vacancies = vacancies
         guard
             let moreVC = moreCoordinator.start() as? moreViewController
         else

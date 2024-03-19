@@ -4,6 +4,40 @@ class TopSearchCell: UICollectionViewCell {
     
     static let cellIdentifier = "TopSearchCellIdentifier"
     
+    weak var viewModel: MoreViewModelProtocol?
+    
+    func configure(_ viewModel: MoreViewModelProtocol?) {
+        searchIconImageView.isHidden = true
+        searchView.addSubview(backButton)
+        searchLable.text = moreSearchString
+        self.viewModel = viewModel
+        
+        let constraints: [NSLayoutConstraint] = [
+            backButton.centerYAnchor.constraint(
+                equalTo: searchView.centerYAnchor
+            ),
+            backButton.leadingAnchor.constraint(
+                equalTo: searchView.leadingAnchor,
+                constant: 8
+            ),
+            backButton.heightAnchor.constraint(equalToConstant: 24),
+            backButton.widthAnchor.constraint(equalToConstant: 24),
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+        
+        backButton.addTarget(
+            self,
+            action: #selector(dismiss),
+            for: .touchUpInside
+        )
+    }
+    
+    @objc
+    private func dismiss() {
+        viewModel?.dismiss()
+    }
+    
     private let searchView: UIView = {
         let view = UIView()
         view.backgroundColor = grey1
@@ -51,16 +85,23 @@ class TopSearchCell: UICollectionViewCell {
         return view
     }()
     
+    private let backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "backIcon"), for: .normal)
+        
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() {
+    private func configureView() {
         disableAutoresizing()
         addSubviews()
         setUpConstrains()
@@ -68,7 +109,7 @@ class TopSearchCell: UICollectionViewCell {
     
     private func disableAutoresizing() {
         [searchView, searchIconImageView, searchLable, filterImageView,
-         filterView
+         filterView, backButton
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     

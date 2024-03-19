@@ -10,7 +10,7 @@ class MainViewModel: MainViewModelProtocol {
     
     var apiService: ApiServiceProtocol?
     
-//    var mockData: MockData?
+    var vacanciesPreviews: [VacancyPreviewData]?
     
     var coordinator: MainScreenCoordinatorProtocol?
     
@@ -33,8 +33,8 @@ class MainViewModel: MainViewModelProtocol {
         return offersData.reduce(into: [String]()) {
             $0.append($1.title)
         }
-        
     }
+    
     func setupVacancyCellPreview(_ vacanciesData: [Vacancy]) -> [VacancyPreviewData] {
         
         let previewData = vacanciesData.enumerated().reduce(into: [VacancyPreviewData]()) {
@@ -49,11 +49,12 @@ class MainViewModel: MainViewModelProtocol {
                 isFavorite: $1.element.isFavorite
             ))
         }
+        vacanciesPreviews = previewData
         
         return previewData
     }
     
     func presentMoreScreen() {
-        coordinator?.presentMoreScreen()
+        coordinator?.presentMoreScreen(vacanciesPreviews)
     }
 }
