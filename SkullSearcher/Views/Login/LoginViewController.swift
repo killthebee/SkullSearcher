@@ -6,15 +6,15 @@ class LoginViewController: UIViewController {
     var warningFired = false
     
     private func bindUI() {
-        viewModel?.showEmailWarning = {
-            self.emailFeld.layer.borderWidth = 2
-            self.emailHelpTextLable.isHidden = false
-            self.warningFired = true
+        viewModel?.showEmailWarning = { [weak self] in
+            self?.emailFeld.layer.borderWidth = 2
+            self?.emailHelpTextLable.isHidden = false
+            self?.warningFired = true
         }
-        viewModel?.hideEmailWarning = {
-            self.emailFeld.layer.borderWidth = 0
-            self.emailHelpTextLable.isHidden = true
-            self.warningFired = false
+        viewModel?.hideEmailWarning = { [weak self] in
+            self?.emailFeld.layer.borderWidth = 0
+            self?.emailHelpTextLable.isHidden = true
+            self?.warningFired = false
         }
     }
     

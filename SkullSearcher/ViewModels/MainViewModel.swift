@@ -3,6 +3,7 @@ protocol MainViewModelProtocol: AnyObject {
     var refreshCollectionView: (() async -> ())? { get set }
     var setOffersTexts: ((_ texts: [String]) -> ())? { get set }
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())? { get set }
+    func presentMoreScreen()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -10,6 +11,8 @@ class MainViewModel: MainViewModelProtocol {
     var apiService: ApiServiceProtocol?
     
 //    var mockData: MockData?
+    
+    var coordinator: MainScreenCoordinatorProtocol?
     
     var refreshCollectionView: (() async -> ())?
     var setOffersTexts: ((_ texts: [String]) -> ())?
@@ -34,7 +37,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     func setupVacancyCellPreview(_ vacanciesData: [Vacancy]) -> [VacancyPreviewData] {
         
-        var previewData = vacanciesData.enumerated().reduce(into: [VacancyPreviewData]()) {
+        let previewData = vacanciesData.enumerated().reduce(into: [VacancyPreviewData]()) {
             $0.append(VacancyPreviewData(
                 lookingText: makeLookingNumberText($1.element.lookingNumber),
                 title: $1.element.title,
@@ -48,5 +51,9 @@ class MainViewModel: MainViewModelProtocol {
         }
         
         return previewData
+    }
+    
+    func presentMoreScreen() {
+        coordinator?.presentMoreScreen()
     }
 }

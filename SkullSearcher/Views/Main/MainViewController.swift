@@ -12,16 +12,11 @@ class MainViewController: UIViewController {
     var offerTexts: [String] = []
     var vacanciesPreviews: [VacancyPreviewData] = []
     
-//    @MainActor
-//    func refreshCollectionView() async {
-//        
-//    }
-    
     private func bindUI() {
         viewModel?.refreshCollectionView = { [weak self] in
             self?.collectionView.reloadData()
             let moreButtonString = "Еще \(self?.vacanciesPreviews.count ?? 0) вакансий"
-            self?.morButton.setTitle(moreButtonString, for: .normal)
+            self?.moreButton.setTitle(moreButtonString, for: .normal)
         }
         
         viewModel?.setOffersTexts = { [weak self] (offerTexts) in
@@ -31,6 +26,11 @@ class MainViewController: UIViewController {
         viewModel?.setVacanciesPreviews = { [weak self] (previews) in
             self?.vacanciesPreviews = previews
         }
+    }
+    
+    @objc
+    private func handeMoreButtonTap() {
+        viewModel?.presentMoreScreen()
     }
     
     private lazy var collectionView : UICollectionView = {
@@ -67,12 +67,17 @@ class MainViewController: UIViewController {
         return collectionView
     }()
     
-    private let morButton: UIButton = {
+    private lazy var moreButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = lightBlue
         button.layer.cornerRadius = 8
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = buttonText1Font
+        button.addTarget(
+            self,
+            action: #selector(handeMoreButtonTap),
+            for: .touchDown
+        )
         
         return button
     }()
@@ -99,12 +104,12 @@ class MainViewController: UIViewController {
     }
     
     private func disableAutoresizing() {
-        [collectionView, dashboardTabBar, morButton
+        [collectionView, dashboardTabBar, moreButton
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubview() {
-        [collectionView, dashboardTabBar, morButton
+        [collectionView, dashboardTabBar, moreButton
         ].forEach{ view.addSubview($0) }
     }
     
@@ -136,16 +141,16 @@ class MainViewController: UIViewController {
                 equalTo: view.bottomAnchor
             ),
             
-            morButton.leadingAnchor.constraint(
+            moreButton.leadingAnchor.constraint(
                 equalTo: view.leadingAnchor,
                 constant: 16
             ),
-            morButton.trailingAnchor.constraint(
+            moreButton.trailingAnchor.constraint(
                 equalTo: view.trailingAnchor,
                 constant: -16
             ),
-            morButton.heightAnchor.constraint(equalToConstant: 48),
-            morButton.bottomAnchor.constraint(
+            moreButton.heightAnchor.constraint(equalToConstant: 48),
+            moreButton.bottomAnchor.constraint(
                 equalTo: dashboardTabBar.topAnchor,
                 constant: -4
             ),

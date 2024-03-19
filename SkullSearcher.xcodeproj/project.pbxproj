@@ -16,6 +16,8 @@
 		84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5B2BA8B10D009685BD /* VacanciesCell.swift */; };
 		84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5E2BA9A522009685BD /* VacancyDataModel.swift */; };
 		84051A612BA9AB1F009685BD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A602BA9AB1F009685BD /* Helpers.swift */; };
+		84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A652BA9D923009685BD /* MoreCoordinator.swift */; };
+		84051A692BA9D997009685BD /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A682BA9D997009685BD /* MoreViewController.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -82,6 +84,8 @@
 		84051A5B2BA8B10D009685BD /* VacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesCell.swift; sourceTree = "<group>"; };
 		84051A5E2BA9A522009685BD /* VacancyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDataModel.swift; sourceTree = "<group>"; };
 		84051A602BA9AB1F009685BD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		84051A652BA9D923009685BD /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
+		84051A682BA9D997009685BD /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +174,43 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		84051A622BA9D762009685BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
+				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		84051A632BA9D773009685BD /* Confrim */ = {
+			isa = PBXGroup;
+			children = (
+				849098302BA6EB030015E68C /* ConfirmVC + ext.swift */,
+				8490982C2BA4B8F90015E68C /* CodeField.swift */,
+				8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */,
+			);
+			path = Confrim;
+			sourceTree = "<group>";
+		};
+		84051A642BA9D783009685BD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84051A592BA86B5B009685BD /* MainVCLayouts.swift */,
+				84051A572BA86A46009685BD /* MainVC + ext.swift */,
+				849098362BA742E40015E68C /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84051A672BA9D98A009685BD /* More */ = {
+			isa = PBXGroup;
+			children = (
+				84051A682BA9D997009685BD /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +285,7 @@
 				849098052BA317A20015E68C /* LoginCoordinator.swift */,
 				849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */,
 				849098342BA73FB50015E68C /* MainScreenCoordinator.swift */,
+				84051A652BA9D923009685BD /* MoreCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -251,16 +293,12 @@
 		849098072BA31B240015E68C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84051A672BA9D98A009685BD /* More */,
+				84051A642BA9D783009685BD /* Main */,
+				84051A632BA9D773009685BD /* Confrim */,
+				84051A622BA9D762009685BD /* Login */,
 				84051A4E2BA835F0009685BD /* Cells */,
-				849097CC2BA308FE0015E68C /* LoginViewController.swift */,
 				8490981C2BA453AC0015E68C /* TabBar.swift */,
-				849098202BA488BA0015E68C /* LoginVC + ext.swift */,
-				8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */,
-				8490982C2BA4B8F90015E68C /* CodeField.swift */,
-				849098302BA6EB030015E68C /* ConfirmVC + ext.swift */,
-				849098362BA742E40015E68C /* MainViewController.swift */,
-				84051A572BA86A46009685BD /* MainVC + ext.swift */,
-				84051A592BA86B5B009685BD /* MainVCLayouts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,6 +511,7 @@
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,
 				849098432BA74F350015E68C /* consts.swift in Sources */,
+				84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,
 				849098272BA494780015E68C /* Verifier.swift in Sources */,
@@ -484,6 +523,7 @@
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
 				84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */,
 				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
+				84051A692BA9D997009685BD /* MoreViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
 				84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */,
