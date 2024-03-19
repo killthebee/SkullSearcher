@@ -7,6 +7,8 @@ class OfferCell: UICollectionViewCell {
     func configure(image: UIImage?, text: String = "decoy \ntext goes wrum") {
         if image == UIImage(named: "locationIcon2") {
             iconCoverView.backgroundColor = darkBlue
+        } else {
+            iconCoverView.backgroundColor = darkGreen
         }
         icon.image = image
         offerLable.text = text
