@@ -82,6 +82,10 @@ class ConfirmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+    }
+    
+    private func configure() {
         view.backgroundColor = .black
         disableAutoresizing()
         addSubview()

@@ -4,6 +4,23 @@ class MainViewController: UIViewController {
     
     var viewModel: MainViewModelProtocol?
     
+    let offerIcons: [UIImage?] = [
+        UIImage(named: "locationIcon2"), UIImage(named: "Star2Icon"),
+        UIImage(named: "checkNoteIcon2"), UIImage(named: "locationIcon2")
+    ]
+    
+    var offerTexts: [String] = []
+    
+    @MainActor
+    func setData(_ offerTexts:  [String]) {
+        self.offerTexts = offerTexts
+        self.collectionView.reloadData()
+    }
+    
+    private func bindUI() {
+        viewModel?.setSentHeaderText = setData(_:)
+    }
+    
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -62,6 +79,12 @@ class MainViewController: UIViewController {
         addSubview()
         configureLayout()
         configureCompositionalLayout()
+        bindUI()
+        updateUI()
+    }
+    
+    private func updateUI() {
+        viewModel?.setData()
     }
     
     private func disableAutoresizing() {

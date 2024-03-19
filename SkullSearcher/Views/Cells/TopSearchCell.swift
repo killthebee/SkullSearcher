@@ -13,7 +13,7 @@ class TopSearchCell: UICollectionViewCell {
     }()
     
     private let searchIconImageView = UIImageView(
-        image: UIImage(named: "loopIcon")
+        image: UIImage(named: "loopIcon2")
     )
     
     private let searchLable: UILabel = {
@@ -46,8 +46,7 @@ class TopSearchCell: UICollectionViewCell {
     private let filterImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.image = UIImage(named: "filterIcon")
-//        view.image?.withAlignmentRectInsets(UIEdgeInsets(top: -14, left: -14, bottom: -14, right: -14))
+        view.image = UIImage(named: "fitlerIcon2")
         
         return view
     }()
@@ -108,8 +107,6 @@ class TopSearchCell: UICollectionViewCell {
                 equalTo: filterView.leadingAnchor,
                 constant: -7
             ),
-//            searchView.heightAnchor.constraint(equalToConstant: 40),
-//            searchView.widthAnchor.constraint(equalToConstant: 280),
             
             searchIconImageView.centerYAnchor.constraint(
                 equalTo: searchView.centerYAnchor

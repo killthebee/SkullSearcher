@@ -13,7 +13,7 @@ extension MainViewController:
         case 0:
             return 1
         case 1:
-            return 4
+            return offerIcons.count
         case 2:
             return 3
         default:
@@ -47,6 +47,17 @@ extension MainViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            if offerTexts.count > 0 {
+                cell.configure(
+                    image: offerIcons[indexPath.row],
+                    text: offerTexts[indexPath.row]
+                )
+            } else {
+                cell.configure(
+                    image: offerIcons[indexPath.row]
+                )
+            }
+            
             
             return cell
         } else if indexPath.section == 2 {

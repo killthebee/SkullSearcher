@@ -68,7 +68,7 @@ class VacancyCell: UICollectionViewCell {
     }()
     
     private let expIconView = UIImageView(
-        image: UIImage(named: "baggageIcon")
+        image: UIImage(named: "baggageIcon2")
     )
     
     private let expLable: UILabel = {
@@ -101,7 +101,7 @@ class VacancyCell: UICollectionViewCell {
     }()
     
     private let likeIconView = UIImageView(
-        image: UIImage(named: "heartIcon")
+        image: UIImage(named: "heartIcon2")
     )
     
     override init(frame: CGRect) {
