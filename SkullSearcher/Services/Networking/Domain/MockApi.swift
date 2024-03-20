@@ -2,6 +2,7 @@ import UIKit
 
 protocol ApiServiceProtocol: AnyObject {
     func getMockData() async -> MockData?
+    var vananciesData: [Vacancy] { get set}
 }
 
 class MockApiService: ApiServiceProtocol {

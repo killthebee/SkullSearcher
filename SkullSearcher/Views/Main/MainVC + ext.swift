@@ -96,7 +96,7 @@ extension MainViewController:
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             viewModel?.presentDetail(indexPath.row)
         }
     }

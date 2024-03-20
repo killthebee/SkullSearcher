@@ -24,6 +24,15 @@
 		84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */; };
 		84051A732BAAC321009685BD /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A722BAAC321009685BD /* DetailCoordinator.swift */; };
 		84051A762BAAC375009685BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A752BAAC375009685BD /* DetailViewController.swift */; };
+		84051A782BAAC65B009685BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A772BAAC65B009685BD /* DetailViewModel.swift */; };
+		84051A7A2BAACD20009685BD /* TopHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A792BAACD20009685BD /* TopHeaderCell.swift */; };
+		84051A7C2BAAD228009685BD /* MainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A7B2BAAD228009685BD /* MainInfoCell.swift */; };
+		84051A7E2BAAD7EA009685BD /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A7D2BAAD7EA009685BD /* StatisticsCell.swift */; };
+		84051A802BAADBA2009685BD /* CompanyAndAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A7F2BAADBA2009685BD /* CompanyAndAddressCell.swift */; };
+		84051A822BAAE630009685BD /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A812BAAE630009685BD /* AboutCell.swift */; };
+		84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A832BAAFB9B009685BD /* QuestionsCell.swift */; };
+		84051A862BAB01C8009685BD /* DetailVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A852BAB01C8009685BD /* DetailVC + ext.swift */; };
+		84051A892BAB0597009685BD /* DetailVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A882BAB0597009685BD /* DetailVCLayouts.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -98,6 +107,15 @@
 		84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderSupCell.swift; sourceTree = "<group>"; };
 		84051A722BAAC321009685BD /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		84051A752BAAC375009685BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		84051A772BAAC65B009685BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		84051A792BAACD20009685BD /* TopHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderCell.swift; sourceTree = "<group>"; };
+		84051A7B2BAAD228009685BD /* MainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoCell.swift; sourceTree = "<group>"; };
+		84051A7D2BAAD7EA009685BD /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
+		84051A7F2BAADBA2009685BD /* CompanyAndAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAndAddressCell.swift; sourceTree = "<group>"; };
+		84051A812BAAE630009685BD /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		84051A832BAAFB9B009685BD /* QuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCell.swift; sourceTree = "<group>"; };
+		84051A852BAB01C8009685BD /* DetailVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailVC + ext.swift"; sourceTree = "<group>"; };
+		84051A882BAB0597009685BD /* DetailVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCLayouts.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -229,9 +247,25 @@
 		84051A742BAAC362009685BD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				84051A872BAB0471009685BD /* Cells */,
 				84051A752BAAC375009685BD /* DetailViewController.swift */,
+				84051A852BAB01C8009685BD /* DetailVC + ext.swift */,
+				84051A882BAB0597009685BD /* DetailVCLayouts.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		84051A872BAB0471009685BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84051A792BAACD20009685BD /* TopHeaderCell.swift */,
+				84051A7B2BAAD228009685BD /* MainInfoCell.swift */,
+				84051A7D2BAAD7EA009685BD /* StatisticsCell.swift */,
+				84051A7F2BAADBA2009685BD /* CompanyAndAddressCell.swift */,
+				84051A812BAAE630009685BD /* AboutCell.swift */,
+				84051A832BAAFB9B009685BD /* QuestionsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		849097BC2BA308FE0015E68C = {
@@ -357,6 +391,7 @@
 				8490982E2BA4C1C90015E68C /* ConfirmViewModel.swift */,
 				849098382BA7433C0015E68C /* MainViewModel.swift */,
 				84051A6A2BA9DE40009685BD /* MoreViewModel.swift */,
+				84051A772BAAC65B009685BD /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -522,10 +557,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84051A822BAAE630009685BD /* AboutCell.swift in Sources */,
 				84051A502BA835FB009685BD /* TopSearchCell.swift in Sources */,
 				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
 				849098192BA344310015E68C /* Strings.swift in Sources */,
 				84051A562BA84C0D009685BD /* VacancyCell2.swift in Sources */,
+				84051A892BAB0597009685BD /* DetailVCLayouts.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
 				849098452BA751180015E68C /* ApiModels.swift in Sources */,
@@ -536,6 +573,7 @@
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				84051A732BAAC321009685BD /* DetailCoordinator.swift in Sources */,
+				84051A7E2BAAD7EA009685BD /* StatisticsCell.swift in Sources */,
 				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,
 				849098432BA74F350015E68C /* consts.swift in Sources */,
 				84051A762BAAC375009685BD /* DetailViewController.swift in Sources */,
@@ -545,14 +583,18 @@
 				849098272BA494780015E68C /* Verifier.swift in Sources */,
 				8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
+				84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */,
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
 				84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */,
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
 				84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */,
+				84051A802BAADBA2009685BD /* CompanyAndAddressCell.swift in Sources */,
 				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
 				84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */,
+				84051A782BAAC65B009685BD /* DetailViewModel.swift in Sources */,
+				84051A7C2BAAD228009685BD /* MainInfoCell.swift in Sources */,
 				84051A692BA9D997009685BD /* MoreViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
@@ -561,9 +603,11 @@
 				849098062BA317A20015E68C /* LoginCoordinator.swift in Sources */,
 				849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */,
 				8490982F2BA4C1C90015E68C /* ConfirmViewModel.swift in Sources */,
+				84051A862BAB01C8009685BD /* DetailVC + ext.swift in Sources */,
 				8490981D2BA453AC0015E68C /* TabBar.swift in Sources */,
 				849098022BA3127B0015E68C /* CoordinatorProtocol.swift in Sources */,
 				84051A522BA84267009685BD /* OfferCell.swift in Sources */,
+				84051A7A2BAACD20009685BD /* TopHeaderCell.swift in Sources */,
 				849098312BA6EB030015E68C /* ConfirmVC + ext.swift in Sources */,
 				84051A6B2BA9DE40009685BD /* MoreViewModel.swift in Sources */,
 				849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */,
