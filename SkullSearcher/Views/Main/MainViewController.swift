@@ -151,8 +151,8 @@ class MainViewController: UIViewController {
             ),
             moreButton.heightAnchor.constraint(equalToConstant: 48),
             moreButton.bottomAnchor.constraint(
-                equalTo: dashboardTabBar.topAnchor,
-                constant: -4
+                equalTo: view.topAnchor,
+                constant: -54
             ),
         ]
         
