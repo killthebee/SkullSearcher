@@ -17,7 +17,7 @@ class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
         viewModel.vacancyIndex = vacancyIndex
         viewModel.apiService = apiService
         detailVC.viewModel = viewModel
-//        viewModel.coordinator = self
+        viewModel.coordinator = self
         view = detailVC
 
         return detailVC

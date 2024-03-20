@@ -32,6 +32,7 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            cell.viewModel = viewModel
             
             return cell
         } else if indexPath.section == 1 {
@@ -43,6 +44,7 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            cell.configure(vacancyFullData)
         
             return cell
         } else if indexPath.section == 2 {
@@ -54,6 +56,12 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            if indexPath.row == 0 {
+                cell.configure(vacancyFullData?.appliedText, statisticsIcons[0])
+            } else {
+                cell.configure(vacancyFullData?.lookingText, statisticsIcons[1])
+            }
+            
             
             return cell
         } else if indexPath.section == 3 {
@@ -65,6 +73,7 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            cell.configure(vacancyFullData)
             
             return cell
         } else if indexPath.section == 4 {
@@ -76,6 +85,7 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            cell.configure(vacancyFullData)
             
             return cell
         } else if indexPath.section == 5 {
@@ -87,6 +97,7 @@ extension detailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
+            cell.configure(vacancyFullData)
             
             return cell
         }

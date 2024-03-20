@@ -61,3 +61,28 @@ func makePublishedData(_ dateString: String) -> String {
     
     return text
 }
+
+func makeFullAddress(_ address: Adress) -> String {
+    let result = "\(address.town), \(address.street), \(address.house),"
+    
+    return result
+}
+
+func makeExpText(_ exp: Experience) -> String {
+    if exp.text == "не требуется" {
+        return "Опыт не требуется"
+    }
+    let expArr = Array(exp.text)
+    let minExp = expArr[0]
+    let maxExp = expArr[2]
+    
+    return "Требуемый опыт: от \(minExp) до \(maxExp) лет"
+}
+
+func makeAppliedText(_ num: Int?) -> String {
+    guard let num = num else { return "Будь первыйм кто откликнулся"}
+    if num == 1 {
+        return "1 человек уже\nоткликнулся"
+    }
+    return "\(num) человек уже\nоткликнулись"
+}

@@ -4,6 +4,14 @@ class MainInfoCell: UICollectionViewCell {
     
     static let cellIdentifier = "MainInfoCellIdentifier"
     
+    func configure(_ vacancy: VacancyFullData?) {
+        guard let vacancy = vacancy else { return }
+        titleLable.text = vacancy.title
+        salaryLable.text = vacancy.salary
+        expLable.text = vacancy.experience
+        schedulesLable.text = vacancy.schedules
+    }
+    
     let titleLable: UILabel = {
         let lable = UILabel()
         lable.text = "UI/UX Designer"
@@ -13,7 +21,7 @@ class MainInfoCell: UICollectionViewCell {
         return lable
     }()
     
-    let slaryLable: UILabel = {
+    let salaryLable: UILabel = {
         let lable = UILabel()
         lable.text = "Уровень дохода не указанr"
         lable.font = text1Font
@@ -67,12 +75,12 @@ class MainInfoCell: UICollectionViewCell {
     }
     
     private func disableAutoresizing() {
-        [titleLable, slaryLable, schedulesExpStack
+        [titleLable, salaryLable, schedulesExpStack
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubviews() {
-        [titleLable, slaryLable, schedulesExpStack
+        [titleLable, salaryLable, schedulesExpStack
         ].forEach{ contentView.addSubview($0) }
     }
     
@@ -88,17 +96,17 @@ class MainInfoCell: UICollectionViewCell {
             ),
             titleLable.heightAnchor.constraint(equalToConstant: 26),
             
-            slaryLable.topAnchor.constraint(
+            salaryLable.topAnchor.constraint(
                 equalTo: titleLable.bottomAnchor,
                 constant: spacing
             ),
-            slaryLable.leadingAnchor.constraint(
+            salaryLable.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor
             ),
-            slaryLable.heightAnchor.constraint(equalToConstant: 17),
+            salaryLable.heightAnchor.constraint(equalToConstant: 17),
             
             schedulesExpStack.topAnchor.constraint(
-                equalTo: slaryLable.bottomAnchor,
+                equalTo: salaryLable.bottomAnchor,
                 constant: spacing
             ),
             schedulesExpStack.leadingAnchor.constraint(

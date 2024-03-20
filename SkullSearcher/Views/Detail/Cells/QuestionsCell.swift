@@ -4,6 +4,23 @@ class questionsCell: UICollectionViewCell {
     
     static let cellIdentifier = "QuestionsCellIdentifier"
     
+    func configure(_ vacancy: VacancyFullData?) {
+        guard let vacancy = vacancy else { return }
+        for question in vacancy.questions {
+            let button = UIButton()
+            button.backgroundColor = grey2
+            button.setTitle("     \(question)    ", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.layer.cornerRadius = 16
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.widthAnchor.constraint(
+                equalToConstant: button.intrinsicContentSize.width
+            ).isActive = true
+            button.setContentHuggingPriority(UILayoutPriority(1001), for: .horizontal)
+            questionsStack.addArrangedSubview(button)
+        }
+    }
+    
     private let callLable: UILabel = {
         let lable = UILabel()
         lable.text = "Задайте вопрос работодателю"
@@ -65,13 +82,14 @@ class questionsCell: UICollectionViewCell {
     
     private lazy var questionsStack: UIStackView = {
         let stack = UIStackView(
-            arrangedSubviews: [exmapleQuestion1, exmapleQuestion2, exmapleQuestion3, exmapleQuestion4]
+//            arrangedSubviews: [exmapleQuestion1, exmapleQuestion2, exmapleQuestion3, exmapleQuestion4]
         )
         let constraints: [NSLayoutConstraint] = [
             exmapleQuestion1.heightAnchor.constraint(equalToConstant: 32),
             exmapleQuestion2.heightAnchor.constraint(equalToConstant: 32),
             exmapleQuestion3.heightAnchor.constraint(equalToConstant: 32),
             exmapleQuestion4.heightAnchor.constraint(equalToConstant: 32),
+//            exmapleQuestion4.heightAnchor.constraint(equalToConstant: 32), ih mojet bit 5!!
         ]
 
         NSLayoutConstraint.activate(constraints)
@@ -142,9 +160,9 @@ class questionsCell: UICollectionViewCell {
             questionsStack.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor
             ),
-//            questionsStack.heightAnchor.constraint(
-//                equalToConstant: 156
-//            ),
+            questionsStack.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor
+            ),
             questionsStack.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
                 constant: -10 * spacing

@@ -8,17 +8,17 @@ class TopHeaderCell: UICollectionViewCell {
     
     @objc
     private func dismiss() {
-//        viewModel?.dismiss()
+        viewModel?.dismiss()
     }
     
-    private let backButton: UIButton = {
+    private lazy var backButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "backIcon"), for: .normal)
-//        backButton.addTarget(
-//            self,
-//            action: #selector(dismiss),
-//            for: .touchUpInside
-//        )
+        button.addTarget(
+            self,
+            action: #selector(dismiss),
+            for: .touchUpInside
+        )
         
         return button
     }()

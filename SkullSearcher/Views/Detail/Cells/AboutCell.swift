@@ -4,6 +4,12 @@ class AboutCell: UICollectionViewCell {
     
     static let cellIdentifier = "AboutCellIdentifier"
     
+    func configure(_ vacancy: VacancyFullData?) {
+        guard let vacancy = vacancy else { return }
+        aboutCompanyLable.text = vacancy.aboutText
+        responsobilityLable.text = vacancy.resonsobilityText
+    }
+    
     let aboutCompanyLable: UILabel = {
         let lable = UILabel()
         lable.textColor = .white

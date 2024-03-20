@@ -4,6 +4,24 @@ class detailViewController: UIViewController {
     
     var viewModel: detailViewModelProtocol?
     
+    let statisticsIcons: [UIImage?] = [
+        UIImage(named: "profileIcon2"), UIImage(named: "eyeIcon"),
+    ]
+    
+    var vacancyFullData: VacancyFullData?
+    
+    private func bindUI() {
+//        viewModel?.refreshCollectionView = { [weak self] in
+//            self?.collectionView.reloadData()
+//            let moreButtonString = "Еще \(self?.vacanciesPreviews.count ?? 0) вакансий"
+//            self?.moreButton.setTitle(moreButtonString, for: .normal)
+//        }
+        
+        viewModel?.setVacancyFullData = { [weak self] (vacancyFullData) in
+            self?.vacancyFullData = vacancyFullData
+        }
+    }
+    
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -52,17 +70,20 @@ class detailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-//        viewModel?.makeVacancyData()
     }
     
     private func configure() {
         view.backgroundColor = .black
+        bindUI()
+        updateUI()
         disableAutoresizing()
         addSubview()
         configureLayout()
         configureCompositionalLayout()
-//        bindUI()
-//        updateUI()
+    }
+    
+    private func updateUI() {
+        viewModel?.makeVacancyData()
     }
     
     private func disableAutoresizing() {

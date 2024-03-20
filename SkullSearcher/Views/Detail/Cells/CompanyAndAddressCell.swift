@@ -4,6 +4,24 @@ class CompanyAndAddressCell: UICollectionViewCell {
     
     static let cellIdentifier = "CompanyAndAddressCelldentifier"
     
+    func configure(_ vacancy: VacancyFullData?) {
+        guard let vacancy = vacancy else { return }
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "checkIcon")
+        attachment.bounds = CGRect(
+            x: 0, y: -2,
+            width: 10,
+            height: 10
+        )
+
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let string = NSMutableAttributedString(string: vacancy.company, attributes: [:])
+        
+        string.append(attachmentString)
+        companyLable.attributedText = string
+        addressLable.text = vacancy.adress
+    }
+    
     private let coverView: UIView = {
         let view = UIView()
         view.backgroundColor = grey1
