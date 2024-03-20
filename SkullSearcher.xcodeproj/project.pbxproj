@@ -303,6 +303,7 @@
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
+				84051A962BAB59AF009685BD /* README.md */,
 				849097C72BA308FE0015E68C /* SkullSearcher */,
 				849097E12BA309010015E68C /* SkullSearcherTests */,
 				849097EB2BA309010015E68C /* SkullSearcherUITests */,
@@ -323,7 +324,6 @@
 		849097C72BA308FE0015E68C /* SkullSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				84051A962BAB59AF009685BD /* README.md */,
 				84051A5D2BA9A513009685BD /* Models */,
 				849098252BA494560015E68C /* Services */,
 				849098222BA493FD0015E68C /* ViewModels */,
