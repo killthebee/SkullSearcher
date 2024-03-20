@@ -152,7 +152,7 @@ class MainViewController: UIViewController {
             moreButton.heightAnchor.constraint(equalToConstant: 48),
             moreButton.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor,
-                constant: -54
+                constant: -104
             ),
         ]
         
