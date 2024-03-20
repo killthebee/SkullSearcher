@@ -1,8 +1,9 @@
 import UIKit
 
-class moreViewController: UIViewController {
+class moreViewController: UIViewController, BSPresenterDelegate {
     
     var viewModel: MoreViewModelProtocol?
+    private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
     
     var vacanciesPreviews: [VacancyPreviewData] = []
     
@@ -14,6 +15,13 @@ class moreViewController: UIViewController {
         viewModel?.setVacanciesPreviews = { [weak self] (previews) in
             self?.vacanciesPreviews = previews
         }
+    }
+    
+    func presentBS() {
+        let vc = ExampleViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = delegate
+        present(vc, animated: true)
     }
     
     private lazy var collectionView : UICollectionView = {

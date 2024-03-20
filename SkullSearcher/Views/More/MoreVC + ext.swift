@@ -47,6 +47,7 @@ extension moreViewController:
             }
             if vacanciesPreviews.count > 0 {
                 cell.configure(previewData: vacanciesPreviews[indexPath.row])
+                cell.bsDelegate = self
             }
             
             return cell

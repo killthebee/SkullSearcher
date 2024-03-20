@@ -1,8 +1,13 @@
 import UIKit
 
-class MainViewController: UIViewController {
+protocol BSPresenterDelegate: AnyObject {
+    func presentBS()
+}
+
+class MainViewController: UIViewController, BSPresenterDelegate {
     
     var viewModel: MainViewModelProtocol?
+    private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
     
     let offerIcons: [UIImage?] = [
         UIImage(named: "locationIcon2"), UIImage(named: "Star2Icon"),
@@ -31,6 +36,13 @@ class MainViewController: UIViewController {
     @objc
     private func handeMoreButtonTap() {
         viewModel?.presentMoreScreen()
+    }
+    
+    func presentBS() {
+        let vc = ExampleViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = delegate
+        present(vc, animated: true)
     }
     
     private lazy var collectionView : UICollectionView = {

@@ -33,6 +33,11 @@
 		84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A832BAAFB9B009685BD /* QuestionsCell.swift */; };
 		84051A862BAB01C8009685BD /* DetailVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A852BAB01C8009685BD /* DetailVC + ext.swift */; };
 		84051A892BAB0597009685BD /* DetailVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A882BAB0597009685BD /* DetailVCLayouts.swift */; };
+		84051A8C2BAB4DE6009685BD /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A8B2BAB4DE6009685BD /* BottomSheetViewController.swift */; };
+		84051A8F2BAB4E6A009685BD /* BSPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A8E2BAB4E6A009685BD /* BSPresentationController.swift */; };
+		84051A912BAB4EA9009685BD /* BSTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A902BAB4EA9009685BD /* BSTransition.swift */; };
+		84051A932BAB4EE2009685BD /* BSTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A922BAB4EE2009685BD /* BSTransitionDelegate.swift */; };
+		84051A952BAB4F05009685BD /* BSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A942BAB4F05009685BD /* BSConfiguration.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -116,6 +121,11 @@
 		84051A832BAAFB9B009685BD /* QuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCell.swift; sourceTree = "<group>"; };
 		84051A852BAB01C8009685BD /* DetailVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailVC + ext.swift"; sourceTree = "<group>"; };
 		84051A882BAB0597009685BD /* DetailVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCLayouts.swift; sourceTree = "<group>"; };
+		84051A8B2BAB4DE6009685BD /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		84051A8E2BAB4E6A009685BD /* BSPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSPresentationController.swift; sourceTree = "<group>"; };
+		84051A902BAB4EA9009685BD /* BSTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTransition.swift; sourceTree = "<group>"; };
+		84051A922BAB4EE2009685BD /* BSTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTransitionDelegate.swift; sourceTree = "<group>"; };
+		84051A942BAB4F05009685BD /* BSConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSConfiguration.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +278,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		84051A8A2BAB4DCB009685BD /* ApplyBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				84051A8D2BAB4E52009685BD /* Transition */,
+				84051A8B2BAB4DE6009685BD /* BottomSheetViewController.swift */,
+			);
+			path = ApplyBottomSheet;
+			sourceTree = "<group>";
+		};
+		84051A8D2BAB4E52009685BD /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				84051A8E2BAB4E6A009685BD /* BSPresentationController.swift */,
+				84051A902BAB4EA9009685BD /* BSTransition.swift */,
+				84051A922BAB4EE2009685BD /* BSTransitionDelegate.swift */,
+				84051A942BAB4F05009685BD /* BSConfiguration.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +381,7 @@
 		849098072BA31B240015E68C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84051A8A2BAB4DCB009685BD /* ApplyBottomSheet */,
 				84051A742BAAC362009685BD /* Detail */,
 				84051A672BA9D98A009685BD /* More */,
 				84051A642BA9D783009685BD /* Main */,
@@ -569,7 +600,11 @@
 				84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
 				84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */,
+				84051A932BAB4EE2009685BD /* BSTransitionDelegate.swift in Sources */,
+				84051A952BAB4F05009685BD /* BSConfiguration.swift in Sources */,
+				84051A912BAB4EA9009685BD /* BSTransition.swift in Sources */,
 				84051A612BA9AB1F009685BD /* Helpers.swift in Sources */,
+				84051A8C2BAB4DE6009685BD /* BottomSheetViewController.swift in Sources */,
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
 				84051A732BAAC321009685BD /* DetailCoordinator.swift in Sources */,
@@ -594,6 +629,7 @@
 				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
 				84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */,
 				84051A782BAAC65B009685BD /* DetailViewModel.swift in Sources */,
+				84051A8F2BAB4E6A009685BD /* BSPresentationController.swift in Sources */,
 				84051A7C2BAAD228009685BD /* MainInfoCell.swift in Sources */,
 				84051A692BA9D997009685BD /* MoreViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,

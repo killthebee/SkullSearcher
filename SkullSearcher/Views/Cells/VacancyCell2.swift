@@ -6,6 +6,13 @@ class VacancyCell: UICollectionViewCell {
     
     private let vacancyContainerView = UIView()
     
+    weak var bsDelegate: BSPresenterDelegate?
+    
+    @objc
+    private func applyToVacancy() {
+        bsDelegate?.presentBS()
+    }
+    
     func configure(previewData: VacancyPreviewData) {
 //    arrangedSubviews: [
 //        lookingLable, titleLable, salaryLable, cityCompanyStack,
@@ -116,13 +123,17 @@ class VacancyCell: UICollectionViewCell {
         return lable
     }()
     
-    private let applyButton: UIButton = {
+    private lazy var applyButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = green
         button.layer.cornerRadius = 16
         button.setTitle(applyString, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = buttonText2Font
+        button.addTarget(
+            self, action: #selector(applyToVacancy),
+            for: .touchUpInside
+        )
         
         return button
     }()
