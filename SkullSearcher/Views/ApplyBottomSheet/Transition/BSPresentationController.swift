@@ -115,23 +115,6 @@ final class BottomSheetPresentationController: UIPresentationController {
         })
     }
     
-    // MARK: Private methods
-
-//    private func setupLayout() {
-//        guard
-//            let containerView = containerView,
-//            let presentedView = presentedView
-//        else {
-//            return
-//        }
-//        overlayView.frame = containerView.bounds
-//        pullBarView.frame.origin.y = 8
-//        pullBarView.center.x = presentedView.center.x
-//        pullBarView.layer.cornerRadius = pullBarView.frame.height / 2
-//        presentedView.layer.cornerCurve = .continuous
-//        presentedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-//        presentedViewController.additionalSafeAreaInsets.top = pullBarView.frame.maxY
-//    }
     private func setupLayout() {
         guard
             let containerView = containerView,
@@ -173,7 +156,7 @@ final class BottomSheetPresentationController: UIPresentationController {
                     equalTo: containerView.trailingAnchor
                 ),
                 presentedView.heightAnchor.constraint(
-                    equalToConstant: 250
+                    equalToConstant: 324
                 ),
             ]
         )
