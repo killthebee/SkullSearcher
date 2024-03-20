@@ -156,7 +156,7 @@ final class BottomSheetPresentationController: UIPresentationController {
                     equalTo: containerView.trailingAnchor
                 ),
                 presentedView.heightAnchor.constraint(
-                    equalToConstant: 324
+                    equalToConstant: 274
                 ),
             ]
         )
