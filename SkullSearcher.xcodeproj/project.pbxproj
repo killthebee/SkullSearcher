@@ -22,6 +22,8 @@
 		84051A6D2BA9E0C5009685BD /* MoreVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A6C2BA9E0C5009685BD /* MoreVC + ext.swift */; };
 		84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A6E2BA9E219009685BD /* MoreVCLayouts.swift */; };
 		84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */; };
+		84051A732BAAC321009685BD /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A722BAAC321009685BD /* DetailCoordinator.swift */; };
+		84051A762BAAC375009685BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A752BAAC375009685BD /* DetailViewController.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -94,6 +96,8 @@
 		84051A6C2BA9E0C5009685BD /* MoreVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreVC + ext.swift"; sourceTree = "<group>"; };
 		84051A6E2BA9E219009685BD /* MoreVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVCLayouts.swift; sourceTree = "<group>"; };
 		84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderSupCell.swift; sourceTree = "<group>"; };
+		84051A722BAAC321009685BD /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		84051A752BAAC375009685BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,14 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		84051A742BAAC362009685BD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				84051A752BAAC375009685BD /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		849097BC2BA308FE0015E68C = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +309,7 @@
 				849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */,
 				849098342BA73FB50015E68C /* MainScreenCoordinator.swift */,
 				84051A652BA9D923009685BD /* MoreCoordinator.swift */,
+				84051A722BAAC321009685BD /* DetailCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -304,6 +317,7 @@
 		849098072BA31B240015E68C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84051A742BAAC362009685BD /* Detail */,
 				84051A672BA9D98A009685BD /* More */,
 				84051A642BA9D783009685BD /* Main */,
 				84051A632BA9D773009685BD /* Confrim */,
@@ -521,8 +535,10 @@
 				84051A612BA9AB1F009685BD /* Helpers.swift in Sources */,
 				849098352BA73FB50015E68C /* MainScreenCoordinator.swift in Sources */,
 				849098392BA7433C0015E68C /* MainViewModel.swift in Sources */,
+				84051A732BAAC321009685BD /* DetailCoordinator.swift in Sources */,
 				8490983E2BA74C7F0015E68C /* Errors.swift in Sources */,
 				849098432BA74F350015E68C /* consts.swift in Sources */,
+				84051A762BAAC375009685BD /* DetailViewController.swift in Sources */,
 				84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,

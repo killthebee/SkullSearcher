@@ -4,6 +4,7 @@ protocol MoreViewModelProtocol: AnyObject {
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())? { get set }
     var refreshCollectionView: (() async -> ())? { get set }
     func dismiss()
+    func presentDetail(_ index: Int)
 }
 
 class MoreViewModel: MoreViewModelProtocol {
@@ -25,5 +26,9 @@ class MoreViewModel: MoreViewModelProtocol {
     
     func dismiss() {
         coordinator?.dismiss()
+    }
+    
+    func presentDetail(_ index: Int) {
+        coordinator?.presentDetail(index)
     }
 }

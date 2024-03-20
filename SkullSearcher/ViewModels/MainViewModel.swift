@@ -4,6 +4,7 @@ protocol MainViewModelProtocol: AnyObject {
     var setOffersTexts: ((_ texts: [String]) -> ())? { get set }
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())? { get set }
     func presentMoreScreen()
+    func presentDetail(_ index: Int)
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -56,5 +57,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func presentMoreScreen() {
         coordinator?.presentMoreScreen(vacanciesPreviews)
+    }
+    
+    func presentDetail(_ index: Int) {
+        coordinator?.presentDetail(index)
     }
 }

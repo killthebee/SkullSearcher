@@ -69,4 +69,10 @@ extension moreViewController:
         
         return supplementaryView
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            viewModel?.presentDetail(indexPath.row)
+        }
+    }
 }

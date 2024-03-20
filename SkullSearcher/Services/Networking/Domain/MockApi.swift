@@ -8,6 +8,8 @@ class MockApiService: ApiServiceProtocol {
     
     static let shared = MockApiService()
     
+    var vananciesData: [Vacancy] = []
+    
     private func makeURL() -> URL? {
         var urlComponents = URLComponents()
         urlComponents.host = Urls.mockHost.rawValue
@@ -33,6 +35,7 @@ class MockApiService: ApiServiceProtocol {
         ) { (result: Result<MockData, Error>) async in
             switch result {
             case let .success(downloadedMockData):
+                self.vananciesData = downloadedMockData.vacancies
                 mockData = downloadedMockData
             case let .failure(error):
 //                self.handleError(

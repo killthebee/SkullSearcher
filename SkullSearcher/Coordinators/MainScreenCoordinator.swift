@@ -1,5 +1,6 @@
 protocol MainScreenCoordinatorProtocol: AnyObject {
     func presentMoreScreen(_ vacancies: [VacancyPreviewData]?)
+    func presentDetail(_ index: Int)
 }
 
 class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
@@ -28,5 +29,16 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
             { return }
         moreVC.modalPresentationStyle = .fullScreen
         view?.present(moreVC)
+    }
+    
+    func presentDetail(_ index: Int) {
+        let detailCoordinator = DetailCoordinator()
+        detailCoordinator.vacancyIndex = index
+        guard
+            let detailVC = detailCoordinator.start() as? detailViewController
+        else
+            { return }
+        detailVC.modalPresentationStyle = .fullScreen
+        view?.present(detailVC)
     }
 }

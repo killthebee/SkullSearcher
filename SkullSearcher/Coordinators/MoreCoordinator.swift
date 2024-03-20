@@ -1,5 +1,6 @@
 protocol MoreCoordinatorProtocol: AnyObject {
     func dismiss()
+    func presentDetail(_ index: Int)
 }
 
 class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
@@ -21,5 +22,16 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
     
     func dismiss() {
         view?.dismiss()
+    }
+    
+    func presentDetail(_ index: Int) {
+        let detailCoordinator = DetailCoordinator()
+        detailCoordinator.vacancyIndex = index
+        guard
+            let detailVC = detailCoordinator.start() as? detailViewController
+        else
+            { return }
+        detailVC.modalPresentationStyle = .fullScreen
+        view?.present(detailVC)
     }
 }
