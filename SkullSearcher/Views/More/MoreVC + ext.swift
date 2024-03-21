@@ -46,7 +46,10 @@ extension MoreViewController:
                 fatalError("Unable deque cell...")
             }
             if vacanciesPreviews.count > 0 {
-                cell.configure(previewData: vacanciesPreviews[indexPath.row])
+                cell.configure(
+                    previewData: vacanciesPreviews[indexPath.row],
+                    favorites
+                )
                 cell.bsDelegate = self
             }
             

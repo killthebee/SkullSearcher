@@ -1,3 +1,8 @@
+protocol favoritesManipulatorProtocol: AnyObject {
+    func addFavorite(_ id: String)
+    func removeFromFavorite(_ id: String)
+}
+
 protocol MainViewModelProtocol: AnyObject {
     func setData()
     var refreshCollectionView: (() async -> ())? { get set }
@@ -5,9 +10,12 @@ protocol MainViewModelProtocol: AnyObject {
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())? { get set }
     func presentMoreScreen()
     func presentDetail(_ index: Int)
+    var setFavorites: ((_ favorites: Set<String>) -> ())? { get set }
+    func reloadWithNewLikes()
+    var updateTulBar: (() -> ())? { get set }
 }
 
-class MainViewModel: MainViewModelProtocol {
+class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
     
     var apiService: ApiServiceProtocol?
     var storageService: FavoriteStorageProtocol?
@@ -19,6 +27,8 @@ class MainViewModel: MainViewModelProtocol {
     var refreshCollectionView: (() async -> ())?
     var setOffersTexts: ((_ texts: [String]) -> ())?
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())?
+    var setFavorites: ((_ favorites: Set<String>) -> ())?
+    var updateTulBar: (() -> ())?
     
     func setData() {
         Task {
@@ -27,6 +37,7 @@ class MainViewModel: MainViewModelProtocol {
             setOffersTexts?(offersTexts)
             let vanaciesPreview = setupVacancyCellPreview(mockData.vacancies)
             setVacanciesPreviews?(vanaciesPreview)
+            getFavorites()
             await refreshCollectionView?()
         }
     }
@@ -35,6 +46,26 @@ class MainViewModel: MainViewModelProtocol {
         return offersData.reduce(into: [String]()) {
             $0.append($1.title)
         }
+    }
+    
+    func reloadWithNewLikes() {
+        Task {
+            getFavorites()
+            await refreshCollectionView?()
+        }
+    }
+    
+    func addFavorite(_ id: String) {
+        storageService?.addToFavorite(id)
+    }
+    
+    func removeFromFavorite(_ id: String) {
+        storageService?.removeFromFavorite(id)
+    }
+    
+    func getFavorites() {
+        guard let favorites = storageService?.retriveFavorite() else { return }
+        setFavorites?(favorites)
     }
     
     func setupVacancyCellPreview(
@@ -52,6 +83,7 @@ class MainViewModel: MainViewModelProtocol {
             }
             
             $0.append(VacancyPreviewData(
+                id: $1.element.id,
                 lookingText: makeLookingNumberText($1.element.lookingNumber),
                 title: $1.element.title,
                 adress: $1.element.address.town,
@@ -59,7 +91,7 @@ class MainViewModel: MainViewModelProtocol {
                 salary: $1.element.salary.short == nil ? nil : $1.element.salary.short,
                 experience: $1.element.experience.previewText,
                 publishedDate: makePublishedData($1.element.publishedDate),
-                isFavorite: needToPopulateStorage ? $1.element.isFavorite : favorites!.contains($1.element.id)
+                isFavorite: false
             ))
         }
         

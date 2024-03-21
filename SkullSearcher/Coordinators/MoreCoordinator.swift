@@ -13,6 +13,7 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
         let moreVC = MoreViewController()
         let viewModel = MoreViewModel()
         viewModel.vacancies = vacancies
+        viewModel.storageService = FavoriteStorage.shared
         moreVC.viewModel = viewModel
         viewModel.coordinator = self
         view = moreVC

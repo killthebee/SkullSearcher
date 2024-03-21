@@ -8,6 +8,7 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
     
     // MARK: Data -
     var vacanciesPreviews: [VacancyPreviewData] = []
+    var favorites = Set<String>()
     
     // MARK: Logic -
     private func bindUI() {
@@ -17,6 +18,10 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
         
         viewModel?.setVacanciesPreviews = { [weak self] (previews) in
             self?.vacanciesPreviews = previews
+        }
+        
+        viewModel?.setFavorites = { [weak self] (favorites) in
+            self?.favorites = favorites
         }
     }
     

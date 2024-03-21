@@ -1,4 +1,5 @@
 struct VacancyPreviewData {
+    let id: String
     let lookingText: String?
     let title: String
     let adress: String?
