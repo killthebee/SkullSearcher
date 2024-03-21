@@ -23,6 +23,10 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
         viewModel?.setFavorites = { [weak self] (favorites) in
             self?.favorites = favorites
         }
+        
+        viewModel?.updateTulBar = { [weak self] () in
+            self?.dashboardTabBar.addItemBadge(atIndex: 1)
+        }
     }
     
     func presentBS() {
@@ -78,7 +82,7 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
         updateUI()
     }
     
-    private let dashboardTabBar = DasboardTabBar.shared
+    private let dashboardTabBar = DasboardTabBar()
     
     private func updateUI() {
         viewModel?.setVacancies()
@@ -124,6 +128,11 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        dashboardTabBar.addItemBadge(atIndex: 1)
     }
 }
 

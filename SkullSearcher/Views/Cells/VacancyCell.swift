@@ -68,6 +68,7 @@ class VacancyCell: UICollectionViewCell {
         infoStack.addArrangedSubview(publishDateLable)
         guard let favorites = favorites else { return }
         vacId = previewData.id
+        liked = false
         if favorites.contains(vacId) {
             likeIconView.image = UIImage(named: "heartIcon3")
             liked = true

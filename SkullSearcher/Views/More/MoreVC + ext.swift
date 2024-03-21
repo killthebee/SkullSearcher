@@ -51,6 +51,7 @@ extension MoreViewController:
                     favorites
                 )
                 cell.bsDelegate = self
+                cell.viewModel = viewModel as? favoritesManipulatorProtocol
             }
             
             return cell

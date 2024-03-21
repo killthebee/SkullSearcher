@@ -50,7 +50,9 @@ class MainViewController: UIViewController, BSPresenterDelegate {
         viewModel?.presentMoreScreen()
     }
     
-//    func refresh
+    func refreshWithNewFavorites() {
+        viewModel?.reloadWithNewLikes()
+    }
     
     // MARK: UI elements -
     func presentBS() {

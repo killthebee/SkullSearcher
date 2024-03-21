@@ -57,10 +57,14 @@ class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
     
     func addFavorite(_ id: String) {
         storageService?.addToFavorite(id)
+        updateTulBar?()
+//        reloadWithNewLikes()
     }
     
     func removeFromFavorite(_ id: String) {
         storageService?.removeFromFavorite(id)
+        updateTulBar?()
+//        reloadWithNewLikes()
     }
     
     func getFavorites() {
