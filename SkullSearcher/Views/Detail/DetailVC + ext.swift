@@ -33,6 +33,7 @@ extension DetailViewController:
                 fatalError("Unable deque cell...")
             }
             cell.viewModel = viewModel
+            cell.configure(vacancyFullData)
             
             return cell
         } else if indexPath.section == 1 {

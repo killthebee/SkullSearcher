@@ -6,6 +6,13 @@ class TopHeaderCell: UICollectionViewCell {
     
     weak var viewModel: detailViewModelProtocol?
     
+    func configure(_ vacancy: VacancyFullData?) {
+        guard let vacancy = vacancy else { return }
+        if vacancy.isFavorite {
+            heartIconView.image = UIImage(named: "heartIcon3")
+        }
+    }
+    
     @objc
     private func dismiss() {
         viewModel?.dismiss()
@@ -32,7 +39,7 @@ class TopHeaderCell: UICollectionViewCell {
     )
     
     private let heartIconView = UIImageView(
-        image: UIImage(named: "heartIcon3")
+        image: UIImage(named: "heartIcon2")
     )
     
     override init(frame: CGRect) {

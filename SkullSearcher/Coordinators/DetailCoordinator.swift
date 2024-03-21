@@ -16,6 +16,7 @@ class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
         apiService = MockApiService.shared
         viewModel.vacancyIndex = vacancyIndex
         viewModel.apiService = apiService
+        viewModel.storageService = FavoriteStorage.shared
         detailVC.viewModel = viewModel
         viewModel.coordinator = self
         view = detailVC

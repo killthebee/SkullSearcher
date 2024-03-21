@@ -7,6 +7,7 @@ protocol detailViewModelProtocol: AnyObject {
 class detailViewModel: detailViewModelProtocol {
     
     var apiService: ApiServiceProtocol?
+    var storageService: FavoriteStorageProtocol?
     
     var coordinator: DetailCoordinatorProtocol?
     
@@ -18,10 +19,11 @@ class detailViewModel: detailViewModelProtocol {
     func makeVacancyData() {
         guard
             let vacancyIndex = vacancyIndex,
-            let vacancyData = apiService?.vananciesData[vacancyIndex]
-        else
-            { return }
-        
+            let vacancyData = apiService?.vananciesData[vacancyIndex],
+            let favorites = storageService?.retriveFavorite()
+        else {
+            return 
+        }
         let vacancyFullData = VacancyFullData(
             title: vacancyData.title,
             adress: makeFullAddress(vacancyData.address),
@@ -31,7 +33,7 @@ class detailViewModel: detailViewModelProtocol {
             schedules: "\(vacancyData.schedules[0]), \(vacancyData.schedules[1])",
             appliedText: makeAppliedText(vacancyData.appliedNumber),
             lookingText: makeLookingNumberText(vacancyData.lookingNumber),
-            isFavorite: vacancyData.isFavorite,
+            isFavorite: favorites.contains(vacancyData.id),
             aboutText: vacancyData.description ?? "Нет описания компании",
             resonsobilityText: vacancyData.responsibilities,
             questions: vacancyData.questions

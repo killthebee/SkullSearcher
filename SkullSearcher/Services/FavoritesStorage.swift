@@ -3,6 +3,7 @@ import Foundation
 protocol FavoriteStorageProtocol: AnyObject {
     func setFavorite(_ favorites: Set<String>)
     func retriveFavorite() -> Set<String>?
+    func removeFavorites()
 }
 
 class FavoriteStorage: FavoriteStorageProtocol {
@@ -24,5 +25,9 @@ class FavoriteStorage: FavoriteStorageProtocol {
         }
         
         return Set(favoritesArray)
+    }
+    
+    func removeFavorites() {
+        UserDefaults.standard.removeObject(forKey: "favorites")
     }
 }

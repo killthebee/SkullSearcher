@@ -23,6 +23,7 @@ class CodeField: UITextField {
         textAlignment = .center
         keyboardType = UIKeyboardType.numberPad
         tintColor = .white
+        textColor = .white
     }
 
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {

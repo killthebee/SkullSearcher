@@ -37,11 +37,17 @@ class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    func setupVacancyCellPreview(_ vacanciesData: [Vacancy]) -> [VacancyPreviewData] {
-        let needToPopulateStorage = storageService?.retriveFavorite() == nil
+    func setupVacancyCellPreview(
+        _ vacanciesData: [Vacancy]
+    ) -> [VacancyPreviewData] {
+        let favorites = storageService?.retriveFavorite()
+        let needToPopulateStorage = favorites == nil
         var ids = Set<String>()
-        let previewData = vacanciesData.enumerated().reduce(into: [VacancyPreviewData]()) {
-            if needToPopulateStorage {
+        
+        let previewData = vacanciesData.enumerated().reduce(
+            into: [VacancyPreviewData]())
+        {
+            if needToPopulateStorage && $1.element.isFavorite {
                 ids.insert($1.element.id)
             }
             
@@ -53,9 +59,10 @@ class MainViewModel: MainViewModelProtocol {
                 salary: $1.element.salary.short == nil ? nil : $1.element.salary.short,
                 experience: $1.element.experience.previewText,
                 publishedDate: makePublishedData($1.element.publishedDate),
-                isFavorite: $1.element.isFavorite
+                isFavorite: needToPopulateStorage ? $1.element.isFavorite : favorites!.contains($1.element.id)
             ))
         }
+        
         vacanciesPreviews = previewData
         if needToPopulateStorage {
             storageService?.setFavorite(ids)

@@ -49,6 +49,10 @@ class VacancyCell: UICollectionViewCell {
         
         publishDateLable.text = previewData.publishedDate
         infoStack.addArrangedSubview(publishDateLable)
+        
+        if previewData.isFavorite {
+            likeIconView.image = UIImage(named: "heartIcon3")
+        }
     }
     
     private let lookingLable: UILabel = {
