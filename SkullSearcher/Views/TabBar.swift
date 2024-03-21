@@ -4,6 +4,7 @@ class DasboardTabBar: UITabBar {
     
     static let shared = DasboardTabBar()
     private let customDelegate = DashboardTabBarDelegate()
+    private let storageService = FavoriteStorage.shared
     
     private let tabBarItemTag: Int = 10090
     
@@ -53,6 +54,11 @@ class DasboardTabBar: UITabBar {
     }
     
     public func addItemBadge(atIndex index: Int) {
+        guard
+            let favoritesCount = storageService.retriveFavorite()?.count
+        else {
+            return
+        }
         guard let itemCount = self.items?.count, itemCount > 0 else {
             return
         }
@@ -67,7 +73,8 @@ class DasboardTabBar: UITabBar {
         badgeView.backgroundColor = UIColor.red
         
         let FavoriteVacanciesCount = UILabel()
-        FavoriteVacanciesCount.text = "1"
+        
+        FavoriteVacanciesCount.text = String(favoritesCount)
         FavoriteVacanciesCount.textColor = .white
         FavoriteVacanciesCount.textAlignment = .center
         FavoriteVacanciesCount.font = numberFont

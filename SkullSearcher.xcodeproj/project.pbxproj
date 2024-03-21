@@ -38,6 +38,7 @@
 		84051A932BAB4EE2009685BD /* BSTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A922BAB4EE2009685BD /* BSTransitionDelegate.swift */; };
 		84051A952BAB4F05009685BD /* BSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A942BAB4F05009685BD /* BSConfiguration.swift */; };
 		84051A972BAB59AF009685BD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84051A962BAB59AF009685BD /* README.md */; };
+		84051A992BAC36B8009685BD /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A982BAC36B8009685BD /* FavoritesStorage.swift */; };
 		849097C92BA308FE0015E68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097C82BA308FE0015E68C /* AppDelegate.swift */; };
 		849097CD2BA308FE0015E68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849097CC2BA308FE0015E68C /* LoginViewController.swift */; };
 		849097D32BA308FE0015E68C /* SkullSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849097D12BA308FE0015E68C /* SkullSearcher.xcdatamodeld */; };
@@ -126,6 +127,7 @@
 		84051A922BAB4EE2009685BD /* BSTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTransitionDelegate.swift; sourceTree = "<group>"; };
 		84051A942BAB4F05009685BD /* BSConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSConfiguration.swift; sourceTree = "<group>"; };
 		84051A962BAB59AF009685BD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84051A982BAC36B8009685BD /* FavoritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorage.swift; sourceTree = "<group>"; };
 		849097C52BA308FE0015E68C /* SkullSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkullSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849097C82BA308FE0015E68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849097CC2BA308FE0015E68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			children = (
 				8490983A2BA74C190015E68C /* Networking */,
 				849098262BA494780015E68C /* verifier.swift */,
+				84051A982BAC36B8009685BD /* FavoritesStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
 				84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */,
+				84051A992BAC36B8009685BD /* FavoritesStorage.swift in Sources */,
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,

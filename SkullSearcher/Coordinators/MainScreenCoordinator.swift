@@ -14,6 +14,8 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
         let viewModel = MainViewModel()
         apiService = MockApiService.shared
         viewModel.apiService = apiService
+        viewModel.storageService = FavoriteStorage.shared
+        viewModel.coordinator = self
         mainVC.viewModel = viewModel
         view = mainVC
         

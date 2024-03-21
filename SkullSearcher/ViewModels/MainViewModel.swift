@@ -10,6 +10,7 @@ protocol MainViewModelProtocol: AnyObject {
 class MainViewModel: MainViewModelProtocol {
     
     var apiService: ApiServiceProtocol?
+    var storageService: FavoriteStorageProtocol?
     
     var vacanciesPreviews: [VacancyPreviewData]?
     
@@ -37,8 +38,13 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func setupVacancyCellPreview(_ vacanciesData: [Vacancy]) -> [VacancyPreviewData] {
-        
+        let needToPopulateStorage = storageService?.retriveFavorite() == nil
+        var ids = Set<String>()
         let previewData = vacanciesData.enumerated().reduce(into: [VacancyPreviewData]()) {
+            if needToPopulateStorage {
+                ids.insert($1.element.id)
+            }
+            
             $0.append(VacancyPreviewData(
                 lookingText: makeLookingNumberText($1.element.lookingNumber),
                 title: $1.element.title,
@@ -51,6 +57,9 @@ class MainViewModel: MainViewModelProtocol {
             ))
         }
         vacanciesPreviews = previewData
+        if needToPopulateStorage {
+            storageService?.setFavorite(ids)
+        }
         
         return previewData
     }
