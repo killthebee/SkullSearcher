@@ -2,9 +2,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // MARK: Dependencies -
     var viewModel: LoginViewModelProtocol?
     var warningFired = false
     
+    // MARK: Logic -
     private func bindUI() {
         viewModel?.showEmailWarning = { [weak self] in
             self?.emailFeld.layer.borderWidth = 2
@@ -43,6 +45,7 @@ class LoginViewController: UIViewController {
         continueButton.setTitleColor(grey4, for: .normal)
     }
     
+    // MARK: UI elements -
     private let enterLKLable: UILabel = {
         let lable = UILabel()
         lable.font = title2Font
@@ -169,6 +172,7 @@ class LoginViewController: UIViewController {
     
     private let dashboardTabBar = DasboardTabBar.shared
     
+    // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -204,6 +208,7 @@ class LoginViewController: UIViewController {
         ].forEach{ employeeSearchContainerView.addSubview($0) }
     }
     
+    // MARK: Layout -
     private let centerContainerView = UIView()
     
     private func configureLayout() {

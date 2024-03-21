@@ -1,8 +1,8 @@
 import Foundation
 
-class Verifier {
+class verifier {
     
-    static let shared = Verifier()
+    static let shared = verifier()
     
     func isValidEmail(_ email: String?) -> Bool {
         guard let email = email else { return false }

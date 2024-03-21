@@ -1,6 +1,6 @@
 import UIKit
 
-extension detailViewController:
+extension DetailViewController:
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout {

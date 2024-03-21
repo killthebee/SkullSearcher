@@ -14,10 +14,6 @@ class VacancyCell: UICollectionViewCell {
     }
     
     func configure(previewData: VacancyPreviewData) {
-//    arrangedSubviews: [
-//        lookingLable, titleLable, salaryLable, cityCompanyStack,
-//        expContainer, publishDateLable
-//    ]
         if let lookingText = previewData.lookingText {
             lookingLable.text = lookingText
             infoStack.addArrangedSubview(lookingLable)
@@ -59,14 +55,12 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = green
-//        lable.text = "Сейчас просматривает 1 человек"
         
         return lable
     }()
     
     private let titleLable: UILabel = {
         let lable = UILabel()
-//        lable.text = "UI/UX Designer"
         lable.font = title3Font
         lable.textColor = .white
         
@@ -77,7 +71,6 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = .white
-//        lable.text = "Минск"
         
         return lable
     }()
@@ -87,8 +80,6 @@ class VacancyCell: UICollectionViewCell {
         lable.font = text1Font
         lable.textColor = .white
         
-//        lable.attributedText = string
-        
         return lable
     }()
     
@@ -96,7 +87,6 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = title2Font
         lable.textColor = .white
-//        lable.text = "1500-2900 Br"
         
         return lable
     }()
@@ -109,7 +99,6 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = .white
-//        lable.text = "Опыт от 1 года до 3 лет"
         
         return lable
     }()

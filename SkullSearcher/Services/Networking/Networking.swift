@@ -32,12 +32,6 @@ struct Networking {
     ) async {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            // debug purposes
-//            if let responseString = String(data: data, encoding: .utf8) {
-//                print("responseString = \(responseString)")
-//            } else {
-//                print("unable to parse response as string")
-//            }
             guard
                 let response = response as? HTTPURLResponse
             else {

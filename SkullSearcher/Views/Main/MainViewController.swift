@@ -6,9 +6,11 @@ protocol BSPresenterDelegate: AnyObject {
 
 class MainViewController: UIViewController, BSPresenterDelegate {
     
+    // MARK: Dependencies -
     var viewModel: MainViewModelProtocol?
     private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
     
+    // MARK: Data -
     let offerIcons: [UIImage?] = [
         UIImage(named: "locationIcon2"), UIImage(named: "Star2Icon"),
         UIImage(named: "checkNoteIcon2"), UIImage(named: "locationIcon2")
@@ -17,6 +19,7 @@ class MainViewController: UIViewController, BSPresenterDelegate {
     var offerTexts: [String] = []
     var vacanciesPreviews: [VacancyPreviewData] = []
     
+    // MARK: Logic -
     private func bindUI() {
         viewModel?.refreshCollectionView = { [weak self] in
             self?.collectionView.reloadData()
@@ -38,8 +41,9 @@ class MainViewController: UIViewController, BSPresenterDelegate {
         viewModel?.presentMoreScreen()
     }
     
+    // MARK: UI elements -
     func presentBS() {
-        let vc = ExampleViewController()
+        let vc = ApplyBSViewController()
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = delegate
         present(vc, animated: true)
@@ -94,8 +98,9 @@ class MainViewController: UIViewController, BSPresenterDelegate {
         return button
     }()
     
-    private let dashboardTabBar = DasboardTabBar.shared
+    private let dashboardTabBar = DasboardTabBar()
     
+    // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -125,9 +130,8 @@ class MainViewController: UIViewController, BSPresenterDelegate {
         ].forEach{ view.addSubview($0) }
     }
     
+    // MARK: Layout -
     private func configureLayout() {
-        
-        
         let constraints: [NSLayoutConstraint] = [
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(

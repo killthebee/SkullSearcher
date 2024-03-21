@@ -11,7 +11,7 @@ class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
     var vacancyIndex: Int?
     
     func start() -> Presentable? {
-        let detailVC = detailViewController()
+        let detailVC = DetailViewController()
         let viewModel = detailViewModel()
         apiService = MockApiService.shared
         viewModel.vacancyIndex = vacancyIndex

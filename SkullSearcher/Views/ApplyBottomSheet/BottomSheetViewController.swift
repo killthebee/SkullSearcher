@@ -1,6 +1,6 @@
 import UIKit
 
-final class ExampleViewController: UIViewController {
+final class ApplyBSViewController: UIViewController {
     
     private let avatarIconCoverImageView = UIImageView(
         image: UIImage(named: "avatarImage")

@@ -10,10 +10,9 @@
 		84051A502BA835FB009685BD /* TopSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A4F2BA835FB009685BD /* TopSearchCell.swift */; };
 		84051A522BA84267009685BD /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A512BA84267009685BD /* OfferCell.swift */; };
 		84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A532BA84B3F009685BD /* VacanciesSupCell.swift */; };
-		84051A562BA84C0D009685BD /* VacancyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A552BA84C0D009685BD /* VacancyCell2.swift */; };
+		84051A562BA84C0D009685BD /* VacancyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A552BA84C0D009685BD /* VacancyCell.swift */; };
 		84051A582BA86A46009685BD /* MainVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A572BA86A46009685BD /* MainVC + ext.swift */; };
 		84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A592BA86B5B009685BD /* MainVCLayouts.swift */; };
-		84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5B2BA8B10D009685BD /* VacanciesCell.swift */; };
 		84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A5E2BA9A522009685BD /* VacancyDataModel.swift */; };
 		84051A612BA9AB1F009685BD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A602BA9AB1F009685BD /* Helpers.swift */; };
 		84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A652BA9D923009685BD /* MoreCoordinator.swift */; };
@@ -61,7 +60,7 @@
 		8490981D2BA453AC0015E68C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490981C2BA453AC0015E68C /* TabBar.swift */; };
 		849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098202BA488BA0015E68C /* LoginVC + ext.swift */; };
 		849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098232BA4940C0015E68C /* LoginViewModel.swift */; };
-		849098272BA494780015E68C /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098262BA494780015E68C /* Verifier.swift */; };
+		849098272BA494780015E68C /* verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098262BA494780015E68C /* verifier.swift */; };
 		849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */; };
 		8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */; };
 		8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490982C2BA4B8F90015E68C /* CodeField.swift */; };
@@ -99,10 +98,9 @@
 		84051A4F2BA835FB009685BD /* TopSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchCell.swift; sourceTree = "<group>"; };
 		84051A512BA84267009685BD /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		84051A532BA84B3F009685BD /* VacanciesSupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesSupCell.swift; sourceTree = "<group>"; };
-		84051A552BA84C0D009685BD /* VacancyCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCell2.swift; sourceTree = "<group>"; };
+		84051A552BA84C0D009685BD /* VacancyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCell.swift; sourceTree = "<group>"; };
 		84051A572BA86A46009685BD /* MainVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC + ext.swift"; sourceTree = "<group>"; };
 		84051A592BA86B5B009685BD /* MainVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCLayouts.swift; sourceTree = "<group>"; };
-		84051A5B2BA8B10D009685BD /* VacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesCell.swift; sourceTree = "<group>"; };
 		84051A5E2BA9A522009685BD /* VacancyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDataModel.swift; sourceTree = "<group>"; };
 		84051A602BA9AB1F009685BD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		84051A652BA9D923009685BD /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
@@ -154,7 +152,7 @@
 		8490981C2BA453AC0015E68C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		849098202BA488BA0015E68C /* LoginVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC + ext.swift"; sourceTree = "<group>"; };
 		849098232BA4940C0015E68C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		849098262BA494780015E68C /* Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifier.swift; sourceTree = "<group>"; };
+		849098262BA494780015E68C /* verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifier.swift; sourceTree = "<group>"; };
 		849098282BA4B0AC0015E68C /* ConfirmCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCoordinator.swift; sourceTree = "<group>"; };
 		8490982A2BA4B0F00015E68C /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		8490982C2BA4B8F90015E68C /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
@@ -202,8 +200,7 @@
 				84051A4F2BA835FB009685BD /* TopSearchCell.swift */,
 				84051A512BA84267009685BD /* OfferCell.swift */,
 				84051A532BA84B3F009685BD /* VacanciesSupCell.swift */,
-				84051A552BA84C0D009685BD /* VacancyCell2.swift */,
-				84051A5B2BA8B10D009685BD /* VacanciesCell.swift */,
+				84051A552BA84C0D009685BD /* VacancyCell.swift */,
 				84051A702BA9EB3D009685BD /* MoreHeaderSupCell.swift */,
 			);
 			path = Cells;
@@ -434,7 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				8490983A2BA74C190015E68C /* Networking */,
-				849098262BA494780015E68C /* Verifier.swift */,
+				849098262BA494780015E68C /* verifier.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -596,7 +593,7 @@
 				84051A502BA835FB009685BD /* TopSearchCell.swift in Sources */,
 				849098132BA3357F0015E68C /* Fonts.swift in Sources */,
 				849098192BA344310015E68C /* Strings.swift in Sources */,
-				84051A562BA84C0D009685BD /* VacancyCell2.swift in Sources */,
+				84051A562BA84C0D009685BD /* VacancyCell.swift in Sources */,
 				84051A892BAB0597009685BD /* DetailVCLayouts.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
@@ -619,7 +616,7 @@
 				84051A662BA9D923009685BD /* MoreCoordinator.swift in Sources */,
 				849098042BA312B00015E68C /* AppCoordinator.swift in Sources */,
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,
-				849098272BA494780015E68C /* Verifier.swift in Sources */,
+				849098272BA494780015E68C /* verifier.swift in Sources */,
 				8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
 				84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */,
@@ -630,7 +627,6 @@
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
 				84051A542BA84B3F009685BD /* VacanciesSupCell.swift in Sources */,
 				84051A802BAADBA2009685BD /* CompanyAndAddressCell.swift in Sources */,
-				84051A5C2BA8B10D009685BD /* VacanciesCell.swift in Sources */,
 				84051A6F2BA9E219009685BD /* MoreVCLayouts.swift in Sources */,
 				84051A782BAAC65B009685BD /* DetailViewModel.swift in Sources */,
 				84051A8F2BAB4E6A009685BD /* BSPresentationController.swift in Sources */,

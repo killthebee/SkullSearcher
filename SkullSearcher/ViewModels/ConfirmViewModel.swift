@@ -72,7 +72,6 @@ class ConfirmViewModel: ConfirmViewModelProtocol {
     }
     
     func presentMainScreen() {
-        print(coordinator == nil)
         coordinator?.presentMainScreen()
     }
 }

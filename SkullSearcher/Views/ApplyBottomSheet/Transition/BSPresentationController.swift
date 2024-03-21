@@ -17,8 +17,10 @@ final class BottomSheetPresentationController: UIPresentationController {
         let view = UIView()
         view.backgroundColor = configuration.overlayColor
         if configuration.tapToDismissEnabled {
-            let tapGR = UITapGestureRecognizer(target: self,
-                                               action: #selector(didTapOverlayView))
+            let tapGR = UITapGestureRecognizer(
+                target: self,
+                action: #selector(didTapOverlayView)
+            )
             view.addGestureRecognizer(tapGR)
         }
         return view
@@ -30,8 +32,10 @@ final class BottomSheetPresentationController: UIPresentationController {
         return view
     }()
     
-    private lazy var panGesture = UIPanGestureRecognizer(target: self,
-                                                         action: #selector(pannedPresentedView))
+    private lazy var panGesture = UIPanGestureRecognizer(
+        target: self,
+        action: #selector(pannedPresentedView)
+    )
     
     private var cornerRadius: CGFloat {
         configuration.cornerRadius
@@ -43,18 +47,17 @@ final class BottomSheetPresentationController: UIPresentationController {
     
     private let configuration: BottomSheetConfiguration
     
-    // MARK: Init
-    
     init(
         presentedViewController: UIViewController,
         presenting: UIViewController?,
         configuration: BottomSheetConfiguration
     ) {
         self.configuration = configuration
-        super.init(presentedViewController: presentedViewController, presenting: presenting)
+        super.init(
+            presentedViewController: presentedViewController,
+            presenting: presenting
+        )
     }
-  
-    // MARK: UIPresentationController
     
     override var frameOfPresentedViewInContainerView: CGRect {
         guard
@@ -63,11 +66,16 @@ final class BottomSheetPresentationController: UIPresentationController {
         else {
             return super.frameOfPresentedViewInContainerView
         }
-        /// The maximum height allowed for the sheet. We allow the sheet to reach the top safe area inset.
-        let maximumHeight = containerView.frame.height - containerView.safeAreaInsets.top - containerView.safeAreaInsets.bottom
+        let maximumHeight = (
+            containerView.frame.height
+             - containerView.safeAreaInsets.top
+             - containerView.safeAreaInsets.bottom
+        )
         
-        let fittingSize = CGSize(width: containerView.bounds.width,
-                                 height: UIView.layoutFittingCompressedSize.height)
+        let fittingSize = CGSize(
+            width: containerView.bounds.width,
+            height: UIView.layoutFittingCompressedSize.height
+        )
         
         let presentedViewHeight = presentedView.systemLayoutSizeFitting(
             fittingSize,
@@ -77,8 +85,14 @@ final class BottomSheetPresentationController: UIPresentationController {
         let targetHeight = presentedViewHeight == .zero ? maximumHeight : presentedViewHeight
         let adjustedHeight = min(targetHeight, maximumHeight) + containerView.safeAreaInsets.bottom
         
-        let targetSize = CGSize(width: containerView.frame.width, height: adjustedHeight)
-        let targetOrigin = CGPoint(x: .zero, y: containerView.frame.maxY - targetSize.height)
+        let targetSize = CGSize(
+            width: containerView.frame.width,
+            height: adjustedHeight
+        )
+        let targetOrigin = CGPoint(
+            x: .zero,
+            y: containerView.frame.maxY - targetSize.height
+        )
         
         return CGRect(origin: targetOrigin, size: targetSize)
     }
@@ -91,7 +105,8 @@ final class BottomSheetPresentationController: UIPresentationController {
         
         overlayView.alpha = 0
         
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
+        presentedViewController.transitionCoordinator?.animate(
+            alongsideTransition: { [weak self] _ in
             guard let self = self else { return }
             self.presentedView?.layer.cornerRadius = self.cornerRadius
             self.overlayView.alpha = 1
@@ -108,7 +123,8 @@ final class BottomSheetPresentationController: UIPresentationController {
     override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
         
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
+        presentedViewController.transitionCoordinator?.animate(
+            alongsideTransition: { [weak self] _ in
             guard let self = self else { return }
             self.presentedView?.layer.cornerRadius = .zero
             self.overlayView.alpha = 0
@@ -126,7 +142,10 @@ final class BottomSheetPresentationController: UIPresentationController {
         pullBarView.center.x = presentedView.center.x
         pullBarView.layer.cornerRadius = pullBarView.frame.height / 2
         presentedView.layer.cornerCurve = .continuous
-        presentedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        presentedView.layer.maskedCorners = [
+            .layerMinXMinYCorner,
+            .layerMaxXMinYCorner
+        ]
         presentedViewController.additionalSafeAreaInsets.top = pullBarView.frame.maxY
         
         presentedView.translatesAutoresizingMaskIntoConstraints = false

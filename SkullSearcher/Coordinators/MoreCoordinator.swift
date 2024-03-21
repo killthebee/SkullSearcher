@@ -10,7 +10,7 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
     var vacancies: [VacancyPreviewData]?
     
     func start() -> Presentable? {
-        let moreVC = moreViewController()
+        let moreVC = MoreViewController()
         let viewModel = MoreViewModel()
         viewModel.vacancies = vacancies
         moreVC.viewModel = viewModel
@@ -28,7 +28,7 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
         let detailCoordinator = DetailCoordinator()
         detailCoordinator.vacancyIndex = index
         guard
-            let detailVC = detailCoordinator.start() as? detailViewController
+            let detailVC = detailCoordinator.start() as? DetailViewController
         else
             { return }
         detailVC.modalPresentationStyle = .fullScreen

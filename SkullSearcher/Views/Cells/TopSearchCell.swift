@@ -55,6 +55,7 @@ class TopSearchCell: UICollectionViewCell {
         lable.font = text1Font
         lable.text = searchString
         lable.textColor = grey4
+        //NOTE: outline is in figma, but not in description i dunno
 //        let strokeTextAttributes: [NSAttributedString.Key : Any] = [
 //            .strokeColor : UIColor.black,
 //            .foregroundColor : grey4!,
@@ -64,7 +65,6 @@ class TopSearchCell: UICollectionViewCell {
 //            string: searchString,
 //            attributes: strokeTextAttributes
 //        )
-        // outline is in figma, but not in description i dunno
         
         return lable
     }()

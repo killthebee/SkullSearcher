@@ -22,7 +22,6 @@ class OfferCell: UICollectionViewCell {
         return view
     }()
     
-    // TODO: get data from above
     private let icon = UIImageView(image: UIImage(named: "locationIcon"))
     
     private let iconCoverView: UIView = {
@@ -75,8 +74,12 @@ class OfferCell: UICollectionViewCell {
         let constraints: [NSLayoutConstraint] = [
             cellBackgroundView.topAnchor.constraint(equalTo: topAnchor),
             cellBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            cellBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            cellBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cellBackgroundView.leadingAnchor.constraint(
+                equalTo: leadingAnchor
+            ),
+            cellBackgroundView.trailingAnchor.constraint(
+                equalTo: trailingAnchor
+            ),
             
             iconCoverView.topAnchor.constraint(
                 equalTo: cellBackgroundView.topAnchor,
@@ -95,10 +98,6 @@ class OfferCell: UICollectionViewCell {
             icon.centerYAnchor.constraint(
                 equalTo: iconCoverView.centerYAnchor
             ),
-//            icon.centerYAnchor.constraint(
-//                equalTo: iconCoverView.centerYAnchor,
-//                constant: 3
-//            ),
             icon.widthAnchor.constraint(equalToConstant: 24),
             icon.heightAnchor.constraint(equalToConstant: 24),
             

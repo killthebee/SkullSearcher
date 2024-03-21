@@ -21,7 +21,8 @@ public struct BottomSheetConfiguration {
                 overlayColor: UIColor,
                 animationDuration: TimeInterval,
                 dampingRatio: Double,
-                dismissThreshold: CGFloat) {
+                dismissThreshold: CGFloat
+    ) {
         self.showPullBar = showPullBar
         self.tapToDismissEnabled = tapToDismissEnabled
         self.panToDismissEnaled = panToDismissEnaled
@@ -31,8 +32,6 @@ public struct BottomSheetConfiguration {
         self.dampingRatio = dampingRatio
         self.dismissThreshold = dismissThreshold
     }
-    
-    // MARK: Configurations
     
     public static let `default` = BottomSheetConfiguration(
         showPullBar: true,

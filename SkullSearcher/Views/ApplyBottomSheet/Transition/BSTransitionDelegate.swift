@@ -6,15 +6,11 @@ public final class BottomSheetTransitioningDelegate: NSObject {
     
     private let configuration: BottomSheetConfiguration
     
-    // MARK: Init
-    
     public init(configuration: BottomSheetConfiguration) {
         self.configuration = configuration
         self.transition = BottomSheetTransition(configuration: configuration)
     }
 }
-
-// MARK: - UIViewControllerTransitioningDelegate
     
 extension BottomSheetTransitioningDelegate: UIViewControllerTransitioningDelegate {
     
@@ -28,12 +24,16 @@ extension BottomSheetTransitioningDelegate: UIViewControllerTransitioningDelegat
         return transition
     }
     
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(
+        forDismissed dismissed: UIViewController
+    ) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
         return transition
     }
     
-    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func interactionControllerForDismissal(
+        using animator: UIViewControllerAnimatedTransitioning
+    ) -> UIViewControllerInteractiveTransitioning? {
         transition.isPresenting = false
         return transition
     }

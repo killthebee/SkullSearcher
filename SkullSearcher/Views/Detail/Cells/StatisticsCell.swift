@@ -5,7 +5,6 @@ class StatisticsCell: UICollectionViewCell {
     static let cellIdentifier = "StatisticsCellIdentifier"
     
     func configure(_ text: String?, _ image: UIImage?) {
-//        guard let vacancy = vacancy else { return }
         appliedLable.text = text
         personIconView.image = image
     }

@@ -1,6 +1,6 @@
 import UIKit
 
-extension moreViewController:
+extension MoreViewController:
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout

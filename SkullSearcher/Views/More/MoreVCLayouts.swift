@@ -27,18 +27,15 @@ class MoreVCLayouts {
     }
     
     func vacanciesLayouts(_ previewsCount: Int) -> NSCollectionLayoutSection {
-//        let sectionHeight: CGFloat = CGFloat(previewsCount) * 230
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .fractionalHeight(1)
-//            heightDimension: .absolute(249)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .absolute(249)
-//            heightDimension: .absolute(sectionHeight)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,

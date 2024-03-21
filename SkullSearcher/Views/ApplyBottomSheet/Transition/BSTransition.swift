@@ -36,7 +36,9 @@ final class BottomSheetTransition: UIPercentDrivenInteractiveTransition {
 
 extension BottomSheetTransition: UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(using _: UIViewControllerContextTransitioning?) -> TimeInterval {
+    func transitionDuration(
+        using _: UIViewControllerContextTransitioning?
+    ) -> TimeInterval {
         animationDuration
     }
     
@@ -59,7 +61,9 @@ extension BottomSheetTransition: UIViewControllerAnimatedTransitioning {
     private func presentationAnimator(
         using transitionContext: UIViewControllerContextTransitioning
     ) -> UIViewImplicitlyAnimating {
-        presentationAnimator ?? createPresentationAnimator(using: transitionContext)
+        presentationAnimator ?? createPresentationAnimator(
+            using: transitionContext
+        )
     }
     
     private func createPresentationAnimator(
@@ -91,7 +95,9 @@ extension BottomSheetTransition: UIViewControllerAnimatedTransitioning {
                 transitionContext.completeTransition(false)
                 return
             }
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            transitionContext.completeTransition(
+                !transitionContext.transitionWasCancelled
+            )
         }
         return animator
     }
@@ -125,7 +131,9 @@ extension BottomSheetTransition: UIViewControllerAnimatedTransitioning {
                 return
             }
             fromView.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            transitionContext.completeTransition(
+                !transitionContext.transitionWasCancelled
+            )
         }
         return animator
     }

@@ -2,10 +2,10 @@ import UIKit
 
 class ConfirmViewController: UIViewController {
     
+    // MARK: Dependencies -
     var viewModel: ConfirmViewModelProtocol?
     
-    var codeFields = Array<UITextField>()
-    
+    // MARK: Logic -
     private func bindUI() {
         viewModel?.setSentHeaderText = { [weak self] (header) in
             self?.sentHeaderLable.text = header
@@ -44,6 +44,9 @@ class ConfirmViewController: UIViewController {
         viewModel?.presentMainScreen()
     }
     
+    // MARK: UI elements -
+    var codeFields = Array<UITextField>()
+    
     private let sentHeaderLable: UILabel = {
         let lable = UILabel()
         lable.font = title2Font
@@ -80,6 +83,7 @@ class ConfirmViewController: UIViewController {
     
     private let dashboardTabBar = DasboardTabBar.shared
     
+    // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -146,6 +150,7 @@ class ConfirmViewController: UIViewController {
         ].forEach { $0.delegate = self }
     }
     
+    // MARK: Layouts -
     private let containerView = UIView()
     
     private func configureLayout() {

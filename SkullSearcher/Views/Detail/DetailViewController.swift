@@ -1,27 +1,25 @@
 import UIKit
 
-class detailViewController: UIViewController {
+class DetailViewController: UIViewController {
     
+    // MARK: Dependencies -
     var viewModel: detailViewModelProtocol?
     
+    // MARK: Data -
     let statisticsIcons: [UIImage?] = [
         UIImage(named: "profileIcon2"), UIImage(named: "eyeIcon"),
     ]
     
     var vacancyFullData: VacancyFullData?
     
+    // MARK: Logic -
     private func bindUI() {
-//        viewModel?.refreshCollectionView = { [weak self] in
-//            self?.collectionView.reloadData()
-//            let moreButtonString = "Еще \(self?.vacanciesPreviews.count ?? 0) вакансий"
-//            self?.moreButton.setTitle(moreButtonString, for: .normal)
-//        }
-        
         viewModel?.setVacancyFullData = { [weak self] (vacancyFullData) in
             self?.vacancyFullData = vacancyFullData
         }
     }
     
+    // MARK: UI elements -
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -67,6 +65,7 @@ class detailViewController: UIViewController {
     
     private let dashboardTabBar = DasboardTabBar.shared
     
+    // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -96,9 +95,8 @@ class detailViewController: UIViewController {
         ].forEach{ view.addSubview($0) }
     }
     
+    // MARK: Layout -
     private func configureLayout() {
-        
-        
         let constraints: [NSLayoutConstraint] = [
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(
@@ -134,22 +132,22 @@ class detailViewController: UIViewController {
     }
 }
 
-extension detailViewController {
+extension DetailViewController {
     
     func configureCompositionalLayout() {
         let layout = UICollectionViewCompositionalLayout {sectionIndex,enviroment in
             if sectionIndex == 0 {
-                return detailVCLayouts.shared.topHeaderLayouts()
+                return DetailVCLayouts.shared.topHeaderLayouts()
             } else if sectionIndex == 1 {
-                return detailVCLayouts.shared.mainInfoLayouts()
+                return DetailVCLayouts.shared.mainInfoLayouts()
             } else if sectionIndex == 2 {
-                return detailVCLayouts.shared.statisticsLayouts()
+                return DetailVCLayouts.shared.statisticsLayouts()
             } else if sectionIndex == 3 {
-                return detailVCLayouts.shared.comopanyAndAddressLayouts()
+                return DetailVCLayouts.shared.comopanyAndAddressLayouts()
             } else if sectionIndex == 4 {
-                return detailVCLayouts.shared.aboutLayouts()
+                return DetailVCLayouts.shared.aboutLayouts()
             } else {
-                return detailVCLayouts.shared.questionsLayouts()
+                return DetailVCLayouts.shared.questionsLayouts()
             }
         }
         

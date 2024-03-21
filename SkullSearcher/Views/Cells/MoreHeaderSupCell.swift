@@ -15,7 +15,6 @@ class MoreSupCell: UICollectionReusableView {
     
     let vacanciesNumLable: UILabel = {
         let lable = UILabel()
-        lable.text = "145 вакансий"
         lable.font = text1Font
         lable.textColor = .white
         

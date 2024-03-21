@@ -24,7 +24,7 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
         let moreCoordinator = MoreCoordinator()
         moreCoordinator.vacancies = vacancies
         guard
-            let moreVC = moreCoordinator.start() as? moreViewController
+            let moreVC = moreCoordinator.start() as? MoreViewController
         else
             { return }
         moreVC.modalPresentationStyle = .fullScreen
@@ -35,7 +35,7 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
         let detailCoordinator = DetailCoordinator()
         detailCoordinator.vacancyIndex = index
         guard
-            let detailVC = detailCoordinator.start() as? detailViewController
+            let detailVC = detailCoordinator.start() as? DetailViewController
         else
             { return }
         detailVC.modalPresentationStyle = .fullScreen

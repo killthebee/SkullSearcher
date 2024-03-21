@@ -1,8 +1,8 @@
 import UIKit
 
-class detailVCLayouts {
+class DetailVCLayouts {
     
-    static let shared = detailVCLayouts()
+    static let shared = DetailVCLayouts()
     
     func topHeaderLayouts() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(

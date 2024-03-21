@@ -27,7 +27,6 @@ class MainVCLayouts {
     }
     
     func offersLayouts() -> NSCollectionLayoutSection {
-        // it's hardcoded for 4 elements, i'll unhardcode it if i find time
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .absolute(152),
             heightDimension: .fractionalHeight(1)

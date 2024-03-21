@@ -15,7 +15,10 @@ class CompanyAndAddressCell: UICollectionViewCell {
         )
 
         let attachmentString = NSAttributedString(attachment: attachment)
-        let string = NSMutableAttributedString(string: vacancy.company, attributes: [:])
+        let string = NSMutableAttributedString(
+            string: vacancy.company,
+            attributes: [:]
+        )
         
         string.append(attachmentString)
         companyLable.attributedText = string

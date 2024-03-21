@@ -1,12 +1,15 @@
 import UIKit
 
-class moreViewController: UIViewController, BSPresenterDelegate {
+class MoreViewController: UIViewController, BSPresenterDelegate {
     
+    // MARK: Dependencies -
     var viewModel: MoreViewModelProtocol?
     private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
     
+    // MARK: Data -
     var vacanciesPreviews: [VacancyPreviewData] = []
     
+    // MARK: Logic -
     private func bindUI() {
         viewModel?.refreshCollectionView = { [weak self] in
             self?.collectionView.reloadData()
@@ -18,12 +21,13 @@ class moreViewController: UIViewController, BSPresenterDelegate {
     }
     
     func presentBS() {
-        let vc = ExampleViewController()
+        let vc = ApplyBSViewController()
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = delegate
         present(vc, animated: true)
     }
     
+    // MARK: UI elements -
     private lazy var collectionView : UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -53,6 +57,7 @@ class moreViewController: UIViewController, BSPresenterDelegate {
         return collectionView
     }()
     
+    // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -84,6 +89,7 @@ class moreViewController: UIViewController, BSPresenterDelegate {
         ].forEach{ view.addSubview($0) }
     }
     
+    // MARK: Logic -
     private func configureLayout() {
         
         let constraints: [NSLayoutConstraint] = [
@@ -116,7 +122,7 @@ class moreViewController: UIViewController, BSPresenterDelegate {
     }
 }
 
-extension moreViewController {
+extension MoreViewController {
     
     func configureCompositionalLayout() {
         let layout = UICollectionViewCompositionalLayout {sectionIndex,enviroment in
