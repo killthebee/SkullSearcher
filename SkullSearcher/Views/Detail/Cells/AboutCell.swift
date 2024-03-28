@@ -103,8 +103,9 @@ class AboutCell: UICollectionViewCell {
     }
     
     private let coverView = UIView()
-    
-    lazy var cellHeightAnchor = coverView.heightAnchor.constraint(equalToConstant: 200)
+    private lazy var cellHeightAnchor = coverView.heightAnchor.constraint(
+        equalToConstant: 200
+    )
     
     private func setUpConstrains() {
         let spacing: CGFloat = 8
@@ -155,40 +156,6 @@ class AboutCell: UICollectionViewCell {
             responsobilityLable.trailingAnchor.constraint(
                 equalTo: coverView.trailingAnchor
             ),
-//            aboutCompanyLable.topAnchor.constraint(
-//                equalTo: contentView.topAnchor
-//            ),
-//            aboutCompanyLable.leadingAnchor.constraint(
-//                equalTo: contentView.leadingAnchor
-//            ),
-//            aboutCompanyLable.trailingAnchor.constraint(
-//                equalTo: contentView.trailingAnchor
-//            ),
-//
-//            titleLable.topAnchor.constraint(
-//                equalTo: aboutCompanyLable.bottomAnchor,
-//                constant: spacing
-//            ),
-//            titleLable.leadingAnchor.constraint(
-//                equalTo: contentView.leadingAnchor
-//            ),
-//            titleLable.heightAnchor.constraint(
-//                equalToConstant: 24
-//            ),
-//            titleLable.trailingAnchor.constraint(
-//                equalTo: contentView.trailingAnchor
-//            ),
-//
-//            responsobilityLable.topAnchor.constraint(
-//                equalTo: titleLable.bottomAnchor,
-//                constant: spacing
-//            ),
-//            responsobilityLable.leadingAnchor.constraint(
-//                equalTo: contentView.leadingAnchor
-//            ),
-//            responsobilityLable.trailingAnchor.constraint(
-//                equalTo: contentView.trailingAnchor
-//            ),
         ]
         
         NSLayoutConstraint.activate(constraints)

@@ -154,7 +154,8 @@ class MainViewController: UIViewController, BSPresenterDelegate {
                 equalTo: view.trailingAnchor
             ),
             collectionView.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor
+                equalTo: view.bottomAnchor,
+                constant: -150
             ),
             
             dashboardTabBar.leadingAnchor.constraint(

@@ -32,40 +32,40 @@ class VacancyCell: UICollectionViewCell {
     
     func configure(previewData: VacancyPreviewData, _ favorites: Set<String>?) {
         if let lookingText = previewData.lookingText {
+            lookingHeightAnchor.constant = 24
+            lookingPositionAnchor.constant = -16
             lookingLable.text = lookingText
-            infoStack.addArrangedSubview(lookingLable)
+        } else {
+            lookingHeightAnchor.constant = 0
+            lookingPositionAnchor.constant = 0
         }
         
         titleLable.text = previewData.title
-        infoStack.addArrangedSubview(titleLable)
+        var titleLableHeight = heightForView(
+            text: previewData.title,
+            font: title3Font!,
+            width: 220
+        )
+        titleLableHeight = titleLableHeight > 19 ? titleLableHeight : 19
+        titleHeightAnchor.constant = titleLableHeight
         
         if let salaryText = previewData.salary {
             salaryLable.text = salaryText
-            infoStack.addArrangedSubview(salaryLable)
+            salaryHeightAnchor.constant = 24
+            salaryPositionAnchor.constant = -16
+        } else {
+            salaryHeightAnchor.constant = 0
+            salaryPositionAnchor.constant = 0
         }
         
         cityLable.text = previewData.adress
         
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "checkIcon")
-        attachment.bounds = CGRect(
-            x: 0, y: -2,
-            width: 10,
-            height: 10
-        )
-
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let string = NSMutableAttributedString(string: previewData.company, attributes: [:])
-        
-        string.append(attachmentString)
-        companyNameLable.attributedText = string
-        infoStack.addArrangedSubview(cityCompanyStack)
+        companyNameLable.text = previewData.company
         
         expLable.text = previewData.experience
-        infoStack.addArrangedSubview(expLable)
         
         publishDateLable.text = previewData.publishedDate
-        infoStack.addArrangedSubview(publishDateLable)
+        
         guard let favorites = favorites else { return }
         vacId = previewData.id
         liked = false
@@ -73,6 +73,28 @@ class VacancyCell: UICollectionViewCell {
             likeIconView.image = UIImage(named: "heartIcon3")
             liked = true
         }
+    }
+    
+    private func heightForView(
+        text: String,
+        font: UIFont,
+        width: CGFloat
+    ) -> CGFloat {
+        let label: UILabel = UILabel(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: width,
+                height: CGFloat.greatestFiniteMagnitude)
+        )
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+
+        label.sizeToFit()
+        
+        return label.frame.height
     }
     
     private let lookingLable: UILabel = {
@@ -87,6 +109,7 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = title3Font
         lable.textColor = .white
+        lable.numberOfLines = 0
         
         return lable
     }()
@@ -131,7 +154,6 @@ class VacancyCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = text1Font
         lable.textColor = grey3
-//        lable.text = "Опубликовано 20 февраля"
         
         return lable
     }()
@@ -166,6 +188,10 @@ class VacancyCell: UICollectionViewCell {
         return view
     }()
     
+    private let checkIconView = UIImageView(
+        image: UIImage(named: "checkIcon2")
+    )
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -186,90 +212,68 @@ class VacancyCell: UICollectionViewCell {
     private func disableAutoresizing() {
         [lookingLable, titleLable, cityLable, companyNameLable,
          salaryLable, expIconView, expLable, publishDateLable,
-         applyButton, likeIconView, cityCompanyStack, infoStack, expContainer
-        ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+         applyButton, likeIconView, coverView, checkIconView
+         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubviews() {
-//        checkImageView, likeIconView, infoStack
-//        contentView.addSubview(hm)
-        [applyButton, infoStack, likeIconView
-        ].forEach{ contentView.addSubview($0) }
-        [expIconView, expLable].forEach{ expContainer.addSubview($0) }
+        contentView.addSubview(coverView)
+        [applyButton, likeIconView, publishDateLable, expIconView,
+         expLable, companyNameLable, checkIconView, cityLable, salaryLable,
+         titleLable, lookingLable
+        ].forEach{ coverView.addSubview($0) }
     }
     
-    private lazy var cityCompanyStack: UIStackView = {
-        let stack = UIStackView(
-            arrangedSubviews: [cityLable, companyNameLable]
-        )
-        stack.axis = .vertical
-        stack.distribution = .fillEqually
-        
-        return stack
-    }()
+    private let coverView = UIView()
+    private lazy var salaryHeightAnchor = salaryLable.heightAnchor.constraint(
+        equalToConstant: 24
+    )
+    private lazy var titleHeightAnchor = titleLable.heightAnchor.constraint(
+        equalToConstant: 19
+    )
+    private lazy var lookingHeightAnchor = lookingLable.heightAnchor.constraint(
+        equalToConstant: 24
+    )
     
-    private let expContainer = UIView()
-    
-    private lazy var infoStack: UIStackView = {
-        let stack = UIStackView(
-//            arrangedSubviews: [
-//                lookingLable, titleLable, salaryLable, cityCompanyStack,
-//                expContainer, publishDateLable
-//            ]
-//            arrangedSubviews: [
-//                lookingLable, titleLable, cityCompanyStack,
-//                expContainer, publishDateLable
-//            ]
-        )
-        stack.axis = .vertical
-        stack.distribution = .fillEqually
-        
-        return stack
-    }()
-    
-    private let hm = UIView()
+    private lazy var salaryPositionAnchor = salaryLable.bottomAnchor.constraint(
+        equalTo: cityLable.topAnchor,
+        constant: -16
+    )
+    private lazy var lookingPositionAnchor = lookingLable.bottomAnchor.constraint(
+        equalTo: titleLable.topAnchor,
+        constant: -16
+    )
+
     
     private func setUpConstrains() {
         let spacing: CGFloat = 16
         
-        
         let constraints: [NSLayoutConstraint] = [
+            coverView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            coverView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor
+            ),
+            coverView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor
+            ),
+            coverView.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor
+            ),
             
             applyButton.bottomAnchor.constraint(
-                equalTo: contentView.bottomAnchor,
+                equalTo: coverView.bottomAnchor,
                 constant: -1 * spacing
             ),
             applyButton.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor,
+                equalTo: coverView.leadingAnchor,
                 constant: spacing
             ),
             
             applyButton.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
+                equalTo: coverView.trailingAnchor,
                 constant: -1 * spacing
             ),
             applyButton.heightAnchor.constraint(equalToConstant: 32),
-            
-            expIconView.widthAnchor.constraint(equalToConstant: 16),
-            expIconView.heightAnchor.constraint(equalToConstant: 16),
-            expIconView.leadingAnchor.constraint(
-                equalTo: expContainer.leadingAnchor
-            ),
-            expIconView.centerYAnchor.constraint(
-                equalTo: expContainer.centerYAnchor
-            ),
-            
-            expLable.heightAnchor.constraint(equalToConstant: 16),
-            expLable.leadingAnchor.constraint(
-                equalTo: expIconView.trailingAnchor,
-                constant: 8
-            ),
-            expLable.trailingAnchor.constraint(
-                equalTo: expContainer.trailingAnchor
-            ),
-            expLable.centerYAnchor.constraint(
-                equalTo: expContainer.centerYAnchor
-            ),
             
             likeIconView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
@@ -282,17 +286,120 @@ class VacancyCell: UICollectionViewCell {
             likeIconView.heightAnchor.constraint(equalToConstant: 24),
             likeIconView.widthAnchor.constraint(equalToConstant: 24),
             
-            infoStack.topAnchor.constraint(
-                equalTo: contentView.topAnchor
-            ),
-            infoStack.leadingAnchor.constraint(
-                equalTo: applyButton.leadingAnchor
-            ),
-            infoStack.bottomAnchor.constraint(
+            publishDateLable.bottomAnchor.constraint(
                 equalTo: applyButton.topAnchor,
-                constant: -5
+                constant: -1 * spacing
             ),
-            infoStack.trailingAnchor.constraint(equalTo: applyButton.trailingAnchor)
+            publishDateLable.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            publishDateLable.trailingAnchor.constraint(
+                equalTo: coverView.trailingAnchor
+            ),
+            publishDateLable.heightAnchor.constraint(
+                equalToConstant: 17
+            ),
+            
+            expIconView.bottomAnchor.constraint(
+                equalTo: publishDateLable.topAnchor,
+                constant: -1 * spacing
+            ),
+            expIconView.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            expIconView.widthAnchor.constraint(equalToConstant: 16),
+            expIconView.heightAnchor.constraint(
+                equalToConstant: 16
+            ),
+            
+            expLable.bottomAnchor.constraint(
+                equalTo: publishDateLable.topAnchor,
+                constant: -1 * spacing
+            ),
+            expLable.leadingAnchor.constraint(
+                equalTo: expIconView.trailingAnchor,
+                constant: 8
+            ),
+            expLable.trailingAnchor.constraint(
+                equalTo: coverView.trailingAnchor
+            ),
+            expLable.heightAnchor.constraint(
+                equalToConstant: 16
+            ),
+            
+            companyNameLable.bottomAnchor.constraint(
+                equalTo: expIconView.topAnchor,
+                constant: -1 * spacing
+            ),
+            companyNameLable.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            companyNameLable.heightAnchor.constraint(
+                equalToConstant: 17
+            ),
+            
+            checkIconView.bottomAnchor.constraint(
+                equalTo: expIconView.topAnchor,
+                constant: -1 * spacing
+            ),
+            checkIconView.leadingAnchor.constraint(
+                equalTo: companyNameLable.trailingAnchor,
+                constant: 8
+            ),
+            checkIconView.heightAnchor.constraint(
+                equalToConstant: 16
+            ),
+            checkIconView.widthAnchor.constraint(
+                equalToConstant: 16
+            ),
+            
+            cityLable.bottomAnchor.constraint(
+                equalTo: companyNameLable.topAnchor,
+                constant: -8
+            ),
+            cityLable.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            cityLable.heightAnchor.constraint(
+                equalToConstant: 17
+            ),
+            
+            salaryPositionAnchor,
+            salaryLable.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            salaryHeightAnchor,
+            
+            titleLable.bottomAnchor.constraint(
+                equalTo: salaryLable.topAnchor,
+                constant: -1 * spacing
+            ),
+            titleLable.leadingAnchor.constraint(
+                equalTo: coverView.leadingAnchor,
+                constant: spacing
+            ),
+            titleLable.widthAnchor.constraint(
+                equalToConstant: 220
+            ),
+            titleHeightAnchor,
+            
+            
+            lookingHeightAnchor,
+            lookingLable.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: spacing
+            ),
+            lookingPositionAnchor,
+            lookingLable.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: spacing
+            ),
+            lookingLable.widthAnchor.constraint(equalToConstant: 220),
         ]
         
         NSLayoutConstraint.activate(constraints)

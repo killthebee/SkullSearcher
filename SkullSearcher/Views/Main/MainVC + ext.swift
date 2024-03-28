@@ -75,7 +75,7 @@ extension MainViewController:
                     favorites
                 )
                 cell.bsDelegate = self
-                cell.viewModel = viewModel as? any favoritesManipulatorProtocol
+                cell.viewModel = viewModel as? favoritesManipulatorProtocol
             }
             
             return cell
