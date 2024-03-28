@@ -63,6 +63,17 @@ class DetailViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var applyButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = green
+        button.layer.cornerRadius = 8
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = buttonText1Font
+        button.setTitle(applyString, for: .normal)
+        
+        return button
+    }()
+    
     private let dashboardTabBar = DasboardTabBar.shared
     
     // MARK: View setup -
@@ -86,12 +97,12 @@ class DetailViewController: UIViewController {
     }
     
     private func disableAutoresizing() {
-        [collectionView, dashboardTabBar
+        [collectionView, dashboardTabBar, applyButton
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubview() {
-        [collectionView, dashboardTabBar
+        [collectionView, dashboardTabBar, applyButton
         ].forEach{ view.addSubview($0) }
     }
     
@@ -120,6 +131,20 @@ class DetailViewController: UIViewController {
             dashboardTabBar.heightAnchor.constraint(equalToConstant: 100),
             dashboardTabBar.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor
+            ),
+            
+            applyButton.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: 16
+            ),
+            applyButton.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -16
+            ),
+            applyButton.heightAnchor.constraint(equalToConstant: 48),
+            applyButton.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: -104
             ),
         ]
         

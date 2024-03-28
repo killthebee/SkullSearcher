@@ -10,7 +10,7 @@ class questionsCell: UICollectionViewCell {
         let stackHeight: CGFloat = (
             CGFloat(numOfQuestion * 32) + CGFloat((numOfQuestion) * 8)
         )
-        let bottomSpacing: CGFloat = 80
+        let bottomSpacing: CGFloat = 130
         let cellHeight: CGFloat = 17 + 8 + 17 + 8 + stackHeight + bottomSpacing
         cellHeightAnchor.constant = cellHeight
         for question in vacancy.questions {
