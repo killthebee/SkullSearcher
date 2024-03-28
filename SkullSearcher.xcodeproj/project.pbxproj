@@ -79,6 +79,11 @@
 		84B806B92BB5707900B82A18 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 84B806B82BB5707900B82A18 /* MockData.json */; };
 		84B806BD2BB5710900B82A18 /* FakeMockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806BC2BB5710900B82A18 /* FakeMockApi.swift */; };
 		84B806C12BB5D79000B82A18 /* UIStackView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806C02BB5D79000B82A18 /* UIStackView + ext.swift */; };
+		84B806C42BB5F31800B82A18 /* LikedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806C32BB5F31800B82A18 /* LikedCoordinator.swift */; };
+		84B806C62BB5F35000B82A18 /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806C52BB5F35000B82A18 /* LikedViewController.swift */; };
+		84B806C82BB5F38600B82A18 /* LikedVCLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806C72BB5F38600B82A18 /* LikedVCLayouts.swift */; };
+		84B806CA2BB5F3E600B82A18 /* LikedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806C92BB5F3E600B82A18 /* LikedViewModel.swift */; };
+		84B806CC2BB5F49500B82A18 /* LikedVC + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B806CB2BB5F49500B82A18 /* LikedVC + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +180,11 @@
 		84B806B82BB5707900B82A18 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		84B806BC2BB5710900B82A18 /* FakeMockApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeMockApi.swift; sourceTree = "<group>"; };
 		84B806C02BB5D79000B82A18 /* UIStackView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + ext.swift"; sourceTree = "<group>"; };
+		84B806C32BB5F31800B82A18 /* LikedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCoordinator.swift; sourceTree = "<group>"; };
+		84B806C52BB5F35000B82A18 /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
+		84B806C72BB5F38600B82A18 /* LikedVCLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedVCLayouts.swift; sourceTree = "<group>"; };
+		84B806C92BB5F3E600B82A18 /* LikedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewModel.swift; sourceTree = "<group>"; };
+		84B806CB2BB5F49500B82A18 /* LikedVC + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedVC + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +393,7 @@
 				849098342BA73FB50015E68C /* MainScreenCoordinator.swift */,
 				84051A652BA9D923009685BD /* MoreCoordinator.swift */,
 				84051A722BAAC321009685BD /* DetailCoordinator.swift */,
+				84B806C32BB5F31800B82A18 /* LikedCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -390,6 +401,7 @@
 		849098072BA31B240015E68C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84B806C22BB5F22F00B82A18 /* Liked */,
 				84051A8A2BAB4DCB009685BD /* ApplyBottomSheet */,
 				84051A742BAAC362009685BD /* Detail */,
 				84051A672BA9D98A009685BD /* More */,
@@ -432,6 +444,7 @@
 				849098382BA7433C0015E68C /* MainViewModel.swift */,
 				84051A6A2BA9DE40009685BD /* MoreViewModel.swift */,
 				84051A772BAAC65B009685BD /* DetailViewModel.swift */,
+				84B806C92BB5F3E600B82A18 /* LikedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -466,6 +479,16 @@
 				84B806BC2BB5710900B82A18 /* FakeMockApi.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		84B806C22BB5F22F00B82A18 /* Liked */ = {
+			isa = PBXGroup;
+			children = (
+				84B806C72BB5F38600B82A18 /* LikedVCLayouts.swift */,
+				84B806C52BB5F35000B82A18 /* LikedViewController.swift */,
+				84B806CB2BB5F49500B82A18 /* LikedVC + ext.swift */,
+			);
+			path = Liked;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,6 +633,7 @@
 				84051A892BAB0597009685BD /* DetailVCLayouts.swift in Sources */,
 				849098212BA488BA0015E68C /* LoginVC + ext.swift in Sources */,
 				8490983C2BA74C250015E68C /* Networking.swift in Sources */,
+				84B806CC2BB5F49500B82A18 /* LikedVC + ext.swift in Sources */,
 				849098452BA751180015E68C /* ApiModels.swift in Sources */,
 				84051A5F2BA9A522009685BD /* VacancyDataModel.swift in Sources */,
 				849098152BA33BD00015E68C /* Colors.swift in Sources */,
@@ -632,12 +656,15 @@
 				849098332BA6EEBE0015E68C /* Toolbars.swift in Sources */,
 				849098272BA494780015E68C /* verifier.swift in Sources */,
 				8490982D2BA4B8F90015E68C /* CodeField.swift in Sources */,
+				84B806C42BB5F31800B82A18 /* LikedCoordinator.swift in Sources */,
 				849098172BA33C3B0015E68C /* UIColor + ext.swift in Sources */,
 				84051A842BAAFB9B009685BD /* QuestionsCell.swift in Sources */,
 				84051A992BAC36B8009685BD /* FavoritesStorage.swift in Sources */,
+				84B806C62BB5F35000B82A18 /* LikedViewController.swift in Sources */,
 				8490981B2BA353620015E68C /* UITextField + ext.swift in Sources */,
 				849097FF2BA311FC0015E68C /* UIViewController + ext.swift in Sources */,
 				8490982B2BA4B0F00015E68C /* ConfirmViewController.swift in Sources */,
+				84B806C82BB5F38600B82A18 /* LikedVCLayouts.swift in Sources */,
 				84B806C12BB5D79000B82A18 /* UIStackView + ext.swift in Sources */,
 				84051A712BA9EB3D009685BD /* MoreHeaderSupCell.swift in Sources */,
 				849098412BA74CD20015E68C /* MockApi.swift in Sources */,
@@ -649,6 +676,7 @@
 				84051A7C2BAAD228009685BD /* MainInfoCell.swift in Sources */,
 				84051A692BA9D997009685BD /* MoreViewController.swift in Sources */,
 				849098242BA4940C0015E68C /* LoginViewModel.swift in Sources */,
+				84B806CA2BB5F3E600B82A18 /* LikedViewModel.swift in Sources */,
 				849098292BA4B0AC0015E68C /* ConfirmCoordinator.swift in Sources */,
 				84051A5A2BA86B5B009685BD /* MainVCLayouts.swift in Sources */,
 				849098372BA742E40015E68C /* MainViewController.swift in Sources */,
