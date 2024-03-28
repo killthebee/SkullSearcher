@@ -110,7 +110,8 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
                 equalTo: view.trailingAnchor
             ),
             collectionView.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor
+                equalTo: view.bottomAnchor,
+                constant: -110
             ),
             
             dashboardTabBar.leadingAnchor.constraint(
