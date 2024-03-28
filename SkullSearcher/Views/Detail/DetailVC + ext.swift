@@ -86,7 +86,8 @@ extension DetailViewController:
             else {
                 fatalError("Unable deque cell...")
             }
-            cell.configure(vacancyFullData)
+            let cellWidth = view.frame.width - 2 * 16
+            cell.configure(vacancyFullData, cellWidth)
             
             return cell
         } else if indexPath.section == 5 {

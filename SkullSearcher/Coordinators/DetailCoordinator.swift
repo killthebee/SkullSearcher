@@ -13,7 +13,7 @@ class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
     func start() -> Presentable? {
         let detailVC = DetailViewController()
         let viewModel = detailViewModel()
-        apiService = MockApiService.shared
+        apiService = FakeMockApiService.shared
         viewModel.vacancyIndex = vacancyIndex
         viewModel.apiService = apiService
         viewModel.storageService = FavoriteStorage.shared

@@ -30,9 +30,11 @@ class detailViewModel: detailViewModelProtocol {
             company: vacancyData.company,
             salary: vacancyData.salary.full,
             experience: makeExpText(vacancyData.experience),
-            schedules: "\(vacancyData.schedules[0]), \(vacancyData.schedules[1])",
+            schedules: makeSchedules(vacancyData.schedules),
             appliedText: makeAppliedText(vacancyData.appliedNumber),
-            lookingText: makeLookingNumberText(vacancyData.lookingNumber),
+            lookingText: makeLookingNumberTextDetail(
+                vacancyData.lookingNumber
+            ),
             isFavorite: favorites.contains(vacancyData.id),
             aboutText: vacancyData.description ?? "Нет описания компании",
             resonsobilityText: vacancyData.responsibilities,

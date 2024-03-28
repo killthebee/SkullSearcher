@@ -6,22 +6,7 @@ class CompanyAndAddressCell: UICollectionViewCell {
     
     func configure(_ vacancy: VacancyFullData?) {
         guard let vacancy = vacancy else { return }
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "checkIcon")
-        attachment.bounds = CGRect(
-            x: 0, y: -2,
-            width: 10,
-            height: 10
-        )
-
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let string = NSMutableAttributedString(
-            string: vacancy.company,
-            attributes: [:]
-        )
-        
-        string.append(attachmentString)
-        companyLable.attributedText = string
+        companyLable.text = vacancy.company
         addressLable.text = vacancy.adress
     }
     
@@ -49,6 +34,10 @@ class CompanyAndAddressCell: UICollectionViewCell {
         return view
     }()
     
+    private let checkIcon = UIImageView(
+        image: UIImage(named: "checkIcon2")
+    )
+    
     private let addressLable: UILabel = {
         let lable = UILabel()
         lable.text = "Минск, улица Бирюзова, 4/5"
@@ -74,13 +63,13 @@ class CompanyAndAddressCell: UICollectionViewCell {
     }
     
     private func disableAutoresizing() {
-        [coverView, companyLable, mapImageView, addressLable
+        [coverView, companyLable, mapImageView, addressLable, checkIcon
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubviews() {
         contentView.addSubview(coverView)
-        [companyLable, mapImageView, addressLable].forEach{
+        [companyLable, mapImageView, addressLable, checkIcon].forEach{
             coverView.addSubview($0)
         }
     }
@@ -110,6 +99,21 @@ class CompanyAndAddressCell: UICollectionViewCell {
             ),
             companyLable.heightAnchor.constraint(
                 equalToConstant: 19
+            ),
+            
+            checkIcon.topAnchor.constraint(
+                equalTo: coverView.topAnchor,
+                constant: 2 * spacing + 2
+            ),
+            checkIcon.leadingAnchor.constraint(
+                equalTo: companyLable.trailingAnchor,
+                constant: spacing
+            ),
+            checkIcon.heightAnchor.constraint(
+                equalToConstant: 16
+            ),
+            checkIcon.widthAnchor.constraint(
+                equalToConstant: 16
             ),
             
             addressLable.bottomAnchor.constraint(

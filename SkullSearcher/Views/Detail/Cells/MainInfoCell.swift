@@ -48,17 +48,6 @@ class MainInfoCell: UICollectionViewCell {
         return lable
     }()
     
-    private lazy var schedulesExpStack: UIStackView = {
-        let stack = UIStackView(
-            arrangedSubviews: [expLable, schedulesLable]
-        )
-        
-        stack.axis = .vertical
-        stack.spacing = 8
-        
-        return stack
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -75,17 +64,18 @@ class MainInfoCell: UICollectionViewCell {
     }
     
     private func disableAutoresizing() {
-        [titleLable, salaryLable, schedulesExpStack
+        [titleLable, salaryLable, expLable, schedulesLable
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubviews() {
-        [titleLable, salaryLable, schedulesExpStack
+        [titleLable, salaryLable, expLable, schedulesLable
         ].forEach{ contentView.addSubview($0) }
     }
     
     private func setUpConstrains() {
         let spacing: CGFloat = 16
+        let spacing2: CGFloat = 8
         
         let constraints: [NSLayoutConstraint] = [
             titleLable.topAnchor.constraint(
@@ -105,14 +95,23 @@ class MainInfoCell: UICollectionViewCell {
             ),
             salaryLable.heightAnchor.constraint(equalToConstant: 17),
             
-            schedulesExpStack.topAnchor.constraint(
+            expLable.topAnchor.constraint(
                 equalTo: salaryLable.bottomAnchor,
                 constant: spacing
             ),
-            schedulesExpStack.leadingAnchor.constraint(
+            expLable.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor
             ),
-            schedulesExpStack.heightAnchor.constraint(equalToConstant: 40),
+            expLable.heightAnchor.constraint(equalToConstant: 17),
+            
+            schedulesLable.topAnchor.constraint(
+                equalTo: expLable.bottomAnchor,
+                constant: spacing2
+            ),
+            schedulesLable.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor
+            ),
+            schedulesLable.heightAnchor.constraint(equalToConstant: 17),
         ]
         
         NSLayoutConstraint.activate(constraints)

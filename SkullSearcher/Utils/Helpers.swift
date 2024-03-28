@@ -25,6 +25,33 @@ func makeLookingNumberText(_ num: Int?) -> String? {
     return text
 }
 
+func makeLookingNumberTextDetail(_ num: Int?) -> String? {
+    guard let num = num else {
+        return "0 человек\nсейчас смотрит" //something must be here, dunno what tho
+    }
+    var text = "\(num)"
+    let digits = Array(String(num))
+    let lastDigit = digits[digits.count - 1]
+    
+    if num > 10 && num < 20 {
+        text = text + " " + "человек\n"
+    } else {
+        let ekDigits: Set<Character> = ["1", "5", "6", "7", "8", "9", "0"]
+        if ekDigits.contains(lastDigit) {
+            text = text + " " + "человек\n"
+        } else {
+            text = text + " " + "человека\n"
+        }
+    }
+    
+    if num > 2 {
+        text = text + "сейчас смотрят"
+    } else {
+        text = text + "сейчас смотрит"
+    }
+    return text
+}
+
 func makePublishedData(_ dateString: String) -> String {
     var text = "Опубликованно"
     let dateArray = Array(dateString)
@@ -63,9 +90,7 @@ func makePublishedData(_ dateString: String) -> String {
 }
 
 func makeFullAddress(_ address: Adress) -> String {
-    let result = "\(address.town), \(address.street), \(address.house),"
-    
-    return result
+    "\(address.town), \(address.street), \(address.house)"
 }
 
 func makeExpText(_ exp: Experience) -> String {
@@ -80,9 +105,14 @@ func makeExpText(_ exp: Experience) -> String {
 }
 
 func makeAppliedText(_ num: Int?) -> String {
-    guard let num = num else { return "Будь первыйм кто откликнулся"}
+    guard let num = num else { return "Будь первым кто откликнулся"}
     if num == 1 {
         return "1 человек уже\nоткликнулся"
     }
     return "\(num) человек уже\nоткликнулись"
+}
+
+func makeSchedules(_ texts: [String]) -> String {
+    let firstSentence = texts[0].prefix(1).capitalized + texts[0].dropFirst()
+    return "\(firstSentence), \(texts[1])"
 }

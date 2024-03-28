@@ -10,6 +10,8 @@ class TopHeaderCell: UICollectionViewCell {
         guard let vacancy = vacancy else { return }
         if vacancy.isFavorite {
             heartIconView.image = UIImage(named: "heartIcon3")
+        } else {
+            heartIconView.image = UIImage(named: "heartIcon4")
         }
     }
     
@@ -39,7 +41,7 @@ class TopHeaderCell: UICollectionViewCell {
     )
     
     private let heartIconView = UIImageView(
-        image: UIImage(named: "heartIcon2")
+        image: UIImage(named: "heartIcon4")
     )
     
     override init(frame: CGRect) {

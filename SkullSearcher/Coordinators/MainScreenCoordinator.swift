@@ -12,7 +12,7 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
     func start() -> Presentable? {
         let mainVC = MainViewController()
         let viewModel = MainViewModel()
-        apiService = MockApiService.shared
+        apiService = FakeMockApiService.shared
         viewModel.apiService = apiService
         viewModel.storageService = FavoriteStorage.shared
         viewModel.coordinator = self
