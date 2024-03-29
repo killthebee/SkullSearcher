@@ -55,18 +55,22 @@ class DasboardTabBar: UITabBar {
     }
     
     public func addItemBadge(atIndex index: Int) {
+        removeItemBadge(atIndex: index)
         guard
             let favoritesCount = storageService.retriveFavorite()?.count
         else {
             return
         }
-        guard let itemCount = self.items?.count, itemCount > 0 else {
+        guard
+            let itemCount = self.items?.count,
+            itemCount > 0,
+            favoritesCount > 0
+        else {
             return
         }
         guard index < itemCount else {
             return
         }
-        removeItemBadge(atIndex: index)
         
         let badgeView = UIView()
         badgeView.tag = tabBarItemTag + Int(index)
