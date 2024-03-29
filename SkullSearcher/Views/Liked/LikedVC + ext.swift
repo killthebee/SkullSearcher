@@ -39,12 +39,11 @@ extension LikedViewController:
                 fatalError("Unable deque cell...")
             }
             if vacanciesPreviews.count > 0 {
-                cell.configure(
-                    previewData: vacanciesPreviews[indexPath.row],
-                    favorites
-                )
+//                cell.configure(
+//                    previewData: vacanciesPreviews[indexPath.row],
+//                    favorites
+//                )
                 cell.bsDelegate = self
-                cell.viewModel = viewModel as? favoritesManipulatorProtocol
             }
             
             return cell

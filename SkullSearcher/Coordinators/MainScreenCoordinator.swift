@@ -5,7 +5,7 @@ protocol MainScreenCoordinatorProtocol: AnyObject {
 
 class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
     
-    weak var view: Presentable?
+    weak var view: MainViewController?
     
     var apiService: ApiServiceProtocol?
     
@@ -29,6 +29,7 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
             let moreVC = moreCoordinator.start() as? MoreViewController
         else
             { return }
+        moreVC.mainVCDelegate = view
         moreVC.modalPresentationStyle = .fullScreen
         view?.present(moreVC)
     }
@@ -40,6 +41,7 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
             let detailVC = detailCoordinator.start() as? DetailViewController
         else
             { return }
+        detailVC.parentVCDelegate = view
         detailVC.modalPresentationStyle = .fullScreen
         view?.present(detailVC)
     }

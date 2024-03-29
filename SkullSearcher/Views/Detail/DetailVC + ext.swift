@@ -33,6 +33,7 @@ extension DetailViewController:
                 fatalError("Unable deque cell...")
             }
             cell.viewModel = viewModel
+            cell.tabBarUpdater = self
             cell.configure(vacancyFullData)
             
             return cell

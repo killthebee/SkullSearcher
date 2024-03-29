@@ -5,9 +5,9 @@ class VacancyCell: UICollectionViewCell {
     static let cellIdentifier = "VacancyCellIdentifier"
     
     weak var bsDelegate: BSPresenterDelegate?
-    weak var viewModel: favoritesManipulatorProtocol?
+    weak var tabBarUpdater: CanUpdateLikesProtocol?
+    weak var storageService: FavoriteStorageProtocol?
     
-    private var liked = false
     private var vacId = ""
     
     @objc
@@ -17,20 +17,30 @@ class VacancyCell: UICollectionViewCell {
     
     @objc
     private func handleLikeTap() {
-        if liked {
-            liked = false
+        guard
+            let storageService = storageService,
+            let favorites = storageService.retriveFavorite()
+        else {
             likeIconView.image = UIImage(named: "heartIcon2")
-            viewModel?.removeFromFavorite(vacId)
-        } else {
-            liked = true
-            likeIconView.image = UIImage(named: "heartIcon3")
-            viewModel?.addFavorite(vacId)
+            return
         }
+        self.storageService = storageService
+        if favorites.contains(vacId) {
+            likeIconView.image = UIImage(named: "heartIcon2")
+            storageService.removeFromFavorite(vacId)
+        } else {
+            likeIconView.image = UIImage(named: "heartIcon3")
+            storageService.addToFavorite(vacId)
+        }
+        tabBarUpdater?.updateTabBar()
     }
     
     private let vacancyContainerView = UIView()
     
-    func configure(previewData: VacancyPreviewData, _ favorites: Set<String>?) {
+    func configure(
+        previewData: VacancyPreviewData
+    ) {
+        self.storageService = FavoriteStorage.shared
         if let lookingText = previewData.lookingText {
             lookingHeightAnchor.constant = 24
             lookingPositionAnchor.constant = -16
@@ -66,12 +76,20 @@ class VacancyCell: UICollectionViewCell {
         
         publishDateLable.text = previewData.publishedDate
         
-        guard let favorites = favorites else { return }
+        if let storageService = storageService {
+            self.storageService = storageService
+        }
+        guard
+            let favorites = storageService?.retriveFavorite()
+        else {
+            likeIconView.image = UIImage(named: "heartIcon2")
+            return
+        }
         vacId = previewData.id
-        liked = false
         if favorites.contains(vacId) {
             likeIconView.image = UIImage(named: "heartIcon3")
-            liked = true
+        } else {
+            likeIconView.image = UIImage(named: "heartIcon2")
         }
     }
     

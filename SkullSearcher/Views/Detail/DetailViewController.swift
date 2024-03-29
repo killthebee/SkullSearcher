@@ -1,9 +1,10 @@
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, CanUpdateLikesProtocol {
     
     // MARK: Dependencies -
     var viewModel: detailViewModelProtocol?
+    weak var parentVCDelegate: CanUpdateLikesProtocol?
     
     // MARK: Data -
     let statisticsIcons: [UIImage?] = [
@@ -17,6 +18,23 @@ class DetailViewController: UIViewController {
         viewModel?.setVacancyFullData = { [weak self] (vacancyFullData) in
             self?.vacancyFullData = vacancyFullData
         }
+        
+        viewModel?.updateTabBar = { [weak self] () in
+            self?.dashboardTabBar.addItemBadge(atIndex: 1)
+        }
+        
+        viewModel?.updateParent = { [weak self] () in
+            self?.parentVCDelegate?.updateTabBar()
+            self?.parentVCDelegate?.refresh()
+        }
+    }
+    
+    func updateTabBar() {
+        viewModel?.updateTabBar?()
+    }
+    
+    func refresh() {
+        collectionView.reloadData()
     }
     
     // MARK: UI elements -

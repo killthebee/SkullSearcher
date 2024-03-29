@@ -11,6 +11,7 @@ struct VacancyPreviewData {
 }
 
 struct VacancyFullData {
+    let id: String
     let title: String
     let adress: String?
     let company: String

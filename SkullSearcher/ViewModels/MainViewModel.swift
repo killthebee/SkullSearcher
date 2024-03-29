@@ -1,8 +1,3 @@
-protocol favoritesManipulatorProtocol: AnyObject {
-    func addFavorite(_ id: String)
-    func removeFromFavorite(_ id: String)
-}
-
 protocol MainViewModelProtocol: AnyObject {
     func setData()
     var refreshCollectionView: (() async -> ())? { get set }
@@ -10,12 +5,12 @@ protocol MainViewModelProtocol: AnyObject {
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())? { get set }
     func presentMoreScreen()
     func presentDetail(_ index: Int)
-    var setFavorites: ((_ favorites: Set<String>) -> ())? { get set }
-    func reloadWithNewLikes()
-    var updateTulBar: (() -> ())? { get set }
+    var updateTabBar: (() -> ())? { get set }
+    var storageService: FavoriteStorageProtocol? { get set }
 }
 
-class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
+class MainViewModel: MainViewModelProtocol {
+    
     
     var apiService: ApiServiceProtocol?
     var storageService: FavoriteStorageProtocol?
@@ -28,7 +23,7 @@ class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
     var setOffersTexts: ((_ texts: [String]) -> ())?
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())?
     var setFavorites: ((_ favorites: Set<String>) -> ())?
-    var updateTulBar: (() -> ())?
+    var updateTabBar: (() -> ())?
     
     func setData() {
         Task {
@@ -37,7 +32,6 @@ class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
             setOffersTexts?(offersTexts)
             let vanaciesPreview = setupVacancyCellPreview(mockData.vacancies)
             setVacanciesPreviews?(vanaciesPreview)
-            getFavorites()
             await refreshCollectionView?()
         }
     }
@@ -46,30 +40,6 @@ class MainViewModel: MainViewModelProtocol, favoritesManipulatorProtocol {
         return offersData.reduce(into: [String]()) {
             $0.append($1.title)
         }
-    }
-    
-    func reloadWithNewLikes() {
-        Task {
-            getFavorites()
-            await refreshCollectionView?()
-        }
-    }
-    
-    func addFavorite(_ id: String) {
-        storageService?.addToFavorite(id)
-        updateTulBar?()
-//        reloadWithNewLikes()
-    }
-    
-    func removeFromFavorite(_ id: String) {
-        storageService?.removeFromFavorite(id)
-        updateTulBar?()
-//        reloadWithNewLikes()
-    }
-    
-    func getFavorites() {
-        guard let favorites = storageService?.retriveFavorite() else { return }
-        setFavorites?(favorites)
     }
     
     func setupVacancyCellPreview(

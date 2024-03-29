@@ -6,10 +6,11 @@ protocol MoreViewModelProtocol: AnyObject {
     func dismiss()
     func presentDetail(_ index: Int)
     var setFavorites: ((_ favorites: Set<String>) -> ())? { get set }
-    var updateTulBar: (() -> ())? { get set }
+    var updateTabBar: (() -> ())? { get set }
+    var updateParent: (() -> ())? { get set }
 }
 
-class MoreViewModel: MoreViewModelProtocol, favoritesManipulatorProtocol {
+class MoreViewModel: MoreViewModelProtocol {
     
     var vacancies: [VacancyPreviewData]?
     
@@ -19,7 +20,8 @@ class MoreViewModel: MoreViewModelProtocol, favoritesManipulatorProtocol {
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())?
     var refreshCollectionView: (() async -> ())?
     var setFavorites: ((_ favorites: Set<String>) -> ())?
-    var updateTulBar: (() -> ())?
+    var updateTabBar: (() -> ())?
+    var updateParent: (() -> ())?
     
     func setVacancies() {
         Task {
@@ -35,15 +37,8 @@ class MoreViewModel: MoreViewModelProtocol, favoritesManipulatorProtocol {
         setFavorites?(favorites)
     }
     
-    func addFavorite(_ id: String) {
-        storageService?.addToFavorite(id)
-    }
-    
-    func removeFromFavorite(_ id: String) {
-        storageService?.removeFromFavorite(id)
-    }
-    
     func dismiss() {
+        updateParent?()
         coordinator?.dismiss()
     }
     

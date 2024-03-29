@@ -1,10 +1,11 @@
 import UIKit
 
-class MoreViewController: UIViewController, BSPresenterDelegate {
-    
+class MoreViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesProtocol {
+ 
     // MARK: Dependencies -
     var viewModel: MoreViewModelProtocol?
     private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
+    weak var mainVCDelegate: CanUpdateLikesProtocol?
     
     // MARK: Data -
     var vacanciesPreviews: [VacancyPreviewData] = []
@@ -24,8 +25,12 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
             self?.favorites = favorites
         }
         
-        viewModel?.updateTulBar = { [weak self] () in
+        viewModel?.updateTabBar = { [weak self] () in
             self?.dashboardTabBar.addItemBadge(atIndex: 1)
+        }
+        viewModel?.updateParent = { [weak self] () in
+            self?.mainVCDelegate?.updateTabBar()
+            self?.mainVCDelegate?.refresh()
         }
     }
     
@@ -34,6 +39,14 @@ class MoreViewController: UIViewController, BSPresenterDelegate {
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = delegate
         present(vc, animated: true)
+    }
+    
+    func updateTabBar() {
+        viewModel?.updateTabBar?()
+    }
+    
+    func refresh() {
+        collectionView.reloadData()
     }
     
     // MARK: UI elements -

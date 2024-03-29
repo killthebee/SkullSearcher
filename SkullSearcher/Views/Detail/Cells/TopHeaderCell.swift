@@ -5,14 +5,46 @@ class TopHeaderCell: UICollectionViewCell {
     static let cellIdentifier = "TopHeaderCellIdentifier"
     
     weak var viewModel: detailViewModelProtocol?
+    weak var storageService: FavoriteStorageProtocol?
+    weak var tabBarUpdater: CanUpdateLikesProtocol?
+    
+    private var vacId = ""
     
     func configure(_ vacancy: VacancyFullData?) {
         guard let vacancy = vacancy else { return }
-        if vacancy.isFavorite {
+        self.storageService = FavoriteStorage.shared
+        guard
+            let favorites = storageService?.retriveFavorite()
+        else {
+            heartIconView.image = UIImage(named: "heartIcon4")
+            return
+        }
+        vacId = vacancy.id
+        if favorites.contains(vacId) {
             heartIconView.image = UIImage(named: "heartIcon3")
         } else {
             heartIconView.image = UIImage(named: "heartIcon4")
         }
+    }
+    
+    @objc
+    private func handleLikeTap() {
+        guard
+            let storageService = storageService,
+            let favorites = storageService.retriveFavorite()
+        else {
+            heartIconView.image = UIImage(named: "heartIcon4")
+            return
+        }
+        self.storageService = storageService
+        if favorites.contains(vacId) {
+            heartIconView.image = UIImage(named: "heartIcon4")
+            storageService.removeFromFavorite(vacId)
+        } else {
+            heartIconView.image = UIImage(named: "heartIcon3")
+            storageService.addToFavorite(vacId)
+        }
+        tabBarUpdater?.updateTabBar()
     }
     
     @objc
@@ -40,9 +72,17 @@ class TopHeaderCell: UICollectionViewCell {
         image: UIImage(named: "shareIcon")
     )
     
-    private let heartIconView = UIImageView(
-        image: UIImage(named: "heartIcon4")
-    )
+    private lazy var heartIconView: UIImageView = {
+        let view = UIImageView(image: UIImage(named: "heartIcon4"))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(handleLikeTap)
+            )
+        )
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

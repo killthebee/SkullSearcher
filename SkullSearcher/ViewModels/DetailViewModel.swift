@@ -2,6 +2,8 @@ protocol detailViewModelProtocol: AnyObject {
     func makeVacancyData()
     var setVacancyFullData: ((_ vacancyFullData: VacancyFullData) -> ())? { get set }
     func dismiss()
+    var updateTabBar: (() -> ())? { get set }
+    var updateParent: (() -> ())? { get set }
 }
 
 class detailViewModel: detailViewModelProtocol {
@@ -15,6 +17,8 @@ class detailViewModel: detailViewModelProtocol {
     var vacancyIndex: Int?
     
     var setVacancyFullData: ((_ vacancyFullData: VacancyFullData) -> ())?
+    var updateTabBar: (() -> ())?
+    var updateParent: (() -> ())?
     
     func makeVacancyData() {
         guard
@@ -25,6 +29,7 @@ class detailViewModel: detailViewModelProtocol {
             return 
         }
         let vacancyFullData = VacancyFullData(
+            id: vacancyData.id,
             title: vacancyData.title,
             adress: makeFullAddress(vacancyData.address),
             company: vacancyData.company,
@@ -45,6 +50,7 @@ class detailViewModel: detailViewModelProtocol {
     }
     
     func dismiss() {
+        updateParent?()
         coordinator?.dismiss()
     }
 }

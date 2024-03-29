@@ -6,11 +6,9 @@ protocol LikedViewModelProtocol: AnyObject {
     func dismiss()
     func presentDetail(_ index: Int)
     var setFavorites: ((_ favorites: Set<String>) -> ())? { get set }
-    var updateTulBar: (() -> ())? { get set }
 }
 
-class LikedViewModel: MoreViewModelProtocol, LikedViewModelProtocol {
-    
+class LikedViewModel: LikedViewModelProtocol {
     var vacancies: [VacancyPreviewData]?
     
     var coordinator: LikedCoordinatorProtocol?
@@ -19,7 +17,7 @@ class LikedViewModel: MoreViewModelProtocol, LikedViewModelProtocol {
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())?
     var refreshCollectionView: (() async -> ())?
     var setFavorites: ((_ favorites: Set<String>) -> ())?
-    var updateTulBar: (() -> ())?
+    var updateTabBar: (() -> ())?
     
     func setVacancies() {
         Task {

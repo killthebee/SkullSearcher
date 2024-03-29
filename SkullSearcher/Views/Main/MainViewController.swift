@@ -4,7 +4,12 @@ protocol BSPresenterDelegate: AnyObject {
     func presentBS()
 }
 
-class MainViewController: UIViewController, BSPresenterDelegate {
+protocol CanUpdateLikesProtocol: AnyObject {
+    func updateTabBar()
+    func refresh()
+}
+
+class MainViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesProtocol {
     
     // MARK: Dependencies -
     var viewModel: MainViewModelProtocol?
@@ -18,7 +23,6 @@ class MainViewController: UIViewController, BSPresenterDelegate {
     
     var offerTexts: [String] = []
     var vacanciesPreviews: [VacancyPreviewData] = []
-    var favorites = Set<String>()
     
     // MARK: Logic -
     private func bindUI() {
@@ -36,11 +40,7 @@ class MainViewController: UIViewController, BSPresenterDelegate {
             self?.vacanciesPreviews = previews
         }
         
-        viewModel?.setFavorites = { [weak self] (favorites) in
-            self?.favorites = favorites
-        }
-        
-        viewModel?.updateTulBar = { [weak self] () in
+        viewModel?.updateTabBar = { [weak self] () in
             self?.dashboardTabBar.addItemBadge(atIndex: 1)
         }
     }
@@ -50,8 +50,12 @@ class MainViewController: UIViewController, BSPresenterDelegate {
         viewModel?.presentMoreScreen()
     }
     
-    func refreshWithNewFavorites() {
-        viewModel?.reloadWithNewLikes()
+    func updateTabBar() {
+        viewModel?.updateTabBar?()
+    }
+    
+    func refresh() {
+        collectionView.reloadData()
     }
     
     // MARK: UI elements -

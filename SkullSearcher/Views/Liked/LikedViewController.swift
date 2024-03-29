@@ -24,9 +24,9 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
             self?.favorites = favorites
         }
         
-        viewModel?.updateTulBar = { [weak self] () in
-            self?.dashboardTabBar.addItemBadge(atIndex: 1)
-        }
+//        viewModel?.updateTabBar = { [weak self] () in
+//            self?.dashboardTabBar.addItemBadge(atIndex: 1)
+//        }
     }
     
     func presentBS() {

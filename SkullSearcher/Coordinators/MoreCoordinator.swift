@@ -5,7 +5,7 @@ protocol MoreCoordinatorProtocol: AnyObject {
 
 class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
     
-    weak var view: Presentable?
+    weak var view: MoreViewController?
     
     var vacancies: [VacancyPreviewData]?
     
@@ -32,6 +32,7 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
             let detailVC = detailCoordinator.start() as? DetailViewController
         else
             { return }
+        detailVC.parentVCDelegate = view
         detailVC.modalPresentationStyle = .fullScreen
         view?.present(detailVC)
     }

@@ -47,11 +47,10 @@ extension MoreViewController:
             }
             if vacanciesPreviews.count > 0 {
                 cell.configure(
-                    previewData: vacanciesPreviews[indexPath.row],
-                    favorites
+                    previewData: vacanciesPreviews[indexPath.row]
                 )
                 cell.bsDelegate = self
-                cell.viewModel = viewModel as? favoritesManipulatorProtocol
+                cell.tabBarUpdater = self
             }
             
             return cell
