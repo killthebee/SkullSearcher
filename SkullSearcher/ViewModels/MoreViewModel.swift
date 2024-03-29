@@ -5,7 +5,6 @@ protocol MoreViewModelProtocol: AnyObject {
     var refreshCollectionView: (() async -> ())? { get set }
     func dismiss()
     func presentDetail(_ index: Int)
-    var setFavorites: ((_ favorites: Set<String>) -> ())? { get set }
     var updateTabBar: (() -> ())? { get set }
     var updateParent: (() -> ())? { get set }
 }
@@ -27,16 +26,10 @@ class MoreViewModel: MoreViewModelProtocol, LikesPresenterProtocol {
         Task {
             guard let vacancies = vacancies else { return }
             setVacanciesPreviews?(vacancies)
-            getFavorites()
             await refreshCollectionView?()
         }
     }
-    
-    func getFavorites() {
-        guard let favorites = storageService?.retriveFavorite() else { return }
-        setFavorites?(favorites)
-    }
-    
+        
     func dismiss() {
         updateParent?()
         coordinator?.dismiss()

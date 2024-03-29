@@ -25,7 +25,6 @@ class MainViewModel: MainViewModelProtocol, LikesPresenterProtocol {
     var refreshCollectionView: (() async -> ())?
     var setOffersTexts: ((_ texts: [String]) -> ())?
     var setVacanciesPreviews: ((_ previews: [VacancyPreviewData]) -> ())?
-    var setFavorites: ((_ favorites: Set<String>) -> ())?
     var updateTabBar: (() -> ())?
     
     func setData() {

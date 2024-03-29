@@ -21,10 +21,6 @@ class MoreViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesP
             self?.vacanciesPreviews = previews
         }
         
-        viewModel?.setFavorites = { [weak self] (favorites) in
-            self?.favorites = favorites
-        }
-        
         viewModel?.updateTabBar = { [weak self] () in
             self?.dashboardTabBar.addItemBadge(atIndex: 1)
         }
