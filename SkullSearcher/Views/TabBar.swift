@@ -3,15 +3,16 @@ import UIKit
 class DasboardTabBar: UITabBar {
     
     static let shared = DasboardTabBar()
-    private let customDelegate = DashboardTabBarDelegate()
     private let storageService = FavoriteStorage.shared
+    weak var presenter: LikesPresenterProtocol?
+    weak var dismisser: LikedViewController?
     
     private let tabBarItemTag: Int = 10090
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        delegate = customDelegate
         configure()
+        delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -101,11 +102,13 @@ class DasboardTabBar: UITabBar {
     }
 }
 
-class DashboardTabBarDelegate: NSObject {}
-
-extension DashboardTabBarDelegate : UITabBarDelegate {
+extension DasboardTabBar: UITabBarDelegate {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print(item.tag)
+        if item.tag != 2 { return }
+        if dismisser != nil {
+            dismisser?.dismissLikesVC()
+        }
+        presenter?.presentLikes()
     }
 }

@@ -1,14 +1,14 @@
 import UIKit
 
-class LikedViewController: UIViewController, BSPresenterDelegate {
+class LikedViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesProtocol {
     
     // MARK: Dependencies -
     var viewModel: LikedViewModelProtocol?
     private let delegate = BottomSheetTransitioningDelegate(configuration: .default)
+    weak var parentVCDelegate: CanUpdateLikesProtocol?
     
     // MARK: Data -
     var vacanciesPreviews: [VacancyPreviewData] = []
-    var favorites = Set<String>()
     
     // MARK: Logic -
     private func bindUI() {
@@ -20,13 +20,20 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
             self?.vacanciesPreviews = previews
         }
         
-        viewModel?.setFavorites = { [weak self] (favorites) in
-            self?.favorites = favorites
+        viewModel?.updateLable = { [weak self] in
+            self?.vacanciesCountLable.text = makeVacanciesCount(
+                self?.vacanciesPreviews.count ?? 0
+            )
         }
         
-//        viewModel?.updateTabBar = { [weak self] () in
-//            self?.dashboardTabBar.addItemBadge(atIndex: 1)
-//        }
+        viewModel?.updateParent = { [weak self] () in
+            self?.parentVCDelegate?.updateTabBar()
+            self?.parentVCDelegate?.refresh()
+        }
+        
+        viewModel?.updateTabBar = { [weak self] () in
+            self?.dashboardTabBar.addItemBadge(atIndex: 1)
+        }
     }
     
     func presentBS() {
@@ -34,6 +41,18 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = delegate
         present(vc, animated: true)
+    }
+    
+    func updateTabBar() {
+        viewModel?.updateTabBar?()
+    }
+    
+    func refresh() {
+        collectionView.reloadData()
+    }
+    
+    func dismissLikesVC() {
+        viewModel?.dismiss()
     }
     
     // MARK: UI elements -
@@ -47,17 +66,6 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
         collectionView.dataSource = self
         
         collectionView.register(
-            TopSearchCell.self,
-            forCellWithReuseIdentifier: TopSearchCell.cellIdentifier
-        )
-        
-        collectionView.register(
-            MoreSupCell.self,
-            forSupplementaryViewOfKind: "MoreHeader",
-            withReuseIdentifier: MoreSupCell.cellIdentifier
-        )
-        
-        collectionView.register(
             VacancyCell.self,
             forCellWithReuseIdentifier: VacancyCell.cellIdentifier
         )
@@ -65,6 +73,26 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
         
         return collectionView
     }()
+    
+    private let LikedHeaderLable: UILabel = {
+        let lable = UILabel()
+        lable.textColor = .white
+        lable.font = title2Font
+        lable.text = likedHeaderString
+        
+        return lable
+    }()
+    
+    private let vacanciesCountLable: UILabel = {
+        let lable = UILabel()
+        lable.textColor = grey3
+        lable.font = text1Font
+        lable.text = "2 вакансии"
+            
+        return lable
+    }()
+    
+    private let dashboardTabBar = DasboardTabBar()
     
     // MARK: View setup -
     override func viewDidLoad() {
@@ -78,23 +106,24 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
         addSubview()
         configureLayout()
         configureCompositionalLayout()
+        dashboardTabBar.dismisser = self
         bindUI()
         updateUI()
     }
-    
-    private let dashboardTabBar = DasboardTabBar()
     
     private func updateUI() {
         viewModel?.setVacancies()
     }
     
     private func disableAutoresizing() {
-        [collectionView, dashboardTabBar
+        [collectionView, dashboardTabBar, LikedHeaderLable,
+         vacanciesCountLable
         ].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func addSubview() {
-        [collectionView, dashboardTabBar
+        [collectionView, dashboardTabBar, LikedHeaderLable,
+         vacanciesCountLable
         ].forEach{ view.addSubview($0) }
     }
     
@@ -102,16 +131,33 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
     private func configureLayout() {
         
         let constraints: [NSLayoutConstraint] = [
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(
-                equalTo: view.leadingAnchor
+            LikedHeaderLable.topAnchor.constraint(
+                equalTo: view.topAnchor,
+                constant: 64
             ),
-            collectionView.trailingAnchor.constraint(
+            LikedHeaderLable.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: 16
+            ),
+            LikedHeaderLable.trailingAnchor.constraint(
                 equalTo: view.trailingAnchor
             ),
-            collectionView.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor,
-                constant: -110
+            LikedHeaderLable.heightAnchor.constraint(
+                equalToConstant: 24
+            ),
+            
+            vacanciesCountLable.topAnchor.constraint(
+                equalTo: LikedHeaderLable.bottomAnchor,
+                constant: 16
+            ),
+            vacanciesCountLable.leadingAnchor.constraint(
+                equalTo: LikedHeaderLable.leadingAnchor
+            ),
+            vacanciesCountLable.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor
+            ),
+            vacanciesCountLable.heightAnchor.constraint(
+                equalToConstant: 24
             ),
             
             dashboardTabBar.leadingAnchor.constraint(
@@ -125,6 +171,20 @@ class LikedViewController: UIViewController, BSPresenterDelegate {
             dashboardTabBar.heightAnchor.constraint(equalToConstant: 100),
             dashboardTabBar.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor
+            ),
+            
+            collectionView.topAnchor.constraint(
+                equalTo: vacanciesCountLable.bottomAnchor
+            ),
+            collectionView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor
+            ),
+            collectionView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor
+            ),
+            collectionView.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: -110
             ),
         ]
         

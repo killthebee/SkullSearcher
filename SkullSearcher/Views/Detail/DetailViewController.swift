@@ -92,7 +92,7 @@ class DetailViewController: UIViewController, CanUpdateLikesProtocol {
         return button
     }()
     
-    private let dashboardTabBar = DasboardTabBar.shared
+    private let dashboardTabBar = DasboardTabBar()
     
     // MARK: View setup -
     override func viewDidLoad() {
@@ -104,6 +104,7 @@ class DetailViewController: UIViewController, CanUpdateLikesProtocol {
         view.backgroundColor = .black
         bindUI()
         updateUI()
+        dashboardTabBar.presenter = viewModel as? LikesPresenterProtocol
         disableAutoresizing()
         addSubview()
         configureLayout()

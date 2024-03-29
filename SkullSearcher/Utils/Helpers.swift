@@ -116,3 +116,21 @@ func makeSchedules(_ texts: [String]) -> String {
     let firstSentence = texts[0].prefix(1).capitalized + texts[0].dropFirst()
     return "\(firstSentence), \(texts[1])"
 }
+
+func makeVacanciesCount(_ num: Int) -> String {
+    let digits = Array(String(num))
+    let lastDigit = digits[digits.count - 1]
+    
+    if num >= 5 && num <= 20{
+        return "\(num) вакансий"
+    } else {
+        let iiDigits: Set<Character> = ["2", "3", "4"]
+        if iiDigits.contains(lastDigit) {
+            return "\(num) вакансии"
+        } else if lastDigit == "1" {
+            return "\(num) вакансия"
+        } else {
+            return "\(num) вакансий"
+        }
+    }
+}

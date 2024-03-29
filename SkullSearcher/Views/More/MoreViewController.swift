@@ -79,6 +79,8 @@ class MoreViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesP
         return collectionView
     }()
     
+    private let dashboardTabBar = DasboardTabBar()
+    
     // MARK: View setup -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,13 +91,12 @@ class MoreViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesP
     private func configure() {
         disableAutoresizing()
         addSubview()
+        dashboardTabBar.presenter = viewModel as? LikesPresenterProtocol
         configureLayout()
         configureCompositionalLayout()
         bindUI()
         updateUI()
     }
-    
-    private let dashboardTabBar = DasboardTabBar()
     
     private func updateUI() {
         viewModel?.setVacancies()

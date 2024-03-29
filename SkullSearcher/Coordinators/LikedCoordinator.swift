@@ -7,13 +7,11 @@ class LikedCoordinator: Coordinator, LikedCoordinatorProtocol {
     
     weak var view: Presentable?
     
-    var vacancies: [VacancyPreviewData]?
-    
     func start() -> Presentable? {
         let likedVC = LikedViewController()
         let viewModel = LikedViewModel()
-        viewModel.vacancies = vacancies
         viewModel.storageService = FavoriteStorage.shared
+        viewModel.apiService = FakeMockApiService.shared
         likedVC.viewModel = viewModel
         viewModel.coordinator = self
         view = likedVC

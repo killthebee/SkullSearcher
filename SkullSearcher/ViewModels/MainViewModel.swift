@@ -9,8 +9,11 @@ protocol MainViewModelProtocol: AnyObject {
     var storageService: FavoriteStorageProtocol? { get set }
 }
 
-class MainViewModel: MainViewModelProtocol {
-    
+protocol LikesPresenterProtocol: AnyObject {
+    func presentLikes()
+}
+
+class MainViewModel: MainViewModelProtocol, LikesPresenterProtocol {
     
     var apiService: ApiServiceProtocol?
     var storageService: FavoriteStorageProtocol?
@@ -83,5 +86,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func presentDetail(_ index: Int) {
         coordinator?.presentDetail(index)
+    }
+    
+    func presentLikes() {
+        coordinator?.presentLikes()
     }
 }

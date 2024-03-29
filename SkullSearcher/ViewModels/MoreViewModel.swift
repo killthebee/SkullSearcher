@@ -10,7 +10,7 @@ protocol MoreViewModelProtocol: AnyObject {
     var updateParent: (() -> ())? { get set }
 }
 
-class MoreViewModel: MoreViewModelProtocol {
+class MoreViewModel: MoreViewModelProtocol, LikesPresenterProtocol {
     
     var vacancies: [VacancyPreviewData]?
     
@@ -44,5 +44,9 @@ class MoreViewModel: MoreViewModelProtocol {
     
     func presentDetail(_ index: Int) {
         coordinator?.presentDetail(index)
+    }
+    
+    func presentLikes() {
+        coordinator?.presentLikes()
     }
 }

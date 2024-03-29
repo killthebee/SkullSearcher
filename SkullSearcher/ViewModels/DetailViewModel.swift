@@ -6,7 +6,7 @@ protocol detailViewModelProtocol: AnyObject {
     var updateParent: (() -> ())? { get set }
 }
 
-class detailViewModel: detailViewModelProtocol {
+class detailViewModel: detailViewModelProtocol, LikesPresenterProtocol {
     
     var apiService: ApiServiceProtocol?
     var storageService: FavoriteStorageProtocol?
@@ -52,5 +52,9 @@ class detailViewModel: detailViewModelProtocol {
     func dismiss() {
         updateParent?()
         coordinator?.dismiss()
+    }
+    
+    func presentLikes() {
+        coordinator?.presentLikes()
     }
 }

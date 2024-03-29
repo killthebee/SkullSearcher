@@ -125,6 +125,7 @@ class MainViewController: UIViewController, BSPresenterDelegate, CanUpdateLikesP
     
     private func configure() {
         view.backgroundColor = .black
+        dashboardTabBar.presenter = viewModel as? LikesPresenterProtocol
         disableAutoresizing()
         addSubview()
         configureLayout()

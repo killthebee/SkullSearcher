@@ -30,17 +30,6 @@ class LikedVCLayouts {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
         
-        section.boundarySupplementaryItems = [
-            .init(
-                layoutSize: .init(
-                    widthDimension: .fractionalWidth(1),
-                    heightDimension: .absolute(32)
-                ),
-                elementKind: "MoreHeader",
-                alignment: .top
-            )
-        ]
-        
         return section
     }
 }

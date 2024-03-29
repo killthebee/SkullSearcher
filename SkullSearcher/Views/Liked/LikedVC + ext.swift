@@ -17,59 +17,26 @@ extension LikedViewController:
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            guard
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: TopSearchCell.cellIdentifier,
-                    for: indexPath
-                ) as? TopSearchCell
-            else {
-                fatalError("Unable deque cell...")
-            }
-//            cell.configure(viewModel)
-            
-            return cell
-        } else {
-            guard
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: VacancyCell.cellIdentifier,
-                    for: indexPath
-                ) as? VacancyCell
-            else {
-                fatalError("Unable deque cell...")
-            }
-            if vacanciesPreviews.count > 0 {
-//                cell.configure(
-//                    previewData: vacanciesPreviews[indexPath.row],
-//                    favorites
-//                )
-                cell.bsDelegate = self
-            }
-            
-            return cell
-        }
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: MoreSupCell.cellIdentifier,
-            for: indexPath) as? MoreSupCell
+        guard
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: VacancyCell.cellIdentifier,
+                for: indexPath
+            ) as? VacancyCell
         else {
-            fatalError("Cannot create header view")
+            fatalError("Unable deque cell...")
         }
-        supplementaryView.configure(vacanciesPreviews.count)
+        if vacanciesPreviews.count > 0 {
+            cell.configure(
+                previewData: vacanciesPreviews[indexPath.row]
+            )
+            cell.tabBarUpdater = self
+            cell.bsDelegate = self
+        }
         
-        return supplementaryView
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
-            viewModel?.presentDetail(indexPath.row)
-        }
+        viewModel?.presentDetail(indexPath.row)
     }
 }

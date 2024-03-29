@@ -1,6 +1,7 @@
 protocol MoreCoordinatorProtocol: AnyObject {
     func dismiss()
     func presentDetail(_ index: Int)
+    func presentLikes()
 }
 
 class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
@@ -35,5 +36,16 @@ class MoreCoordinator: Coordinator, MoreCoordinatorProtocol {
         detailVC.parentVCDelegate = view
         detailVC.modalPresentationStyle = .fullScreen
         view?.present(detailVC)
+    }
+    
+    func presentLikes() {
+        let likesCoordinator = LikedCoordinator()
+        guard
+            let likesVC = likesCoordinator.start() as? LikedViewController
+        else
+            { return }
+        likesVC.parentVCDelegate = view
+        likesVC.modalPresentationStyle = .fullScreen
+        view?.present(likesVC)
     }
 }

@@ -1,6 +1,7 @@
 protocol MainScreenCoordinatorProtocol: AnyObject {
     func presentMoreScreen(_ vacancies: [VacancyPreviewData]?)
     func presentDetail(_ index: Int)
+    func presentLikes()
 }
 
 class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
@@ -44,5 +45,16 @@ class MainScreenCoordinator: Coordinator, MainScreenCoordinatorProtocol {
         detailVC.parentVCDelegate = view
         detailVC.modalPresentationStyle = .fullScreen
         view?.present(detailVC)
+    }
+    
+    func presentLikes() {
+        let likesCoordinator = LikedCoordinator()
+        guard
+            let likesVC = likesCoordinator.start() as? LikedViewController
+        else
+            { return }
+        likesVC.parentVCDelegate = view
+        likesVC.modalPresentationStyle = .fullScreen
+        view?.present(likesVC)
     }
 }

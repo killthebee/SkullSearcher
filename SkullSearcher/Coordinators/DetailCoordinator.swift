@@ -1,10 +1,11 @@
 protocol DetailCoordinatorProtocol: AnyObject {
     func dismiss()
+    func presentLikes()
 }
 
 class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
     
-    weak var view: Presentable?
+    weak var view: DetailViewController?
     
     var apiService: ApiServiceProtocol?
     
@@ -26,5 +27,16 @@ class DetailCoordinator: Coordinator, DetailCoordinatorProtocol {
 
     func dismiss() {
         view?.dismiss()
+    }
+    
+    func presentLikes() {
+        let likesCoordinator = LikedCoordinator()
+        guard
+            let likesVC = likesCoordinator.start() as? LikedViewController
+        else
+            { return }
+        likesVC.parentVCDelegate = view
+        likesVC.modalPresentationStyle = .fullScreen
+        view?.present(likesVC)
     }
 }

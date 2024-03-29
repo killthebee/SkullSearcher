@@ -19,3 +19,4 @@ let moreSearchString = "Должность по подходящим вакан�
 let responsobilityHeader = "Ваши задачи"
 let questionHeaderString = "Задайте вопрос работодателю"
 let questionHelpTextString = "Он получит его с откликом на вакансию"
+let likedHeaderString = "Избранное"
