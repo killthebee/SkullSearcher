@@ -32,6 +32,25 @@ class OfferCell: UICollectionViewCell {
         )
     }
     
+    func addLoop() { // figma is kinda messed up so
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "loopIcon")
+        attachment.bounds = CGRect(
+            x: 0, y: -2,
+            width: 14,
+            height: 14
+        )
+
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let completeText = NSMutableAttributedString(string: "")
+        let string = NSMutableAttributedString(
+            string: offerLable.text ?? "Вакансии рядом с вами"
+        )
+        completeText.append(attachmentString)
+        completeText.append(string)
+        offerLable.attributedText = completeText
+    }
+    
     @objc
     private func bumpCV() {
         print("bump cv")
