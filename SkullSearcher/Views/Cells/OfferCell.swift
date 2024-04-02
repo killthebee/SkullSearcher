@@ -11,7 +11,30 @@ class OfferCell: UICollectionViewCell {
             iconCoverView.backgroundColor = darkGreen
         }
         icon.image = image
+        offerLableHeight.constant = 34
         offerLable.text = text
+    }
+    
+    func addOffer() {
+        offerLableHeight.constant = 54
+        let offerAttriString = NSMutableAttributedString(string: offerString)
+        let offerRange = (offerString as NSString).range(of: offerStringRagne)
+        
+        offerAttriString.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: green!,
+            range: offerRange
+        )
+        offerLable.attributedText = offerAttriString
+        offerLable.isUserInteractionEnabled = true
+        offerLable.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(bumpCV))
+        )
+    }
+    
+    @objc
+    private func bumpCV() {
+        print("bump cv")
     }
     
     private let cellBackgroundView: UIView = {
@@ -68,6 +91,10 @@ class OfferCell: UICollectionViewCell {
         iconCoverView.addSubview(icon)
     }
     
+    private lazy var offerLableHeight = offerLable.heightAnchor.constraint(
+        equalToConstant: 34
+    )
+    
     private func setUpConstrains() {
         let spacing: CGFloat = 8
         
@@ -113,7 +140,7 @@ class OfferCell: UICollectionViewCell {
                 equalTo: cellBackgroundView.trailingAnchor,
                 constant: -1 * spacing
             ),
-            offerLable.heightAnchor.constraint(equalToConstant: 34),
+            offerLableHeight,
         ]
         
         NSLayoutConstraint.activate(constraints)

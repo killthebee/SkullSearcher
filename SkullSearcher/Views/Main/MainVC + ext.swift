@@ -52,6 +52,9 @@ extension MainViewController:
                     image: offerIcons[indexPath.row],
                     text: offerTexts[indexPath.row]
                 )
+                if indexPath.row == 1 {
+                    cell.addOffer()
+                }
             } else {
                 cell.configure(
                     image: offerIcons[indexPath.row]
