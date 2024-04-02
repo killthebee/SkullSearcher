@@ -22,3 +22,4 @@ let questionHelpTextString = "Он получит его с откликом н�
 let likedHeaderString = "Избранное"
 let offerString = "Поднять резюме в поиске\nПоднять"
 let offerStringRagne = "\nПоднять"
+let coverLetterString = "Ваше сопроводительное письмо"
